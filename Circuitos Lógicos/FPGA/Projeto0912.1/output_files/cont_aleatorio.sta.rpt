@@ -1,0 +1,1423 @@
+TimeQuest Timing Analyzer report for cont_aleatorio
+Mon Dec 09 19:40:18 2019
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clock1'
+ 12. Slow Model Setup: 'reset'
+ 13. Slow Model Setup: 'clock:talita|clk_div'
+ 14. Slow Model Hold: 'clock1'
+ 15. Slow Model Hold: 'clock:talita|clk_div'
+ 16. Slow Model Hold: 'reset'
+ 17. Slow Model Recovery: 'clock:talita|clk_div'
+ 18. Slow Model Removal: 'clock:talita|clk_div'
+ 19. Slow Model Minimum Pulse Width: 'clock1'
+ 20. Slow Model Minimum Pulse Width: 'reset'
+ 21. Slow Model Minimum Pulse Width: 'clock:talita|clk_div'
+ 22. Clock to Output Times
+ 23. Minimum Clock to Output Times
+ 24. Fast Model Setup Summary
+ 25. Fast Model Hold Summary
+ 26. Fast Model Recovery Summary
+ 27. Fast Model Removal Summary
+ 28. Fast Model Minimum Pulse Width Summary
+ 29. Fast Model Setup: 'clock1'
+ 30. Fast Model Setup: 'reset'
+ 31. Fast Model Setup: 'clock:talita|clk_div'
+ 32. Fast Model Hold: 'clock1'
+ 33. Fast Model Hold: 'clock:talita|clk_div'
+ 34. Fast Model Hold: 'reset'
+ 35. Fast Model Recovery: 'clock:talita|clk_div'
+ 36. Fast Model Removal: 'clock:talita|clk_div'
+ 37. Fast Model Minimum Pulse Width: 'clock1'
+ 38. Fast Model Minimum Pulse Width: 'reset'
+ 39. Fast Model Minimum Pulse Width: 'clock:talita|clk_div'
+ 40. Clock to Output Times
+ 41. Minimum Clock to Output Times
+ 42. Multicorner Timing Analysis Summary
+ 43. Clock to Output Times
+ 44. Minimum Clock to Output Times
+ 45. Setup Transfers
+ 46. Hold Transfers
+ 47. Recovery Transfers
+ 48. Removal Transfers
+ 49. Report TCCS
+ 50. Report RSKM
+ 51. Unconstrained Paths
+ 52. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; cont_aleatorio                                                    ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C35F672C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                     ;
++----------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------+
+; Clock Name           ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                  ;
++----------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------+
+; clock1               ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clock1 }               ;
+; clock:talita|clk_div ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clock:talita|clk_div } ;
+; reset                ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { reset }                ;
++----------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Slow Model Fmax Summary                                                                                     ;
++------------+-----------------+----------------------+-------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name           ; Note                                                  ;
++------------+-----------------+----------------------+-------------------------------------------------------+
+; 170.74 MHz ; 170.74 MHz      ; clock1               ;                                                       ;
+; 963.39 MHz ; 500.0 MHz       ; clock:talita|clk_div ; limit due to high minimum pulse width violation (tch) ;
++------------+-----------------+----------------------+-------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-----------------------------------------------+
+; Slow Model Setup Summary                      ;
++----------------------+--------+---------------+
+; Clock                ; Slack  ; End Point TNS ;
++----------------------+--------+---------------+
+; clock1               ; -4.857 ; -99.510       ;
+; reset                ; -0.730 ; -2.132        ;
+; clock:talita|clk_div ; -0.038 ; -0.041        ;
++----------------------+--------+---------------+
+
+
++-----------------------------------------------+
+; Slow Model Hold Summary                       ;
++----------------------+--------+---------------+
+; Clock                ; Slack  ; End Point TNS ;
++----------------------+--------+---------------+
+; clock1               ; -2.505 ; -2.505        ;
+; clock:talita|clk_div ; 0.391  ; 0.000         ;
+; reset                ; 0.698  ; 0.000         ;
++----------------------+--------+---------------+
+
+
++----------------------------------------------+
+; Slow Model Recovery Summary                  ;
++----------------------+-------+---------------+
+; Clock                ; Slack ; End Point TNS ;
++----------------------+-------+---------------+
+; clock:talita|clk_div ; 0.048 ; 0.000         ;
++----------------------+-------+---------------+
+
+
++----------------------------------------------+
+; Slow Model Removal Summary                   ;
++----------------------+-------+---------------+
+; Clock                ; Slack ; End Point TNS ;
++----------------------+-------+---------------+
+; clock:talita|clk_div ; 0.222 ; 0.000         ;
++----------------------+-------+---------------+
+
+
++-----------------------------------------------+
+; Slow Model Minimum Pulse Width Summary        ;
++----------------------+--------+---------------+
+; Clock                ; Slack  ; End Point TNS ;
++----------------------+--------+---------------+
+; clock1               ; -1.380 ; -34.380       ;
+; reset                ; -1.380 ; -1.380        ;
+; clock:talita|clk_div ; -0.500 ; -3.000        ;
++----------------------+--------+---------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clock1'                                                                                                     ;
++--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node              ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; -4.857 ; clock:talita|count[0]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; 0.005      ; 5.898      ;
+; -4.856 ; clock:talita|count[0]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; 0.005      ; 5.897      ;
+; -4.853 ; clock:talita|count[0]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; 0.005      ; 5.894      ;
+; -4.851 ; clock:talita|count[0]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; 0.005      ; 5.892      ;
+; -4.818 ; clock:talita|count[0]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.009      ; 5.863      ;
+; -4.817 ; clock:talita|count[0]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.009      ; 5.862      ;
+; -4.816 ; clock:talita|count[0]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.009      ; 5.861      ;
+; -4.810 ; clock:talita|count[0]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; 0.009      ; 5.855      ;
+; -4.759 ; clock:talita|count[6]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; -0.004     ; 5.791      ;
+; -4.758 ; clock:talita|count[6]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; -0.004     ; 5.790      ;
+; -4.755 ; clock:talita|count[6]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; -0.004     ; 5.787      ;
+; -4.753 ; clock:talita|count[6]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; -0.004     ; 5.785      ;
+; -4.720 ; clock:talita|count[6]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.756      ;
+; -4.719 ; clock:talita|count[6]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.755      ;
+; -4.718 ; clock:talita|count[6]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.754      ;
+; -4.712 ; clock:talita|count[6]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.748      ;
+; -4.703 ; clock:talita|count[0]  ; clock:talita|count[0]  ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.739      ;
+; -4.605 ; clock:talita|count[1]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.644      ;
+; -4.605 ; clock:talita|count[6]  ; clock:talita|count[0]  ; clock1       ; clock1      ; 1.000        ; -0.009     ; 5.632      ;
+; -4.604 ; clock:talita|count[1]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.643      ;
+; -4.601 ; clock:talita|count[1]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.640      ;
+; -4.599 ; clock:talita|count[1]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.638      ;
+; -4.567 ; clock:talita|count[0]  ; clock:talita|count[14] ; clock1       ; clock1      ; 1.000        ; 0.009      ; 5.612      ;
+; -4.566 ; clock:talita|count[1]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 5.609      ;
+; -4.565 ; clock:talita|count[0]  ; clock:talita|count[12] ; clock1       ; clock1      ; 1.000        ; 0.009      ; 5.610      ;
+; -4.565 ; clock:talita|count[1]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 5.608      ;
+; -4.564 ; clock:talita|count[1]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 5.607      ;
+; -4.558 ; clock:talita|count[1]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 5.601      ;
+; -4.540 ; clock:talita|count[2]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.579      ;
+; -4.539 ; clock:talita|count[2]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.578      ;
+; -4.536 ; clock:talita|count[2]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.575      ;
+; -4.534 ; clock:talita|count[2]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.573      ;
+; -4.516 ; clock:talita|count[0]  ; clock:talita|count[13] ; clock1       ; clock1      ; 1.000        ; 0.009      ; 5.561      ;
+; -4.512 ; clock:talita|count[0]  ; clock:talita|count[6]  ; clock1       ; clock1      ; 1.000        ; 0.009      ; 5.557      ;
+; -4.511 ; clock:talita|count[0]  ; clock:talita|count[11] ; clock1       ; clock1      ; 1.000        ; 0.009      ; 5.556      ;
+; -4.501 ; clock:talita|count[3]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.540      ;
+; -4.501 ; clock:talita|count[2]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 5.544      ;
+; -4.500 ; clock:talita|count[3]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.539      ;
+; -4.500 ; clock:talita|count[2]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 5.543      ;
+; -4.499 ; clock:talita|count[2]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 5.542      ;
+; -4.497 ; clock:talita|count[3]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.536      ;
+; -4.495 ; clock:talita|count[3]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.534      ;
+; -4.493 ; clock:talita|count[2]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 5.536      ;
+; -4.469 ; clock:talita|count[6]  ; clock:talita|count[14] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.505      ;
+; -4.467 ; clock:talita|count[6]  ; clock:talita|count[12] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.503      ;
+; -4.462 ; clock:talita|count[3]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 5.505      ;
+; -4.461 ; clock:talita|count[3]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 5.504      ;
+; -4.460 ; clock:talita|count[3]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 5.503      ;
+; -4.454 ; clock:talita|count[3]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 5.497      ;
+; -4.451 ; clock:talita|count[1]  ; clock:talita|count[0]  ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.485      ;
+; -4.418 ; clock:talita|count[6]  ; clock:talita|count[13] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.454      ;
+; -4.414 ; clock:talita|count[6]  ; clock:talita|count[6]  ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.450      ;
+; -4.413 ; clock:talita|count[6]  ; clock:talita|count[11] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.449      ;
+; -4.398 ; clock:talita|count[4]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.437      ;
+; -4.397 ; clock:talita|count[4]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.436      ;
+; -4.394 ; clock:talita|count[4]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.433      ;
+; -4.392 ; clock:talita|count[4]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.431      ;
+; -4.386 ; clock:talita|count[2]  ; clock:talita|count[0]  ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.420      ;
+; -4.359 ; clock:talita|count[5]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.398      ;
+; -4.359 ; clock:talita|count[4]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 5.402      ;
+; -4.358 ; clock:talita|count[5]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.397      ;
+; -4.358 ; clock:talita|count[4]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 5.401      ;
+; -4.357 ; clock:talita|count[4]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 5.400      ;
+; -4.355 ; clock:talita|count[5]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.394      ;
+; -4.353 ; clock:talita|count[5]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.392      ;
+; -4.351 ; clock:talita|count[4]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 5.394      ;
+; -4.347 ; clock:talita|count[3]  ; clock:talita|count[0]  ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.381      ;
+; -4.320 ; clock:talita|count[5]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 5.363      ;
+; -4.319 ; clock:talita|count[5]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 5.362      ;
+; -4.318 ; clock:talita|count[5]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 5.361      ;
+; -4.315 ; clock:talita|count[1]  ; clock:talita|count[14] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 5.358      ;
+; -4.313 ; clock:talita|count[1]  ; clock:talita|count[12] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 5.356      ;
+; -4.312 ; clock:talita|count[5]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 5.355      ;
+; -4.272 ; clock:talita|count[11] ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; -0.004     ; 5.304      ;
+; -4.271 ; clock:talita|count[11] ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; -0.004     ; 5.303      ;
+; -4.268 ; clock:talita|count[11] ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; -0.004     ; 5.300      ;
+; -4.266 ; clock:talita|count[11] ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; -0.004     ; 5.298      ;
+; -4.264 ; clock:talita|count[1]  ; clock:talita|count[13] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 5.307      ;
+; -4.260 ; clock:talita|count[1]  ; clock:talita|count[6]  ; clock1       ; clock1      ; 1.000        ; 0.007      ; 5.303      ;
+; -4.259 ; clock:talita|count[1]  ; clock:talita|count[11] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 5.302      ;
+; -4.250 ; clock:talita|count[2]  ; clock:talita|count[14] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 5.293      ;
+; -4.248 ; clock:talita|count[2]  ; clock:talita|count[12] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 5.291      ;
+; -4.244 ; clock:talita|count[4]  ; clock:talita|count[0]  ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.278      ;
+; -4.237 ; clock:talita|count[12] ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; -0.004     ; 5.269      ;
+; -4.236 ; clock:talita|count[12] ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; -0.004     ; 5.268      ;
+; -4.233 ; clock:talita|count[12] ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; -0.004     ; 5.265      ;
+; -4.233 ; clock:talita|count[11] ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.269      ;
+; -4.232 ; clock:talita|count[11] ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.268      ;
+; -4.231 ; clock:talita|count[12] ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; -0.004     ; 5.263      ;
+; -4.231 ; clock:talita|count[11] ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.267      ;
+; -4.225 ; clock:talita|count[11] ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.261      ;
+; -4.211 ; clock:talita|count[3]  ; clock:talita|count[14] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 5.254      ;
+; -4.209 ; clock:talita|count[3]  ; clock:talita|count[12] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 5.252      ;
+; -4.205 ; clock:talita|count[5]  ; clock:talita|count[0]  ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.239      ;
+; -4.199 ; clock:talita|count[2]  ; clock:talita|count[13] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 5.242      ;
+; -4.198 ; clock:talita|count[12] ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.234      ;
+; -4.197 ; clock:talita|count[12] ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.233      ;
+; -4.196 ; clock:talita|count[12] ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.232      ;
+; -4.195 ; clock:talita|count[2]  ; clock:talita|count[6]  ; clock1       ; clock1      ; 1.000        ; 0.007      ; 5.238      ;
+; -4.194 ; clock:talita|count[2]  ; clock:talita|count[11] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 5.237      ;
++--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'reset'                                                                                                                                  ;
++--------+------------------------------------+--------------------------------+----------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                          ; To Node                        ; Launch Clock         ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------+--------------------------------+----------------------+-------------+--------------+------------+------------+
+; -0.730 ; conta_decada:feliperenato|qtemp[0] ; conta_decada:feliperenato|q[0] ; clock:talita|clk_div ; reset       ; 1.000        ; 0.014      ; 0.715      ;
+; -0.728 ; conta_decada:feliperenato|qtemp[2] ; conta_decada:feliperenato|q[2] ; clock:talita|clk_div ; reset       ; 1.000        ; 0.014      ; 0.712      ;
+; -0.674 ; conta_decada:feliperenato|qtemp[1] ; conta_decada:feliperenato|q[1] ; clock:talita|clk_div ; reset       ; 1.000        ; 0.013      ; 0.713      ;
++--------+------------------------------------+--------------------------------+----------------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clock:talita|clk_div'                                                                                                                                ;
++--------+------------------------------------+------------------------------------+----------------------+----------------------+--------------+------------+------------+
+; Slack  ; From Node                          ; To Node                            ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------+------------------------------------+----------------------+----------------------+--------------+------------+------------+
+; -0.038 ; conta_decada:feliperenato|qtemp[2] ; conta_decada:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 1.074      ;
+; -0.003 ; conta_decada:feliperenato|qtemp[1] ; conta_decada:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 1.039      ;
+; 0.006  ; conta_decada:feliperenato|qtemp[2] ; conta_decada:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 1.030      ;
+; 0.238  ; conta_decada:feliperenato|qtemp[1] ; conta_decada:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.798      ;
+; 0.238  ; conta_decada:feliperenato|qtemp[0] ; conta_decada:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.798      ;
+; 0.239  ; conta_decada:feliperenato|qtemp[0] ; conta_decada:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.797      ;
+; 0.379  ; conta_decada:feliperenato|qtemp[0] ; conta_decada:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.657      ;
+; 0.379  ; conta_decada:feliperenato|qtemp[2] ; conta_decada:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.657      ;
+; 0.379  ; conta_decada:feliperenato|qtemp[1] ; conta_decada:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.657      ;
++--------+------------------------------------+------------------------------------+----------------------+----------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clock1'                                                                                                              ;
++--------+------------------------+------------------------+----------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node              ; To Node                ; Launch Clock         ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------+------------------------+----------------------+-------------+--------------+------------+------------+
+; -2.505 ; clock:talita|clk_div   ; clock:talita|clk_div   ; clock:talita|clk_div ; clock1      ; 0.000        ; 2.646      ; 0.657      ;
+; -2.005 ; clock:talita|clk_div   ; clock:talita|clk_div   ; clock:talita|clk_div ; clock1      ; -0.500       ; 2.646      ; 0.657      ;
+; 0.524  ; clock:talita|count[31] ; clock:talita|count[31] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.790      ;
+; 0.788  ; clock:talita|count[23] ; clock:talita|count[23] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.054      ;
+; 0.788  ; clock:talita|count[15] ; clock:talita|count[15] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.054      ;
+; 0.793  ; clock:talita|count[1]  ; clock:talita|count[1]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.059      ;
+; 0.794  ; clock:talita|count[9]  ; clock:talita|count[9]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.060      ;
+; 0.798  ; clock:talita|count[17] ; clock:talita|count[17] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.064      ;
+; 0.799  ; clock:talita|count[2]  ; clock:talita|count[2]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.065      ;
+; 0.799  ; clock:talita|count[4]  ; clock:talita|count[4]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.065      ;
+; 0.799  ; clock:talita|count[27] ; clock:talita|count[27] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.065      ;
+; 0.799  ; clock:talita|count[25] ; clock:talita|count[25] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.065      ;
+; 0.799  ; clock:talita|count[7]  ; clock:talita|count[7]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.065      ;
+; 0.799  ; clock:talita|count[29] ; clock:talita|count[29] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.065      ;
+; 0.799  ; clock:talita|count[30] ; clock:talita|count[30] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.065      ;
+; 0.828  ; clock:talita|count[3]  ; clock:talita|count[3]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.094      ;
+; 0.828  ; clock:talita|count[5]  ; clock:talita|count[5]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.094      ;
+; 0.828  ; clock:talita|count[26] ; clock:talita|count[26] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.094      ;
+; 0.828  ; clock:talita|count[10] ; clock:talita|count[10] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.094      ;
+; 0.828  ; clock:talita|count[8]  ; clock:talita|count[8]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.094      ;
+; 0.828  ; clock:talita|count[28] ; clock:talita|count[28] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.094      ;
+; 1.176  ; clock:talita|count[1]  ; clock:talita|count[2]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.442      ;
+; 1.177  ; clock:talita|count[9]  ; clock:talita|count[10] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.443      ;
+; 1.182  ; clock:talita|count[30] ; clock:talita|count[31] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.448      ;
+; 1.182  ; clock:talita|count[29] ; clock:talita|count[30] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.448      ;
+; 1.182  ; clock:talita|count[2]  ; clock:talita|count[3]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.448      ;
+; 1.182  ; clock:talita|count[4]  ; clock:talita|count[5]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.448      ;
+; 1.182  ; clock:talita|count[25] ; clock:talita|count[26] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.448      ;
+; 1.182  ; clock:talita|count[27] ; clock:talita|count[28] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.448      ;
+; 1.214  ; clock:talita|count[8]  ; clock:talita|count[9]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.480      ;
+; 1.214  ; clock:talita|count[3]  ; clock:talita|count[4]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.480      ;
+; 1.214  ; clock:talita|count[26] ; clock:talita|count[27] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.480      ;
+; 1.214  ; clock:talita|count[28] ; clock:talita|count[29] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.480      ;
+; 1.247  ; clock:talita|count[1]  ; clock:talita|count[3]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.513      ;
+; 1.253  ; clock:talita|count[29] ; clock:talita|count[31] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.519      ;
+; 1.253  ; clock:talita|count[2]  ; clock:talita|count[4]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.519      ;
+; 1.253  ; clock:talita|count[25] ; clock:talita|count[27] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.519      ;
+; 1.253  ; clock:talita|count[27] ; clock:talita|count[29] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.519      ;
+; 1.274  ; clock:talita|count[7]  ; clock:talita|count[8]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.540      ;
+; 1.285  ; clock:talita|count[5]  ; clock:talita|count[7]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.551      ;
+; 1.285  ; clock:talita|count[8]  ; clock:talita|count[10] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.551      ;
+; 1.285  ; clock:talita|count[28] ; clock:talita|count[30] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.551      ;
+; 1.285  ; clock:talita|count[3]  ; clock:talita|count[5]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.551      ;
+; 1.285  ; clock:talita|count[26] ; clock:talita|count[28] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.551      ;
+; 1.318  ; clock:talita|count[1]  ; clock:talita|count[4]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.584      ;
+; 1.324  ; clock:talita|count[4]  ; clock:talita|count[7]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.590      ;
+; 1.324  ; clock:talita|count[27] ; clock:talita|count[30] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.590      ;
+; 1.324  ; clock:talita|count[2]  ; clock:talita|count[5]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.590      ;
+; 1.324  ; clock:talita|count[25] ; clock:talita|count[28] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.590      ;
+; 1.325  ; clock:talita|count[15] ; clock:talita|count[17] ; clock1               ; clock1      ; 0.000        ; 0.009      ; 1.600      ;
+; 1.334  ; clock:talita|count[23] ; clock:talita|count[25] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.600      ;
+; 1.345  ; clock:talita|count[7]  ; clock:talita|count[9]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.611      ;
+; 1.356  ; clock:talita|count[28] ; clock:talita|count[31] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.622      ;
+; 1.356  ; clock:talita|count[26] ; clock:talita|count[29] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.622      ;
+; 1.357  ; clock:talita|count[0]  ; clock:talita|count[1]  ; clock1               ; clock1      ; 0.000        ; 0.002      ; 1.625      ;
+; 1.389  ; clock:talita|count[1]  ; clock:talita|count[5]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.655      ;
+; 1.389  ; clock:talita|count[16] ; clock:talita|count[17] ; clock1               ; clock1      ; 0.000        ; 0.002      ; 1.657      ;
+; 1.395  ; clock:talita|count[27] ; clock:talita|count[31] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.661      ;
+; 1.395  ; clock:talita|count[25] ; clock:talita|count[29] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.661      ;
+; 1.405  ; clock:talita|count[23] ; clock:talita|count[26] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.671      ;
+; 1.416  ; clock:talita|count[7]  ; clock:talita|count[10] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.682      ;
+; 1.427  ; clock:talita|count[3]  ; clock:talita|count[7]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.693      ;
+; 1.427  ; clock:talita|count[26] ; clock:talita|count[30] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.693      ;
+; 1.428  ; clock:talita|count[0]  ; clock:talita|count[2]  ; clock1               ; clock1      ; 0.000        ; 0.002      ; 1.696      ;
+; 1.444  ; clock:talita|count[5]  ; clock:talita|count[8]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.710      ;
+; 1.466  ; clock:talita|count[2]  ; clock:talita|count[7]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.732      ;
+; 1.466  ; clock:talita|count[25] ; clock:talita|count[30] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.732      ;
+; 1.476  ; clock:talita|count[23] ; clock:talita|count[27] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.742      ;
+; 1.483  ; clock:talita|count[4]  ; clock:talita|count[8]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.749      ;
+; 1.495  ; clock:talita|count[20] ; clock:talita|count[23] ; clock1               ; clock1      ; 0.000        ; 0.002      ; 1.763      ;
+; 1.498  ; clock:talita|count[10] ; clock:talita|count[15] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.764      ;
+; 1.498  ; clock:talita|count[26] ; clock:talita|count[31] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.764      ;
+; 1.499  ; clock:talita|count[0]  ; clock:talita|count[3]  ; clock1               ; clock1      ; 0.000        ; 0.002      ; 1.767      ;
+; 1.515  ; clock:talita|count[5]  ; clock:talita|count[9]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.781      ;
+; 1.531  ; clock:talita|count[1]  ; clock:talita|count[7]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.797      ;
+; 1.532  ; clock:talita|count[9]  ; clock:talita|count[15] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.798      ;
+; 1.536  ; clock:talita|count[17] ; clock:talita|count[23] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.802      ;
+; 1.537  ; clock:talita|count[25] ; clock:talita|count[31] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.803      ;
+; 1.547  ; clock:talita|count[23] ; clock:talita|count[28] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.813      ;
+; 1.554  ; clock:talita|count[4]  ; clock:talita|count[9]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.820      ;
+; 1.568  ; clock:talita|count[24] ; clock:talita|count[25] ; clock1               ; clock1      ; 0.000        ; 0.006      ; 1.840      ;
+; 1.568  ; clock:talita|count[19] ; clock:talita|count[23] ; clock1               ; clock1      ; 0.000        ; 0.002      ; 1.836      ;
+; 1.569  ; clock:talita|count[22] ; clock:talita|count[23] ; clock1               ; clock1      ; 0.000        ; 0.006      ; 1.841      ;
+; 1.570  ; clock:talita|count[0]  ; clock:talita|count[4]  ; clock1               ; clock1      ; 0.000        ; 0.002      ; 1.838      ;
+; 1.586  ; clock:talita|count[5]  ; clock:talita|count[10] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.852      ;
+; 1.586  ; clock:talita|count[3]  ; clock:talita|count[8]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.852      ;
+; 1.618  ; clock:talita|count[23] ; clock:talita|count[29] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.884      ;
+; 1.625  ; clock:talita|count[4]  ; clock:talita|count[10] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.891      ;
+; 1.625  ; clock:talita|count[2]  ; clock:talita|count[8]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.891      ;
+; 1.639  ; clock:talita|count[24] ; clock:talita|count[26] ; clock1               ; clock1      ; 0.000        ; 0.006      ; 1.911      ;
+; 1.640  ; clock:talita|count[8]  ; clock:talita|count[15] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.906      ;
+; 1.640  ; clock:talita|count[18] ; clock:talita|count[23] ; clock1               ; clock1      ; 0.000        ; 0.002      ; 1.908      ;
+; 1.641  ; clock:talita|count[0]  ; clock:talita|count[5]  ; clock1               ; clock1      ; 0.000        ; 0.002      ; 1.909      ;
+; 1.643  ; clock:talita|count[21] ; clock:talita|count[23] ; clock1               ; clock1      ; 0.000        ; 0.006      ; 1.915      ;
+; 1.657  ; clock:talita|count[3]  ; clock:talita|count[9]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.923      ;
+; 1.684  ; clock:talita|count[14] ; clock:talita|count[15] ; clock1               ; clock1      ; 0.000        ; -0.007     ; 1.943      ;
+; 1.685  ; clock:talita|count[6]  ; clock:talita|count[7]  ; clock1               ; clock1      ; 0.000        ; -0.007     ; 1.944      ;
+; 1.689  ; clock:talita|count[23] ; clock:talita|count[30] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.955      ;
+; 1.690  ; clock:talita|count[1]  ; clock:talita|count[8]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.956      ;
+; 1.696  ; clock:talita|count[2]  ; clock:talita|count[9]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.962      ;
++--------+------------------------+------------------------+----------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clock:talita|clk_div'                                                                                                                                ;
++-------+------------------------------------+------------------------------------+----------------------+----------------------+--------------+------------+------------+
+; Slack ; From Node                          ; To Node                            ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------+------------------------------------+----------------------+----------------------+--------------+------------+------------+
+; 0.391 ; conta_decada:feliperenato|qtemp[1] ; conta_decada:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; conta_decada:feliperenato|qtemp[0] ; conta_decada:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; conta_decada:feliperenato|qtemp[2] ; conta_decada:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.657      ;
+; 0.531 ; conta_decada:feliperenato|qtemp[0] ; conta_decada:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.797      ;
+; 0.532 ; conta_decada:feliperenato|qtemp[1] ; conta_decada:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.798      ;
+; 0.532 ; conta_decada:feliperenato|qtemp[0] ; conta_decada:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.798      ;
+; 0.764 ; conta_decada:feliperenato|qtemp[2] ; conta_decada:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 1.030      ;
+; 0.773 ; conta_decada:feliperenato|qtemp[1] ; conta_decada:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 1.039      ;
+; 0.808 ; conta_decada:feliperenato|qtemp[2] ; conta_decada:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 1.074      ;
++-------+------------------------------------+------------------------------------+----------------------+----------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'reset'                                                                                                                                  ;
++-------+------------------------------------+--------------------------------+----------------------+-------------+--------------+------------+------------+
+; Slack ; From Node                          ; To Node                        ; Launch Clock         ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------+--------------------------------+----------------------+-------------+--------------+------------+------------+
+; 0.698 ; conta_decada:feliperenato|qtemp[2] ; conta_decada:feliperenato|q[2] ; clock:talita|clk_div ; reset       ; 0.000        ; 0.014      ; 0.712      ;
+; 0.700 ; conta_decada:feliperenato|qtemp[1] ; conta_decada:feliperenato|q[1] ; clock:talita|clk_div ; reset       ; 0.000        ; 0.013      ; 0.713      ;
+; 0.701 ; conta_decada:feliperenato|qtemp[0] ; conta_decada:feliperenato|q[0] ; clock:talita|clk_div ; reset       ; 0.000        ; 0.014      ; 0.715      ;
++-------+------------------------------------+--------------------------------+----------------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Recovery: 'clock:talita|clk_div'                                                                                           ;
++-------+-----------+------------------------------------+--------------+----------------------+--------------+------------+------------+
+; Slack ; From Node ; To Node                            ; Launch Clock ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+------------------------------------+--------------+----------------------+--------------+------------+------------+
+; 0.048 ; reset     ; conta_decada:feliperenato|qtemp[1] ; reset        ; clock:talita|clk_div ; 0.500        ; 2.721      ; 3.209      ;
+; 0.048 ; reset     ; conta_decada:feliperenato|qtemp[0] ; reset        ; clock:talita|clk_div ; 0.500        ; 2.721      ; 3.209      ;
+; 0.048 ; reset     ; conta_decada:feliperenato|qtemp[2] ; reset        ; clock:talita|clk_div ; 0.500        ; 2.721      ; 3.209      ;
+; 0.548 ; reset     ; conta_decada:feliperenato|qtemp[1] ; reset        ; clock:talita|clk_div ; 1.000        ; 2.721      ; 3.209      ;
+; 0.548 ; reset     ; conta_decada:feliperenato|qtemp[0] ; reset        ; clock:talita|clk_div ; 1.000        ; 2.721      ; 3.209      ;
+; 0.548 ; reset     ; conta_decada:feliperenato|qtemp[2] ; reset        ; clock:talita|clk_div ; 1.000        ; 2.721      ; 3.209      ;
++-------+-----------+------------------------------------+--------------+----------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Removal: 'clock:talita|clk_div'                                                                                            ;
++-------+-----------+------------------------------------+--------------+----------------------+--------------+------------+------------+
+; Slack ; From Node ; To Node                            ; Launch Clock ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+------------------------------------+--------------+----------------------+--------------+------------+------------+
+; 0.222 ; reset     ; conta_decada:feliperenato|qtemp[1] ; reset        ; clock:talita|clk_div ; 0.000        ; 2.721      ; 3.209      ;
+; 0.222 ; reset     ; conta_decada:feliperenato|qtemp[0] ; reset        ; clock:talita|clk_div ; 0.000        ; 2.721      ; 3.209      ;
+; 0.222 ; reset     ; conta_decada:feliperenato|qtemp[2] ; reset        ; clock:talita|clk_div ; 0.000        ; 2.721      ; 3.209      ;
+; 0.722 ; reset     ; conta_decada:feliperenato|qtemp[1] ; reset        ; clock:talita|clk_div ; -0.500       ; 2.721      ; 3.209      ;
+; 0.722 ; reset     ; conta_decada:feliperenato|qtemp[0] ; reset        ; clock:talita|clk_div ; -0.500       ; 2.721      ; 3.209      ;
+; 0.722 ; reset     ; conta_decada:feliperenato|qtemp[2] ; reset        ; clock:talita|clk_div ; -0.500       ; 2.721      ; 3.209      ;
++-------+-----------+------------------------------------+--------------+----------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clock1'                                                                  ;
++--------+--------------+----------------+------------------+--------+------------+-------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                  ;
++--------+--------------+----------------+------------------+--------+------------+-------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clock1 ; Rise       ; clock1                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|clk_div    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|clk_div    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[10]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[10]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[11]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[11]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[12]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[12]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[13]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[13]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[14]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[14]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[15]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[15]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[16]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[16]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[17]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[17]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[18]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[18]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[19]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[19]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[20]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[20]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[21]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[21]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[22]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[22]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[23]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[23]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[24]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[24]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[25]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[25]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[26]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[26]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[27]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[27]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[28]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[28]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[29]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[29]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[30]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[30]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[31]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[31]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[3]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[3]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[4]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[4]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[5]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[5]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[6]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[6]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[7]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[7]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[8]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[8]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[9]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[9]   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock1 ; Rise       ; clock1|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock1|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock1 ; Rise       ; clock1~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock1~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock1 ; Rise       ; clock1~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock1~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock1 ; Rise       ; talita|clk_div|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock1 ; Rise       ; talita|clk_div|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock1 ; Rise       ; talita|count[0]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock1 ; Rise       ; talita|count[0]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock1 ; Rise       ; talita|count[10]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock1 ; Rise       ; talita|count[10]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock1 ; Rise       ; talita|count[11]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock1 ; Rise       ; talita|count[11]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock1 ; Rise       ; talita|count[12]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock1 ; Rise       ; talita|count[12]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock1 ; Rise       ; talita|count[13]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock1 ; Rise       ; talita|count[13]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock1 ; Rise       ; talita|count[14]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock1 ; Rise       ; talita|count[14]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock1 ; Rise       ; talita|count[15]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock1 ; Rise       ; talita|count[15]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock1 ; Rise       ; talita|count[16]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock1 ; Rise       ; talita|count[16]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock1 ; Rise       ; talita|count[17]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock1 ; Rise       ; talita|count[17]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock1 ; Rise       ; talita|count[18]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock1 ; Rise       ; talita|count[18]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock1 ; Rise       ; talita|count[19]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock1 ; Rise       ; talita|count[19]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock1 ; Rise       ; talita|count[1]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock1 ; Rise       ; talita|count[1]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock1 ; Rise       ; talita|count[20]|clk    ;
++--------+--------------+----------------+------------------+--------+------------+-------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'reset'                                                                         ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                         ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; reset ; Rise       ; reset                          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; conta_decada:feliperenato|q[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; conta_decada:feliperenato|q[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; conta_decada:feliperenato|q[1] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; conta_decada:feliperenato|q[1] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; conta_decada:feliperenato|q[2] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; conta_decada:feliperenato|q[2] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; feliperenato|q[0]|datac        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; feliperenato|q[0]|datac        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; feliperenato|q[1]|datac        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; feliperenato|q[1]|datac        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; feliperenato|q[2]|datac        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; feliperenato|q[2]|datac        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; reset|combout                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; reset|combout                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; reset~clkctrl|inclk[0]         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; reset~clkctrl|inclk[0]         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; reset~clkctrl|outclk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; reset~clkctrl|outclk           ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clock:talita|clk_div'                                                                             ;
++--------+--------------+----------------+------------------+----------------------+------------+------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock                ; Clock Edge ; Target                             ;
++--------+--------------+----------------+------------------+----------------------+------------+------------------------------------+
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; conta_decada:feliperenato|qtemp[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock:talita|clk_div ; Rise       ; conta_decada:feliperenato|qtemp[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; conta_decada:feliperenato|qtemp[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock:talita|clk_div ; Rise       ; conta_decada:feliperenato|qtemp[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; conta_decada:feliperenato|qtemp[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock:talita|clk_div ; Rise       ; conta_decada:feliperenato|qtemp[2] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; feliperenato|qtemp[0]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock:talita|clk_div ; Rise       ; feliperenato|qtemp[0]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; feliperenato|qtemp[1]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock:talita|clk_div ; Rise       ; feliperenato|qtemp[1]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; feliperenato|qtemp[2]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock:talita|clk_div ; Rise       ; feliperenato|qtemp[2]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; talita|clk_div|regout              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock:talita|clk_div ; Rise       ; talita|clk_div|regout              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; talita|clk_div~clkctrl|inclk[0]    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock:talita|clk_div ; Rise       ; talita|clk_div~clkctrl|inclk[0]    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; talita|clk_div~clkctrl|outclk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock:talita|clk_div ; Rise       ; talita|clk_div~clkctrl|outclk      ;
++--------+--------------+----------------+------------------+----------------------+------------+------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; HEX[*]    ; reset      ; 6.929 ; 6.929 ; Rise       ; reset           ;
+;  HEX[0]   ; reset      ; 6.869 ; 6.869 ; Rise       ; reset           ;
+;  HEX[1]   ; reset      ; 6.854 ; 6.854 ; Rise       ; reset           ;
+;  HEX[2]   ; reset      ; 6.838 ; 6.838 ; Rise       ; reset           ;
+;  HEX[3]   ; reset      ; 6.929 ; 6.929 ; Rise       ; reset           ;
+;  HEX[4]   ; reset      ; 6.593 ; 6.593 ; Rise       ; reset           ;
+;  HEX[5]   ; reset      ; 6.560 ; 6.560 ; Rise       ; reset           ;
+;  HEX[6]   ; reset      ; 6.615 ; 6.615 ; Rise       ; reset           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; HEX[*]    ; reset      ; 6.385 ; 6.385 ; Rise       ; reset           ;
+;  HEX[0]   ; reset      ; 6.694 ; 6.694 ; Rise       ; reset           ;
+;  HEX[1]   ; reset      ; 6.679 ; 6.679 ; Rise       ; reset           ;
+;  HEX[2]   ; reset      ; 6.668 ; 6.668 ; Rise       ; reset           ;
+;  HEX[3]   ; reset      ; 6.754 ; 6.754 ; Rise       ; reset           ;
+;  HEX[4]   ; reset      ; 6.423 ; 6.423 ; Rise       ; reset           ;
+;  HEX[5]   ; reset      ; 6.385 ; 6.385 ; Rise       ; reset           ;
+;  HEX[6]   ; reset      ; 6.440 ; 6.440 ; Rise       ; reset           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------+
+; Fast Model Setup Summary                      ;
++----------------------+--------+---------------+
+; Clock                ; Slack  ; End Point TNS ;
++----------------------+--------+---------------+
+; clock1               ; -1.724 ; -30.128       ;
+; reset                ; 0.142  ; 0.000         ;
+; clock:talita|clk_div ; 0.513  ; 0.000         ;
++----------------------+--------+---------------+
+
+
++-----------------------------------------------+
+; Fast Model Hold Summary                       ;
++----------------------+--------+---------------+
+; Clock                ; Slack  ; End Point TNS ;
++----------------------+--------+---------------+
+; clock1               ; -1.550 ; -1.550        ;
+; clock:talita|clk_div ; 0.215  ; 0.000         ;
+; reset                ; 0.426  ; 0.000         ;
++----------------------+--------+---------------+
+
+
++----------------------------------------------+
+; Fast Model Recovery Summary                  ;
++----------------------+-------+---------------+
+; Clock                ; Slack ; End Point TNS ;
++----------------------+-------+---------------+
+; clock:talita|clk_div ; 0.272 ; 0.000         ;
++----------------------+-------+---------------+
+
+
++----------------------------------------------+
+; Fast Model Removal Summary                   ;
++----------------------+-------+---------------+
+; Clock                ; Slack ; End Point TNS ;
++----------------------+-------+---------------+
+; clock:talita|clk_div ; 0.108 ; 0.000         ;
++----------------------+-------+---------------+
+
+
++-----------------------------------------------+
+; Fast Model Minimum Pulse Width Summary        ;
++----------------------+--------+---------------+
+; Clock                ; Slack  ; End Point TNS ;
++----------------------+--------+---------------+
+; clock1               ; -1.380 ; -34.380       ;
+; reset                ; -1.380 ; -1.380        ;
+; clock:talita|clk_div ; -0.500 ; -3.000        ;
++----------------------+--------+---------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clock1'                                                                                                     ;
++--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node              ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+; -1.724 ; clock:talita|count[0]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.763      ;
+; -1.723 ; clock:talita|count[0]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.762      ;
+; -1.721 ; clock:talita|count[0]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.760      ;
+; -1.719 ; clock:talita|count[0]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.758      ;
+; -1.704 ; clock:talita|count[0]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.009      ; 2.745      ;
+; -1.703 ; clock:talita|count[0]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.009      ; 2.744      ;
+; -1.702 ; clock:talita|count[0]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.009      ; 2.743      ;
+; -1.696 ; clock:talita|count[0]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; 0.009      ; 2.737      ;
+; -1.665 ; clock:talita|count[0]  ; clock:talita|count[0]  ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.697      ;
+; -1.663 ; clock:talita|count[6]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 2.693      ;
+; -1.662 ; clock:talita|count[6]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; -0.002     ; 2.692      ;
+; -1.660 ; clock:talita|count[6]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 2.690      ;
+; -1.658 ; clock:talita|count[6]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 2.688      ;
+; -1.643 ; clock:talita|count[6]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.675      ;
+; -1.642 ; clock:talita|count[6]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.674      ;
+; -1.641 ; clock:talita|count[6]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.673      ;
+; -1.635 ; clock:talita|count[6]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.667      ;
+; -1.610 ; clock:talita|count[1]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; 0.005      ; 2.647      ;
+; -1.609 ; clock:talita|count[1]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; 0.005      ; 2.646      ;
+; -1.607 ; clock:talita|count[1]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; 0.005      ; 2.644      ;
+; -1.605 ; clock:talita|count[1]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; 0.005      ; 2.642      ;
+; -1.604 ; clock:talita|count[6]  ; clock:talita|count[0]  ; clock1       ; clock1      ; 1.000        ; -0.009     ; 2.627      ;
+; -1.597 ; clock:talita|count[0]  ; clock:talita|count[14] ; clock1       ; clock1      ; 1.000        ; 0.009      ; 2.638      ;
+; -1.596 ; clock:talita|count[0]  ; clock:talita|count[12] ; clock1       ; clock1      ; 1.000        ; 0.009      ; 2.637      ;
+; -1.590 ; clock:talita|count[1]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.629      ;
+; -1.589 ; clock:talita|count[1]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.628      ;
+; -1.588 ; clock:talita|count[1]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.627      ;
+; -1.582 ; clock:talita|count[1]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.621      ;
+; -1.581 ; clock:talita|count[0]  ; clock:talita|count[13] ; clock1       ; clock1      ; 1.000        ; 0.009      ; 2.622      ;
+; -1.578 ; clock:talita|count[0]  ; clock:talita|count[6]  ; clock1       ; clock1      ; 1.000        ; 0.009      ; 2.619      ;
+; -1.578 ; clock:talita|count[2]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; 0.005      ; 2.615      ;
+; -1.577 ; clock:talita|count[0]  ; clock:talita|count[11] ; clock1       ; clock1      ; 1.000        ; 0.009      ; 2.618      ;
+; -1.577 ; clock:talita|count[2]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; 0.005      ; 2.614      ;
+; -1.575 ; clock:talita|count[2]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; 0.005      ; 2.612      ;
+; -1.573 ; clock:talita|count[2]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; 0.005      ; 2.610      ;
+; -1.558 ; clock:talita|count[2]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.597      ;
+; -1.557 ; clock:talita|count[2]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.596      ;
+; -1.556 ; clock:talita|count[2]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.595      ;
+; -1.554 ; clock:talita|count[3]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; 0.005      ; 2.591      ;
+; -1.553 ; clock:talita|count[3]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; 0.005      ; 2.590      ;
+; -1.551 ; clock:talita|count[3]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; 0.005      ; 2.588      ;
+; -1.551 ; clock:talita|count[1]  ; clock:talita|count[0]  ; clock1       ; clock1      ; 1.000        ; -0.002     ; 2.581      ;
+; -1.550 ; clock:talita|count[2]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.589      ;
+; -1.549 ; clock:talita|count[3]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; 0.005      ; 2.586      ;
+; -1.536 ; clock:talita|count[6]  ; clock:talita|count[14] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.568      ;
+; -1.535 ; clock:talita|count[6]  ; clock:talita|count[12] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.567      ;
+; -1.534 ; clock:talita|count[3]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.573      ;
+; -1.533 ; clock:talita|count[3]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.572      ;
+; -1.532 ; clock:talita|count[3]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.571      ;
+; -1.526 ; clock:talita|count[3]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.565      ;
+; -1.520 ; clock:talita|count[6]  ; clock:talita|count[13] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.552      ;
+; -1.519 ; clock:talita|count[2]  ; clock:talita|count[0]  ; clock1       ; clock1      ; 1.000        ; -0.002     ; 2.549      ;
+; -1.517 ; clock:talita|count[6]  ; clock:talita|count[6]  ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.549      ;
+; -1.516 ; clock:talita|count[6]  ; clock:talita|count[11] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.548      ;
+; -1.509 ; clock:talita|count[4]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; 0.005      ; 2.546      ;
+; -1.508 ; clock:talita|count[4]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; 0.005      ; 2.545      ;
+; -1.506 ; clock:talita|count[4]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; 0.005      ; 2.543      ;
+; -1.504 ; clock:talita|count[4]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; 0.005      ; 2.541      ;
+; -1.495 ; clock:talita|count[3]  ; clock:talita|count[0]  ; clock1       ; clock1      ; 1.000        ; -0.002     ; 2.525      ;
+; -1.489 ; clock:talita|count[4]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.528      ;
+; -1.488 ; clock:talita|count[4]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.527      ;
+; -1.487 ; clock:talita|count[4]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.526      ;
+; -1.484 ; clock:talita|count[5]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; 0.005      ; 2.521      ;
+; -1.483 ; clock:talita|count[5]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; 0.005      ; 2.520      ;
+; -1.483 ; clock:talita|count[1]  ; clock:talita|count[14] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.522      ;
+; -1.482 ; clock:talita|count[1]  ; clock:talita|count[12] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.521      ;
+; -1.481 ; clock:talita|count[5]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; 0.005      ; 2.518      ;
+; -1.481 ; clock:talita|count[4]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.520      ;
+; -1.479 ; clock:talita|count[5]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; 0.005      ; 2.516      ;
+; -1.467 ; clock:talita|count[1]  ; clock:talita|count[13] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.506      ;
+; -1.464 ; clock:talita|count[5]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.503      ;
+; -1.464 ; clock:talita|count[1]  ; clock:talita|count[6]  ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.503      ;
+; -1.463 ; clock:talita|count[5]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.502      ;
+; -1.463 ; clock:talita|count[1]  ; clock:talita|count[11] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.502      ;
+; -1.462 ; clock:talita|count[5]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.501      ;
+; -1.456 ; clock:talita|count[5]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.495      ;
+; -1.451 ; clock:talita|count[2]  ; clock:talita|count[14] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.490      ;
+; -1.450 ; clock:talita|count[4]  ; clock:talita|count[0]  ; clock1       ; clock1      ; 1.000        ; -0.002     ; 2.480      ;
+; -1.450 ; clock:talita|count[2]  ; clock:talita|count[12] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.489      ;
+; -1.435 ; clock:talita|count[2]  ; clock:talita|count[13] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.474      ;
+; -1.432 ; clock:talita|count[2]  ; clock:talita|count[6]  ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.471      ;
+; -1.431 ; clock:talita|count[2]  ; clock:talita|count[11] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.470      ;
+; -1.427 ; clock:talita|count[3]  ; clock:talita|count[14] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.466      ;
+; -1.426 ; clock:talita|count[3]  ; clock:talita|count[12] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.465      ;
+; -1.425 ; clock:talita|count[5]  ; clock:talita|count[0]  ; clock1       ; clock1      ; 1.000        ; -0.002     ; 2.455      ;
+; -1.411 ; clock:talita|count[11] ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 2.441      ;
+; -1.411 ; clock:talita|count[3]  ; clock:talita|count[13] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.450      ;
+; -1.410 ; clock:talita|count[11] ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; -0.002     ; 2.440      ;
+; -1.408 ; clock:talita|count[11] ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 2.438      ;
+; -1.408 ; clock:talita|count[3]  ; clock:talita|count[6]  ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.447      ;
+; -1.407 ; clock:talita|count[3]  ; clock:talita|count[11] ; clock1       ; clock1      ; 1.000        ; 0.007      ; 2.446      ;
+; -1.406 ; clock:talita|count[11] ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 2.436      ;
+; -1.400 ; clock:talita|count[7]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; 0.005      ; 2.437      ;
+; -1.399 ; clock:talita|count[7]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; 0.005      ; 2.436      ;
+; -1.397 ; clock:talita|count[7]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; 0.005      ; 2.434      ;
+; -1.395 ; clock:talita|count[7]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; 0.005      ; 2.432      ;
+; -1.391 ; clock:talita|count[11] ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.423      ;
+; -1.390 ; clock:talita|count[12] ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 2.420      ;
+; -1.390 ; clock:talita|count[11] ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.422      ;
+; -1.389 ; clock:talita|count[12] ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; -0.002     ; 2.419      ;
++--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'reset'                                                                                                                                 ;
++-------+------------------------------------+--------------------------------+----------------------+-------------+--------------+------------+------------+
+; Slack ; From Node                          ; To Node                        ; Launch Clock         ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------+--------------------------------+----------------------+-------------+--------------+------------+------------+
+; 0.142 ; conta_decada:feliperenato|qtemp[2] ; conta_decada:feliperenato|q[2] ; clock:talita|clk_div ; reset       ; 1.000        ; -0.072     ; 0.354      ;
+; 0.142 ; conta_decada:feliperenato|qtemp[0] ; conta_decada:feliperenato|q[0] ; clock:talita|clk_div ; reset       ; 1.000        ; -0.071     ; 0.358      ;
+; 0.166 ; conta_decada:feliperenato|qtemp[1] ; conta_decada:feliperenato|q[1] ; clock:talita|clk_div ; reset       ; 1.000        ; -0.073     ; 0.356      ;
++-------+------------------------------------+--------------------------------+----------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clock:talita|clk_div'                                                                                                                               ;
++-------+------------------------------------+------------------------------------+----------------------+----------------------+--------------+------------+------------+
+; Slack ; From Node                          ; To Node                            ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------+------------------------------------+----------------------+----------------------+--------------+------------+------------+
+; 0.513 ; conta_decada:feliperenato|qtemp[1] ; conta_decada:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.519      ;
+; 0.515 ; conta_decada:feliperenato|qtemp[2] ; conta_decada:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.517      ;
+; 0.517 ; conta_decada:feliperenato|qtemp[2] ; conta_decada:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.515      ;
+; 0.632 ; conta_decada:feliperenato|qtemp[0] ; conta_decada:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.400      ;
+; 0.633 ; conta_decada:feliperenato|qtemp[1] ; conta_decada:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.399      ;
+; 0.633 ; conta_decada:feliperenato|qtemp[0] ; conta_decada:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.399      ;
+; 0.665 ; conta_decada:feliperenato|qtemp[2] ; conta_decada:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; conta_decada:feliperenato|qtemp[0] ; conta_decada:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; conta_decada:feliperenato|qtemp[1] ; conta_decada:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.367      ;
++-------+------------------------------------+------------------------------------+----------------------+----------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clock1'                                                                                                              ;
++--------+------------------------+------------------------+----------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node              ; To Node                ; Launch Clock         ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------+------------------------+----------------------+-------------+--------------+------------+------------+
+; -1.550 ; clock:talita|clk_div   ; clock:talita|clk_div   ; clock:talita|clk_div ; clock1      ; 0.000        ; 1.624      ; 0.367      ;
+; -1.050 ; clock:talita|clk_div   ; clock:talita|clk_div   ; clock:talita|clk_div ; clock1      ; -0.500       ; 1.624      ; 0.367      ;
+; 0.241  ; clock:talita|count[31] ; clock:talita|count[31] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.393      ;
+; 0.354  ; clock:talita|count[23] ; clock:talita|count[23] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.506      ;
+; 0.355  ; clock:talita|count[1]  ; clock:talita|count[1]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.507      ;
+; 0.355  ; clock:talita|count[15] ; clock:talita|count[15] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.507      ;
+; 0.355  ; clock:talita|count[9]  ; clock:talita|count[9]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.507      ;
+; 0.357  ; clock:talita|count[17] ; clock:talita|count[17] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.509      ;
+; 0.358  ; clock:talita|count[2]  ; clock:talita|count[2]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358  ; clock:talita|count[27] ; clock:talita|count[27] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358  ; clock:talita|count[25] ; clock:talita|count[25] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.510      ;
+; 0.359  ; clock:talita|count[4]  ; clock:talita|count[4]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359  ; clock:talita|count[7]  ; clock:talita|count[7]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359  ; clock:talita|count[29] ; clock:talita|count[29] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359  ; clock:talita|count[30] ; clock:talita|count[30] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.511      ;
+; 0.367  ; clock:talita|count[3]  ; clock:talita|count[3]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.519      ;
+; 0.367  ; clock:talita|count[5]  ; clock:talita|count[5]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.519      ;
+; 0.367  ; clock:talita|count[26] ; clock:talita|count[26] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.519      ;
+; 0.367  ; clock:talita|count[10] ; clock:talita|count[10] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.519      ;
+; 0.367  ; clock:talita|count[8]  ; clock:talita|count[8]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.519      ;
+; 0.367  ; clock:talita|count[28] ; clock:talita|count[28] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.519      ;
+; 0.493  ; clock:talita|count[1]  ; clock:talita|count[2]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.645      ;
+; 0.493  ; clock:talita|count[9]  ; clock:talita|count[10] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.645      ;
+; 0.496  ; clock:talita|count[2]  ; clock:talita|count[3]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.648      ;
+; 0.496  ; clock:talita|count[25] ; clock:talita|count[26] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.648      ;
+; 0.496  ; clock:talita|count[27] ; clock:talita|count[28] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.648      ;
+; 0.497  ; clock:talita|count[30] ; clock:talita|count[31] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.649      ;
+; 0.497  ; clock:talita|count[29] ; clock:talita|count[30] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.649      ;
+; 0.497  ; clock:talita|count[4]  ; clock:talita|count[5]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.649      ;
+; 0.507  ; clock:talita|count[8]  ; clock:talita|count[9]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.659      ;
+; 0.507  ; clock:talita|count[26] ; clock:talita|count[27] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.659      ;
+; 0.507  ; clock:talita|count[3]  ; clock:talita|count[4]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.659      ;
+; 0.507  ; clock:talita|count[28] ; clock:talita|count[29] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.659      ;
+; 0.528  ; clock:talita|count[1]  ; clock:talita|count[3]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.680      ;
+; 0.531  ; clock:talita|count[25] ; clock:talita|count[27] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.683      ;
+; 0.531  ; clock:talita|count[2]  ; clock:talita|count[4]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.683      ;
+; 0.531  ; clock:talita|count[27] ; clock:talita|count[29] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.683      ;
+; 0.532  ; clock:talita|count[29] ; clock:talita|count[31] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.684      ;
+; 0.542  ; clock:talita|count[5]  ; clock:talita|count[7]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.694      ;
+; 0.542  ; clock:talita|count[8]  ; clock:talita|count[10] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.694      ;
+; 0.542  ; clock:talita|count[26] ; clock:talita|count[28] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.694      ;
+; 0.542  ; clock:talita|count[28] ; clock:talita|count[30] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.694      ;
+; 0.542  ; clock:talita|count[3]  ; clock:talita|count[5]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.694      ;
+; 0.552  ; clock:talita|count[7]  ; clock:talita|count[8]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.704      ;
+; 0.563  ; clock:talita|count[1]  ; clock:talita|count[4]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.715      ;
+; 0.566  ; clock:talita|count[15] ; clock:talita|count[17] ; clock1               ; clock1      ; 0.000        ; 0.009      ; 0.727      ;
+; 0.566  ; clock:talita|count[25] ; clock:talita|count[28] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.718      ;
+; 0.566  ; clock:talita|count[27] ; clock:talita|count[30] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.718      ;
+; 0.566  ; clock:talita|count[2]  ; clock:talita|count[5]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.718      ;
+; 0.567  ; clock:talita|count[4]  ; clock:talita|count[7]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.719      ;
+; 0.572  ; clock:talita|count[0]  ; clock:talita|count[1]  ; clock1               ; clock1      ; 0.000        ; 0.002      ; 0.726      ;
+; 0.577  ; clock:talita|count[26] ; clock:talita|count[29] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.729      ;
+; 0.577  ; clock:talita|count[28] ; clock:talita|count[31] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.729      ;
+; 0.582  ; clock:talita|count[23] ; clock:talita|count[25] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.734      ;
+; 0.584  ; clock:talita|count[16] ; clock:talita|count[17] ; clock1               ; clock1      ; 0.000        ; 0.002      ; 0.738      ;
+; 0.587  ; clock:talita|count[7]  ; clock:talita|count[9]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.739      ;
+; 0.598  ; clock:talita|count[1]  ; clock:talita|count[5]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.750      ;
+; 0.601  ; clock:talita|count[25] ; clock:talita|count[29] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.753      ;
+; 0.601  ; clock:talita|count[27] ; clock:talita|count[31] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.753      ;
+; 0.607  ; clock:talita|count[0]  ; clock:talita|count[2]  ; clock1               ; clock1      ; 0.000        ; 0.002      ; 0.761      ;
+; 0.612  ; clock:talita|count[26] ; clock:talita|count[30] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.764      ;
+; 0.612  ; clock:talita|count[3]  ; clock:talita|count[7]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.764      ;
+; 0.617  ; clock:talita|count[23] ; clock:talita|count[26] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.769      ;
+; 0.622  ; clock:talita|count[7]  ; clock:talita|count[10] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.774      ;
+; 0.636  ; clock:talita|count[5]  ; clock:talita|count[8]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.788      ;
+; 0.636  ; clock:talita|count[25] ; clock:talita|count[30] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.788      ;
+; 0.636  ; clock:talita|count[2]  ; clock:talita|count[7]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.788      ;
+; 0.642  ; clock:talita|count[20] ; clock:talita|count[23] ; clock1               ; clock1      ; 0.000        ; 0.002      ; 0.796      ;
+; 0.642  ; clock:talita|count[0]  ; clock:talita|count[3]  ; clock1               ; clock1      ; 0.000        ; 0.002      ; 0.796      ;
+; 0.647  ; clock:talita|count[10] ; clock:talita|count[15] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.799      ;
+; 0.647  ; clock:talita|count[26] ; clock:talita|count[31] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.799      ;
+; 0.652  ; clock:talita|count[23] ; clock:talita|count[27] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.804      ;
+; 0.661  ; clock:talita|count[4]  ; clock:talita|count[8]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.813      ;
+; 0.665  ; clock:talita|count[22] ; clock:talita|count[23] ; clock1               ; clock1      ; 0.000        ; 0.004      ; 0.821      ;
+; 0.666  ; clock:talita|count[24] ; clock:talita|count[25] ; clock1               ; clock1      ; 0.000        ; 0.004      ; 0.822      ;
+; 0.668  ; clock:talita|count[1]  ; clock:talita|count[7]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.820      ;
+; 0.668  ; clock:talita|count[9]  ; clock:talita|count[15] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.820      ;
+; 0.670  ; clock:talita|count[17] ; clock:talita|count[23] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.822      ;
+; 0.671  ; clock:talita|count[5]  ; clock:talita|count[9]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.823      ;
+; 0.671  ; clock:talita|count[25] ; clock:talita|count[31] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.823      ;
+; 0.677  ; clock:talita|count[0]  ; clock:talita|count[4]  ; clock1               ; clock1      ; 0.000        ; 0.002      ; 0.831      ;
+; 0.677  ; clock:talita|count[19] ; clock:talita|count[23] ; clock1               ; clock1      ; 0.000        ; 0.002      ; 0.831      ;
+; 0.687  ; clock:talita|count[23] ; clock:talita|count[28] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.839      ;
+; 0.696  ; clock:talita|count[4]  ; clock:talita|count[9]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.848      ;
+; 0.701  ; clock:talita|count[24] ; clock:talita|count[26] ; clock1               ; clock1      ; 0.000        ; 0.004      ; 0.857      ;
+; 0.702  ; clock:talita|count[21] ; clock:talita|count[23] ; clock1               ; clock1      ; 0.000        ; 0.004      ; 0.858      ;
+; 0.706  ; clock:talita|count[5]  ; clock:talita|count[10] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.858      ;
+; 0.706  ; clock:talita|count[3]  ; clock:talita|count[8]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.858      ;
+; 0.712  ; clock:talita|count[0]  ; clock:talita|count[5]  ; clock1               ; clock1      ; 0.000        ; 0.002      ; 0.866      ;
+; 0.712  ; clock:talita|count[18] ; clock:talita|count[23] ; clock1               ; clock1      ; 0.000        ; 0.002      ; 0.866      ;
+; 0.717  ; clock:talita|count[8]  ; clock:talita|count[15] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.869      ;
+; 0.721  ; clock:talita|count[6]  ; clock:talita|count[7]  ; clock1               ; clock1      ; 0.000        ; -0.007     ; 0.866      ;
+; 0.721  ; clock:talita|count[14] ; clock:talita|count[15] ; clock1               ; clock1      ; 0.000        ; -0.007     ; 0.866      ;
+; 0.722  ; clock:talita|count[23] ; clock:talita|count[29] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.874      ;
+; 0.730  ; clock:talita|count[2]  ; clock:talita|count[8]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.882      ;
+; 0.731  ; clock:talita|count[4]  ; clock:talita|count[10] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.883      ;
+; 0.736  ; clock:talita|count[24] ; clock:talita|count[27] ; clock1               ; clock1      ; 0.000        ; 0.004      ; 0.892      ;
+; 0.741  ; clock:talita|count[3]  ; clock:talita|count[9]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.893      ;
+; 0.743  ; clock:talita|count[13] ; clock:talita|count[15] ; clock1               ; clock1      ; 0.000        ; -0.007     ; 0.888      ;
+; 0.757  ; clock:talita|count[23] ; clock:talita|count[30] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.909      ;
++--------+------------------------+------------------------+----------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clock:talita|clk_div'                                                                                                                                ;
++-------+------------------------------------+------------------------------------+----------------------+----------------------+--------------+------------+------------+
+; Slack ; From Node                          ; To Node                            ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------+------------------------------------+----------------------+----------------------+--------------+------------+------------+
+; 0.215 ; conta_decada:feliperenato|qtemp[1] ; conta_decada:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; conta_decada:feliperenato|qtemp[0] ; conta_decada:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; conta_decada:feliperenato|qtemp[2] ; conta_decada:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.367      ;
+; 0.247 ; conta_decada:feliperenato|qtemp[0] ; conta_decada:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.399      ;
+; 0.247 ; conta_decada:feliperenato|qtemp[1] ; conta_decada:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.399      ;
+; 0.248 ; conta_decada:feliperenato|qtemp[0] ; conta_decada:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.400      ;
+; 0.363 ; conta_decada:feliperenato|qtemp[2] ; conta_decada:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.515      ;
+; 0.365 ; conta_decada:feliperenato|qtemp[2] ; conta_decada:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.517      ;
+; 0.367 ; conta_decada:feliperenato|qtemp[1] ; conta_decada:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.519      ;
++-------+------------------------------------+------------------------------------+----------------------+----------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'reset'                                                                                                                                  ;
++-------+------------------------------------+--------------------------------+----------------------+-------------+--------------+------------+------------+
+; Slack ; From Node                          ; To Node                        ; Launch Clock         ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------+--------------------------------+----------------------+-------------+--------------+------------+------------+
+; 0.426 ; conta_decada:feliperenato|qtemp[2] ; conta_decada:feliperenato|q[2] ; clock:talita|clk_div ; reset       ; 0.000        ; -0.072     ; 0.354      ;
+; 0.429 ; conta_decada:feliperenato|qtemp[1] ; conta_decada:feliperenato|q[1] ; clock:talita|clk_div ; reset       ; 0.000        ; -0.073     ; 0.356      ;
+; 0.429 ; conta_decada:feliperenato|qtemp[0] ; conta_decada:feliperenato|q[0] ; clock:talita|clk_div ; reset       ; 0.000        ; -0.071     ; 0.358      ;
++-------+------------------------------------+--------------------------------+----------------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Recovery: 'clock:talita|clk_div'                                                                                           ;
++-------+-----------+------------------------------------+--------------+----------------------+--------------+------------+------------+
+; Slack ; From Node ; To Node                            ; Launch Clock ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+------------------------------------+--------------+----------------------+--------------+------------+------------+
+; 0.272 ; reset     ; conta_decada:feliperenato|qtemp[1] ; reset        ; clock:talita|clk_div ; 0.500        ; 1.657      ; 1.917      ;
+; 0.272 ; reset     ; conta_decada:feliperenato|qtemp[0] ; reset        ; clock:talita|clk_div ; 0.500        ; 1.657      ; 1.917      ;
+; 0.272 ; reset     ; conta_decada:feliperenato|qtemp[2] ; reset        ; clock:talita|clk_div ; 0.500        ; 1.657      ; 1.917      ;
+; 0.772 ; reset     ; conta_decada:feliperenato|qtemp[1] ; reset        ; clock:talita|clk_div ; 1.000        ; 1.657      ; 1.917      ;
+; 0.772 ; reset     ; conta_decada:feliperenato|qtemp[0] ; reset        ; clock:talita|clk_div ; 1.000        ; 1.657      ; 1.917      ;
+; 0.772 ; reset     ; conta_decada:feliperenato|qtemp[2] ; reset        ; clock:talita|clk_div ; 1.000        ; 1.657      ; 1.917      ;
++-------+-----------+------------------------------------+--------------+----------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Removal: 'clock:talita|clk_div'                                                                                            ;
++-------+-----------+------------------------------------+--------------+----------------------+--------------+------------+------------+
+; Slack ; From Node ; To Node                            ; Launch Clock ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+------------------------------------+--------------+----------------------+--------------+------------+------------+
+; 0.108 ; reset     ; conta_decada:feliperenato|qtemp[1] ; reset        ; clock:talita|clk_div ; 0.000        ; 1.657      ; 1.917      ;
+; 0.108 ; reset     ; conta_decada:feliperenato|qtemp[0] ; reset        ; clock:talita|clk_div ; 0.000        ; 1.657      ; 1.917      ;
+; 0.108 ; reset     ; conta_decada:feliperenato|qtemp[2] ; reset        ; clock:talita|clk_div ; 0.000        ; 1.657      ; 1.917      ;
+; 0.608 ; reset     ; conta_decada:feliperenato|qtemp[1] ; reset        ; clock:talita|clk_div ; -0.500       ; 1.657      ; 1.917      ;
+; 0.608 ; reset     ; conta_decada:feliperenato|qtemp[0] ; reset        ; clock:talita|clk_div ; -0.500       ; 1.657      ; 1.917      ;
+; 0.608 ; reset     ; conta_decada:feliperenato|qtemp[2] ; reset        ; clock:talita|clk_div ; -0.500       ; 1.657      ; 1.917      ;
++-------+-----------+------------------------------------+--------------+----------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clock1'                                                                  ;
++--------+--------------+----------------+------------------+--------+------------+-------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                  ;
++--------+--------------+----------------+------------------+--------+------------+-------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clock1 ; Rise       ; clock1                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|clk_div    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|clk_div    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[10]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[10]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[11]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[11]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[12]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[12]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[13]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[13]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[14]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[14]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[15]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[15]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[16]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[16]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[17]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[17]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[18]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[18]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[19]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[19]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[20]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[20]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[21]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[21]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[22]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[22]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[23]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[23]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[24]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[24]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[25]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[25]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[26]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[26]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[27]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[27]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[28]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[28]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[29]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[29]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[30]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[30]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[31]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[31]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[3]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[3]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[4]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[4]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[5]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[5]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[6]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[6]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[7]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[7]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[8]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[8]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock1 ; Rise       ; clock:talita|count[9]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock:talita|count[9]   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock1 ; Rise       ; clock1|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock1|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock1 ; Rise       ; clock1~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock1~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock1 ; Rise       ; clock1~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock1 ; Rise       ; clock1~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock1 ; Rise       ; talita|clk_div|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock1 ; Rise       ; talita|clk_div|clk      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock1 ; Rise       ; talita|count[0]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock1 ; Rise       ; talita|count[0]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock1 ; Rise       ; talita|count[10]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock1 ; Rise       ; talita|count[10]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock1 ; Rise       ; talita|count[11]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock1 ; Rise       ; talita|count[11]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock1 ; Rise       ; talita|count[12]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock1 ; Rise       ; talita|count[12]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock1 ; Rise       ; talita|count[13]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock1 ; Rise       ; talita|count[13]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock1 ; Rise       ; talita|count[14]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock1 ; Rise       ; talita|count[14]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock1 ; Rise       ; talita|count[15]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock1 ; Rise       ; talita|count[15]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock1 ; Rise       ; talita|count[16]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock1 ; Rise       ; talita|count[16]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock1 ; Rise       ; talita|count[17]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock1 ; Rise       ; talita|count[17]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock1 ; Rise       ; talita|count[18]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock1 ; Rise       ; talita|count[18]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock1 ; Rise       ; talita|count[19]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock1 ; Rise       ; talita|count[19]|clk    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock1 ; Rise       ; talita|count[1]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock1 ; Rise       ; talita|count[1]|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock1 ; Rise       ; talita|count[20]|clk    ;
++--------+--------------+----------------+------------------+--------+------------+-------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'reset'                                                                         ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                         ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; reset ; Rise       ; reset                          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; conta_decada:feliperenato|q[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; conta_decada:feliperenato|q[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; conta_decada:feliperenato|q[1] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; conta_decada:feliperenato|q[1] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; conta_decada:feliperenato|q[2] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; conta_decada:feliperenato|q[2] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; feliperenato|q[0]|datac        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; feliperenato|q[0]|datac        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; feliperenato|q[1]|datac        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; feliperenato|q[1]|datac        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; feliperenato|q[2]|datac        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; feliperenato|q[2]|datac        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; reset|combout                  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; reset|combout                  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; reset~clkctrl|inclk[0]         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; reset~clkctrl|inclk[0]         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; reset~clkctrl|outclk           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; reset~clkctrl|outclk           ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clock:talita|clk_div'                                                                             ;
++--------+--------------+----------------+------------------+----------------------+------------+------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock                ; Clock Edge ; Target                             ;
++--------+--------------+----------------+------------------+----------------------+------------+------------------------------------+
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; conta_decada:feliperenato|qtemp[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock:talita|clk_div ; Rise       ; conta_decada:feliperenato|qtemp[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; conta_decada:feliperenato|qtemp[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock:talita|clk_div ; Rise       ; conta_decada:feliperenato|qtemp[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; conta_decada:feliperenato|qtemp[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock:talita|clk_div ; Rise       ; conta_decada:feliperenato|qtemp[2] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; feliperenato|qtemp[0]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock:talita|clk_div ; Rise       ; feliperenato|qtemp[0]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; feliperenato|qtemp[1]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock:talita|clk_div ; Rise       ; feliperenato|qtemp[1]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; feliperenato|qtemp[2]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock:talita|clk_div ; Rise       ; feliperenato|qtemp[2]|clk          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; talita|clk_div|regout              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock:talita|clk_div ; Rise       ; talita|clk_div|regout              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; talita|clk_div~clkctrl|inclk[0]    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock:talita|clk_div ; Rise       ; talita|clk_div~clkctrl|inclk[0]    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; talita|clk_div~clkctrl|outclk      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock:talita|clk_div ; Rise       ; talita|clk_div~clkctrl|outclk      ;
++--------+--------------+----------------+------------------+----------------------+------------+------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; HEX[*]    ; reset      ; 3.711 ; 3.711 ; Rise       ; reset           ;
+;  HEX[0]   ; reset      ; 3.678 ; 3.678 ; Rise       ; reset           ;
+;  HEX[1]   ; reset      ; 3.653 ; 3.653 ; Rise       ; reset           ;
+;  HEX[2]   ; reset      ; 3.660 ; 3.660 ; Rise       ; reset           ;
+;  HEX[3]   ; reset      ; 3.711 ; 3.711 ; Rise       ; reset           ;
+;  HEX[4]   ; reset      ; 3.550 ; 3.550 ; Rise       ; reset           ;
+;  HEX[5]   ; reset      ; 3.533 ; 3.533 ; Rise       ; reset           ;
+;  HEX[6]   ; reset      ; 3.554 ; 3.554 ; Rise       ; reset           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; HEX[*]    ; reset      ; 3.454 ; 3.454 ; Rise       ; reset           ;
+;  HEX[0]   ; reset      ; 3.625 ; 3.625 ; Rise       ; reset           ;
+;  HEX[1]   ; reset      ; 3.574 ; 3.574 ; Rise       ; reset           ;
+;  HEX[2]   ; reset      ; 3.584 ; 3.584 ; Rise       ; reset           ;
+;  HEX[3]   ; reset      ; 3.658 ; 3.658 ; Rise       ; reset           ;
+;  HEX[4]   ; reset      ; 3.474 ; 3.474 ; Rise       ; reset           ;
+;  HEX[5]   ; reset      ; 3.454 ; 3.454 ; Rise       ; reset           ;
+;  HEX[6]   ; reset      ; 3.501 ; 3.501 ; Rise       ; reset           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                  ;
++-----------------------+----------+--------+----------+---------+---------------------+
+; Clock                 ; Setup    ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
++-----------------------+----------+--------+----------+---------+---------------------+
+; Worst-case Slack      ; -4.857   ; -2.505 ; 0.048    ; 0.108   ; -1.380              ;
+;  clock1               ; -4.857   ; -2.505 ; N/A      ; N/A     ; -1.380              ;
+;  clock:talita|clk_div ; -0.038   ; 0.215  ; 0.048    ; 0.108   ; -0.500              ;
+;  reset                ; -0.730   ; 0.426  ; N/A      ; N/A     ; -1.380              ;
+; Design-wide TNS       ; -101.683 ; -2.505 ; 0.0      ; 0.0     ; -38.76              ;
+;  clock1               ; -99.510  ; -2.505 ; N/A      ; N/A     ; -34.380             ;
+;  clock:talita|clk_div ; -0.041   ; 0.000  ; 0.000    ; 0.000   ; -3.000              ;
+;  reset                ; -2.132   ; 0.000  ; N/A      ; N/A     ; -1.380              ;
++-----------------------+----------+--------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; HEX[*]    ; reset      ; 6.929 ; 6.929 ; Rise       ; reset           ;
+;  HEX[0]   ; reset      ; 6.869 ; 6.869 ; Rise       ; reset           ;
+;  HEX[1]   ; reset      ; 6.854 ; 6.854 ; Rise       ; reset           ;
+;  HEX[2]   ; reset      ; 6.838 ; 6.838 ; Rise       ; reset           ;
+;  HEX[3]   ; reset      ; 6.929 ; 6.929 ; Rise       ; reset           ;
+;  HEX[4]   ; reset      ; 6.593 ; 6.593 ; Rise       ; reset           ;
+;  HEX[5]   ; reset      ; 6.560 ; 6.560 ; Rise       ; reset           ;
+;  HEX[6]   ; reset      ; 6.615 ; 6.615 ; Rise       ; reset           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; HEX[*]    ; reset      ; 3.454 ; 3.454 ; Rise       ; reset           ;
+;  HEX[0]   ; reset      ; 3.625 ; 3.625 ; Rise       ; reset           ;
+;  HEX[1]   ; reset      ; 3.574 ; 3.574 ; Rise       ; reset           ;
+;  HEX[2]   ; reset      ; 3.584 ; 3.584 ; Rise       ; reset           ;
+;  HEX[3]   ; reset      ; 3.658 ; 3.658 ; Rise       ; reset           ;
+;  HEX[4]   ; reset      ; 3.474 ; 3.474 ; Rise       ; reset           ;
+;  HEX[5]   ; reset      ; 3.454 ; 3.454 ; Rise       ; reset           ;
+;  HEX[6]   ; reset      ; 3.501 ; 3.501 ; Rise       ; reset           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Setup Transfers                                                                         ;
++----------------------+----------------------+----------+----------+----------+----------+
+; From Clock           ; To Clock             ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------+----------------------+----------+----------+----------+----------+
+; clock1               ; clock1               ; 7920     ; 0        ; 0        ; 0        ;
+; clock:talita|clk_div ; clock1               ; 1        ; 1        ; 0        ; 0        ;
+; clock:talita|clk_div ; clock:talita|clk_div ; 9        ; 0        ; 0        ; 0        ;
+; clock:talita|clk_div ; reset                ; 3        ; 0        ; 0        ; 0        ;
++----------------------+----------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------+
+; Hold Transfers                                                                          ;
++----------------------+----------------------+----------+----------+----------+----------+
+; From Clock           ; To Clock             ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------+----------------------+----------+----------+----------+----------+
+; clock1               ; clock1               ; 7920     ; 0        ; 0        ; 0        ;
+; clock:talita|clk_div ; clock1               ; 1        ; 1        ; 0        ; 0        ;
+; clock:talita|clk_div ; clock:talita|clk_div ; 9        ; 0        ; 0        ; 0        ;
+; clock:talita|clk_div ; reset                ; 3        ; 0        ; 0        ; 0        ;
++----------------------+----------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------------------+
+; Recovery Transfers                                                            ;
++------------+----------------------+----------+----------+----------+----------+
+; From Clock ; To Clock             ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------------------+----------+----------+----------+----------+
+; reset      ; clock:talita|clk_div ; 3        ; 3        ; 0        ; 0        ;
++------------+----------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------------------+
+; Removal Transfers                                                             ;
++------------+----------------------+----------+----------+----------+----------+
+; From Clock ; To Clock             ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------------------+----------+----------+----------+----------+
+; reset      ; clock:talita|clk_div ; 3        ; 3        ; 0        ; 0        ;
++------------+----------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 0     ; 0    ;
+; Unconstrained Input Port Paths  ; 0     ; 0    ;
+; Unconstrained Output Ports      ; 7     ; 7    ;
+; Unconstrained Output Port Paths ; 21    ; 21   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Mon Dec 09 19:40:16 2019
+Info: Command: quartus_sta cont_aleatorio -c cont_aleatorio
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Warning (335093): TimeQuest Timing Analyzer is analyzing 3 combinational loops as latches.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'cont_aleatorio.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clock1 clock1
+    Info (332105): create_clock -period 1.000 -name reset reset
+    Info (332105): create_clock -period 1.000 -name clock:talita|clk_div clock:talita|clk_div
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -4.857
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -4.857       -99.510 clock1 
+    Info (332119):    -0.730        -2.132 reset 
+    Info (332119):    -0.038        -0.041 clock:talita|clk_div 
+Info (332146): Worst-case hold slack is -2.505
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.505        -2.505 clock1 
+    Info (332119):     0.391         0.000 clock:talita|clk_div 
+    Info (332119):     0.698         0.000 reset 
+Info (332146): Worst-case recovery slack is 0.048
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.048         0.000 clock:talita|clk_div 
+Info (332146): Worst-case removal slack is 0.222
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.222         0.000 clock:talita|clk_div 
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -34.380 clock1 
+    Info (332119):    -1.380        -1.380 reset 
+    Info (332119):    -0.500        -3.000 clock:talita|clk_div 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -1.724
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.724       -30.128 clock1 
+    Info (332119):     0.142         0.000 reset 
+    Info (332119):     0.513         0.000 clock:talita|clk_div 
+Info (332146): Worst-case hold slack is -1.550
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.550        -1.550 clock1 
+    Info (332119):     0.215         0.000 clock:talita|clk_div 
+    Info (332119):     0.426         0.000 reset 
+Info (332146): Worst-case recovery slack is 0.272
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.272         0.000 clock:talita|clk_div 
+Info (332146): Worst-case removal slack is 0.108
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.108         0.000 clock:talita|clk_div 
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -34.380 clock1 
+    Info (332119):    -1.380        -1.380 reset 
+    Info (332119):    -0.500        -3.000 clock:talita|clk_div 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4526 megabytes
+    Info: Processing ended: Mon Dec 09 19:40:18 2019
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

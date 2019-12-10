@@ -557,7 +557,7 @@ VCCIO5                       : N22       : power  :                   : 3.3V    
 GND*                         : N23       :        :                   :         : 5         :                
 GND*                         : N24       :        :                   :         : 5         :                
 reset                        : N25       : input  : 3.3-V LVTTL       :         : 5         : Y              
-GND+                         : N26       :        :                   :         : 5         :                
+sobedesce                    : N26       : input  : 3.3-V LVTTL       :         : 5         : Y              
 GND+                         : P1        :        :                   :         : 1         :                
 GND+                         : P2        :        :                   :         : 1         :                
 GND*                         : P3        :        :                   :         : 1         :                

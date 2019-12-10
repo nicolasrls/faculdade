@@ -1,5 +1,5 @@
 Flow report for conta10s
-Tue Dec 03 20:27:22 2019
+Mon Dec 09 21:06:51 2019
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,18 +40,18 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Tue Dec 03 20:27:19 2019           ;
+; Flow Status                        ; Successful - Mon Dec 09 21:06:48 2019           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; conta10s                                        ;
 ; Top-level Entity Name              ; conta10s                                        ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C35F672C6                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 74 / 33,216 ( < 1 % )                           ;
-;     Total combinational functions  ; 74 / 33,216 ( < 1 % )                           ;
+; Total logic elements               ; 79 / 33,216 ( < 1 % )                           ;
+;     Total combinational functions  ; 79 / 33,216 ( < 1 % )                           ;
 ;     Dedicated logic registers      ; 37 / 33,216 ( < 1 % )                           ;
 ; Total registers                    ; 37                                              ;
-; Total pins                         ; 9 / 475 ( 2 % )                                 ;
+; Total pins                         ; 10 / 475 ( 2 % )                                ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0 / 483,840 ( 0 % )                             ;
 ; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                                  ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/03/2019 20:26:53 ;
+; Start date & time ; 12/09/2019 21:06:26 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; conta10s            ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 141761634573187.157541561211732       ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 141761634573187.157593638601496       ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; 16764057                              ; --            ; --          ; Top        ;
@@ -92,11 +92,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 4626 MB             ; 00:00:03                           ;
-; Fitter                    ; 00:00:16     ; 1.0                     ; 4793 MB             ; 00:00:14                           ;
+; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 4631 MB             ; 00:00:03                           ;
+; Fitter                    ; 00:00:12     ; 1.0                     ; 4791 MB             ; 00:00:12                           ;
 ; Assembler                 ; 00:00:04     ; 1.0                     ; 4557 MB             ; 00:00:04                           ;
 ; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 4526 MB             ; 00:00:02                           ;
-; Total                     ; 00:00:25     ; --                      ; --                  ; 00:00:23                           ;
+; Total                     ; 00:00:21     ; --                      ; --                  ; 00:00:21                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

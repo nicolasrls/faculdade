@@ -1,15 +1,15 @@
-Fitter Status : Successful - Tue Dec 03 20:27:13 2019
+Fitter Status : Successful - Mon Dec 09 21:06:42 2019
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : conta10s
 Top-level Entity Name : conta10s
 Family : Cyclone II
 Device : EP2C35F672C6
 Timing Models : Final
-Total logic elements : 74 / 33,216 ( < 1 % )
-    Total combinational functions : 74 / 33,216 ( < 1 % )
+Total logic elements : 79 / 33,216 ( < 1 % )
+    Total combinational functions : 79 / 33,216 ( < 1 % )
     Dedicated logic registers : 37 / 33,216 ( < 1 % )
 Total registers : 37
-Total pins : 9 / 475 ( 2 % )
+Total pins : 10 / 475 ( 2 % )
 Total virtual pins : 0
 Total memory bits : 0 / 483,840 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 70 ( 0 % )

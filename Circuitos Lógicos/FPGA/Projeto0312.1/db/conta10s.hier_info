@@ -1,6 +1,7 @@
 |conta10s
 clock1 => clock:talita.clk_in
-reset => conta_decada:feliperenato.reset
+reset => conta_updown:feliperenato.reset
+sobedesce => conta_updown:feliperenato.sobedesce
 HEX0[6] <= displaycvector:caleb.HEX0[6]
 HEX0[5] <= displaycvector:caleb.HEX0[5]
 HEX0[4] <= displaycvector:caleb.HEX0[4]
@@ -49,7 +50,8 @@ a <= a.DB_MAX_OUTPUT_PORT_TYPE
 b <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|conta10s|conta_decada:feliperenato
+|conta10s|conta_updown:feliperenato
+clk => carry_out~reg0.CLK
 clk => qtemp[0].CLK
 clk => qtemp[1].CLK
 clk => qtemp[2].CLK
@@ -62,6 +64,13 @@ reset => q[3]$latch.LATCH_ENABLE
 reset => q[2]$latch.LATCH_ENABLE
 reset => q[1]$latch.LATCH_ENABLE
 reset => q[0]$latch.LATCH_ENABLE
+reset => carry_out~reg0.ENA
+sobedesce => qtemp.OUTPUTSELECT
+sobedesce => qtemp.OUTPUTSELECT
+sobedesce => qtemp.OUTPUTSELECT
+sobedesce => qtemp.OUTPUTSELECT
+sobedesce => carry_out.OUTPUTSELECT
+carry_out <= carry_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
 q[0] <= q[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
 q[1] <= q[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
 q[2] <= q[2]$latch.DB_MAX_OUTPUT_PORT_TYPE

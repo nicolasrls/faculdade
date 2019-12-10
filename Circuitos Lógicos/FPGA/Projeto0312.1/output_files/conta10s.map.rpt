@@ -1,5 +1,5 @@
 Analysis & Synthesis report for conta10s
-Tue Dec 03 20:26:55 2019
+Mon Dec 09 21:06:29 2019
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -16,9 +16,11 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   8. User-Specified and Inferred Latches
   9. General Register Statistics
  10. Inverted Register Statistics
- 11. Port Connectivity Checks: "clock:talita"
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Port Connectivity Checks: "conta_updown:feliperenato"
+ 13. Port Connectivity Checks: "clock:talita"
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
 
 
 
@@ -44,16 +46,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Dec 03 20:26:55 2019           ;
+; Analysis & Synthesis Status        ; Successful - Mon Dec 09 21:06:29 2019           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; conta10s                                        ;
 ; Top-level Entity Name              ; conta10s                                        ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 74                                              ;
-;     Total combinational functions  ; 74                                              ;
+; Total logic elements               ; 79                                              ;
+;     Total combinational functions  ; 79                                              ;
 ;     Dedicated logic registers      ; 37                                              ;
 ; Total registers                    ; 37                                              ;
-; Total pins                         ; 9                                               ;
+; Total pins                         ; 10                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -157,16 +159,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                    ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                             ; Library ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------+---------+
-; Conta Decada/conta_decada.vhd    ; yes             ; User VHDL File  ; C:/Users/nicol/Documents/faculdade/Circuitos Lógicos/FPGA/Projeto0312.1/Conta Decada/conta_decada.vhd    ;         ;
-; Clock/clock.vhd                  ; yes             ; User VHDL File  ; C:/Users/nicol/Documents/faculdade/Circuitos Lógicos/FPGA/Projeto0312.1/Clock/clock.vhd                  ;         ;
-; Vetor Display/displaycvector.vhd ; yes             ; User VHDL File  ; C:/Users/nicol/Documents/faculdade/Circuitos Lógicos/FPGA/Projeto0312.1/Vetor Display/displaycvector.vhd ;         ;
-; conta10s.vhd                     ; yes             ; User VHDL File  ; C:/Users/nicol/Documents/faculdade/Circuitos Lógicos/FPGA/Projeto0312.1/conta10s.vhd                     ;         ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                     ;
++-----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path  ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                             ; Library ;
++-----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------+---------+
+; ../Projeto0912.2/conta_updown.vhd ; yes             ; User VHDL File  ; C:/Users/nicol/Documents/faculdade/Circuitos Lógicos/FPGA/Projeto0912.2/conta_updown.vhd                 ;         ;
+; Clock/clock.vhd                   ; yes             ; User VHDL File  ; C:/Users/nicol/Documents/faculdade/Circuitos Lógicos/FPGA/Projeto0312.1/Clock/clock.vhd                  ;         ;
+; Vetor Display/displaycvector.vhd  ; yes             ; User VHDL File  ; C:/Users/nicol/Documents/faculdade/Circuitos Lógicos/FPGA/Projeto0312.1/Vetor Display/displaycvector.vhd ;         ;
+; conta10s.vhd                      ; yes             ; User VHDL File  ; C:/Users/nicol/Documents/faculdade/Circuitos Lógicos/FPGA/Projeto0312.1/conta10s.vhd                     ;         ;
++-----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------+---------+
 
 
 +------------------------------------------------------+
@@ -174,28 +176,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+--------+
 ; Resource                                    ; Usage  ;
 +---------------------------------------------+--------+
-; Estimated Total logic elements              ; 74     ;
+; Estimated Total logic elements              ; 79     ;
 ;                                             ;        ;
-; Total combinational functions               ; 74     ;
+; Total combinational functions               ; 79     ;
 ; Logic element usage by number of LUT inputs ;        ;
-;     -- 4 input functions                    ; 24     ;
-;     -- 3 input functions                    ; 8      ;
-;     -- <=2 input functions                  ; 42     ;
+;     -- 4 input functions                    ; 29     ;
+;     -- 3 input functions                    ; 9      ;
+;     -- <=2 input functions                  ; 41     ;
 ;                                             ;        ;
 ; Logic elements by mode                      ;        ;
-;     -- normal mode                          ; 43     ;
+;     -- normal mode                          ; 48     ;
 ;     -- arithmetic mode                      ; 31     ;
 ;                                             ;        ;
 ; Total registers                             ; 37     ;
 ;     -- Dedicated logic registers            ; 37     ;
 ;     -- I/O registers                        ; 0      ;
 ;                                             ;        ;
-; I/O pins                                    ; 9      ;
+; I/O pins                                    ; 10     ;
 ; Embedded Multiplier 9-bit elements          ; 0      ;
 ; Maximum fan-out node                        ; clock1 ;
 ; Maximum fan-out                             ; 33     ;
-; Total fan-out                               ; 288    ;
-; Average fan-out                             ; 2.40   ;
+; Total fan-out                               ; 309    ;
+; Average fan-out                             ; 2.45   ;
 +---------------------------------------------+--------+
 
 
@@ -204,9 +206,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+--------------+
 ; Compilation Hierarchy Node     ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                 ; Library Name ;
 +--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+--------------+
-; |conta10s                      ; 74 (0)            ; 37 (0)       ; 0           ; 0            ; 0       ; 0         ; 9    ; 0            ; |conta10s                           ; work         ;
+; |conta10s                      ; 79 (0)            ; 37 (0)       ; 0           ; 0            ; 0       ; 0         ; 10   ; 0            ; |conta10s                           ; work         ;
 ;    |clock:talita|              ; 59 (59)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |conta10s|clock:talita              ; work         ;
-;    |conta_decada:feliperenato| ; 8 (8)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |conta10s|conta_decada:feliperenato ; work         ;
+;    |conta_updown:feliperenato| ; 13 (13)           ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |conta10s|conta_updown:feliperenato ; work         ;
 ;    |displaycvector:caleb|      ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |conta10s|displaycvector:caleb      ; work         ;
 +--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -217,10 +219,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------+---------------------+------------------------+
 ; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
 +----------------------------------------------------+---------------------+------------------------+
-; conta_decada:feliperenato|q[3]                     ; reset               ; yes                    ;
-; conta_decada:feliperenato|q[1]                     ; reset               ; yes                    ;
-; conta_decada:feliperenato|q[0]                     ; reset               ; yes                    ;
-; conta_decada:feliperenato|q[2]                     ; reset               ; yes                    ;
+; conta_updown:feliperenato|q[3]                     ; reset               ; yes                    ;
+; conta_updown:feliperenato|q[1]                     ; reset               ; yes                    ;
+; conta_updown:feliperenato|q[0]                     ; reset               ; yes                    ;
+; conta_updown:feliperenato|q[2]                     ; reset               ; yes                    ;
 ; Number of user-specified and inferred latches = 4  ;                     ;                        ;
 +----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
@@ -251,6 +253,24 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------+---------+
 
 
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |conta10s|conta_updown:feliperenato|qtemp[2] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "conta_updown:feliperenato"                                                               ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; carry_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "clock:talita"                                                                                            ;
 +------+--------+----------+----------------------------------------------------------------------------------------------------------+
@@ -276,12 +296,15 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Dec 03 20:26:52 2019
+    Info: Processing started: Mon Dec 09 21:06:25 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off conta10s -c conta10s
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file conta decada/conta_decada.vhd
     Info (12022): Found design unit 1: conta_decada-arquitetura
     Info (12023): Found entity 1: conta_decada
+Info (12021): Found 2 design units, including 1 entities, in source file /users/nicol/documents/faculdade/circuitos lógicos/fpga/projeto0912.2/conta_updown.vhd
+    Info (12022): Found design unit 1: conta_updown-arquitetura
+    Info (12023): Found entity 1: conta_updown
 Info (12021): Found 2 design units, including 1 entities, in source file clock/clock.vhd
     Info (12022): Found design unit 1: clock-behavioral
     Info (12023): Found entity 1: clock
@@ -295,24 +318,24 @@ Info (12127): Elaborating entity "conta10s" for the top level hierarchy
 Info (12128): Elaborating entity "clock" for hierarchy "clock:talita"
 Warning (10541): VHDL Signal Declaration warning at clock.vhd(10): used implicit default value for signal "a" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Warning (10541): VHDL Signal Declaration warning at clock.vhd(10): used implicit default value for signal "b" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Info (12128): Elaborating entity "conta_decada" for hierarchy "conta_decada:feliperenato"
-Warning (10631): VHDL Process Statement warning at conta_decada.vhd(18): inferring latch(es) for signal or variable "q", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "q[0]" at conta_decada.vhd(18)
-Info (10041): Inferred latch for "q[1]" at conta_decada.vhd(18)
-Info (10041): Inferred latch for "q[2]" at conta_decada.vhd(18)
-Info (10041): Inferred latch for "q[3]" at conta_decada.vhd(18)
+Info (12128): Elaborating entity "conta_updown" for hierarchy "conta_updown:feliperenato"
+Warning (10631): VHDL Process Statement warning at conta_updown.vhd(16): inferring latch(es) for signal or variable "q", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "q[0]" at conta_updown.vhd(16)
+Info (10041): Inferred latch for "q[1]" at conta_updown.vhd(16)
+Info (10041): Inferred latch for "q[2]" at conta_updown.vhd(16)
+Info (10041): Inferred latch for "q[3]" at conta_updown.vhd(16)
 Info (12128): Elaborating entity "displaycvector" for hierarchy "displaycvector:caleb"
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 102 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 2 input pins
+Info (21057): Implemented 108 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
     Info (21059): Implemented 7 output pins
-    Info (21061): Implemented 93 logic cells
+    Info (21061): Implemented 98 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4633 megabytes
-    Info: Processing ended: Tue Dec 03 20:26:55 2019
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Peak virtual memory: 4641 megabytes
+    Info: Processing ended: Mon Dec 09 21:06:29 2019
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
 
 

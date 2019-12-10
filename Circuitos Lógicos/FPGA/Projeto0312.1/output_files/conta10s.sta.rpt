@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for conta10s
-Tue Dec 03 20:27:22 2019
+Mon Dec 09 21:06:51 2019
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -27,37 +27,43 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
  19. Slow Model Minimum Pulse Width: 'clock1'
  20. Slow Model Minimum Pulse Width: 'reset'
  21. Slow Model Minimum Pulse Width: 'clock:talita|clk_div'
- 22. Clock to Output Times
- 23. Minimum Clock to Output Times
- 24. Fast Model Setup Summary
- 25. Fast Model Hold Summary
- 26. Fast Model Recovery Summary
- 27. Fast Model Removal Summary
- 28. Fast Model Minimum Pulse Width Summary
- 29. Fast Model Setup: 'clock1'
- 30. Fast Model Setup: 'reset'
- 31. Fast Model Setup: 'clock:talita|clk_div'
- 32. Fast Model Hold: 'clock1'
- 33. Fast Model Hold: 'clock:talita|clk_div'
- 34. Fast Model Hold: 'reset'
- 35. Fast Model Recovery: 'clock:talita|clk_div'
- 36. Fast Model Removal: 'clock:talita|clk_div'
- 37. Fast Model Minimum Pulse Width: 'clock1'
- 38. Fast Model Minimum Pulse Width: 'reset'
- 39. Fast Model Minimum Pulse Width: 'clock:talita|clk_div'
- 40. Clock to Output Times
- 41. Minimum Clock to Output Times
- 42. Multicorner Timing Analysis Summary
- 43. Clock to Output Times
- 44. Minimum Clock to Output Times
- 45. Setup Transfers
- 46. Hold Transfers
- 47. Recovery Transfers
- 48. Removal Transfers
- 49. Report TCCS
- 50. Report RSKM
- 51. Unconstrained Paths
- 52. TimeQuest Timing Analyzer Messages
+ 22. Setup Times
+ 23. Hold Times
+ 24. Clock to Output Times
+ 25. Minimum Clock to Output Times
+ 26. Fast Model Setup Summary
+ 27. Fast Model Hold Summary
+ 28. Fast Model Recovery Summary
+ 29. Fast Model Removal Summary
+ 30. Fast Model Minimum Pulse Width Summary
+ 31. Fast Model Setup: 'clock1'
+ 32. Fast Model Setup: 'reset'
+ 33. Fast Model Setup: 'clock:talita|clk_div'
+ 34. Fast Model Hold: 'clock1'
+ 35. Fast Model Hold: 'clock:talita|clk_div'
+ 36. Fast Model Hold: 'reset'
+ 37. Fast Model Recovery: 'clock:talita|clk_div'
+ 38. Fast Model Removal: 'clock:talita|clk_div'
+ 39. Fast Model Minimum Pulse Width: 'clock1'
+ 40. Fast Model Minimum Pulse Width: 'reset'
+ 41. Fast Model Minimum Pulse Width: 'clock:talita|clk_div'
+ 42. Setup Times
+ 43. Hold Times
+ 44. Clock to Output Times
+ 45. Minimum Clock to Output Times
+ 46. Multicorner Timing Analysis Summary
+ 47. Setup Times
+ 48. Hold Times
+ 49. Clock to Output Times
+ 50. Minimum Clock to Output Times
+ 51. Setup Transfers
+ 52. Hold Transfers
+ 53. Recovery Transfers
+ 54. Removal Transfers
+ 55. Report TCCS
+ 56. Report RSKM
+ 57. Unconstrained Paths
+ 58. TimeQuest Timing Analyzer Messages
 
 
 
@@ -120,8 +126,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------+-----------------+----------------------+-------------------------------------------------------+
 ; Fmax       ; Restricted Fmax ; Clock Name           ; Note                                                  ;
 +------------+-----------------+----------------------+-------------------------------------------------------+
-; 163.8 MHz  ; 163.8 MHz       ; clock1               ;                                                       ;
-; 795.54 MHz ; 500.0 MHz       ; clock:talita|clk_div ; limit due to high minimum pulse width violation (tch) ;
+; 166.64 MHz ; 166.64 MHz      ; clock1               ;                                                       ;
+; 557.1 MHz  ; 500.0 MHz       ; clock:talita|clk_div ; limit due to high minimum pulse width violation (tch) ;
 +------------+-----------------+----------------------+-------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -131,9 +137,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------------------+--------+---------------+
 ; Clock                ; Slack  ; End Point TNS ;
 +----------------------+--------+---------------+
-; clock1               ; -5.105 ; -107.301      ;
-; reset                ; -0.717 ; -2.202        ;
-; clock:talita|clk_div ; -0.257 ; -0.615        ;
+; clock1               ; -5.001 ; -101.603      ;
+; reset                ; -1.457 ; -5.440        ;
+; clock:talita|clk_div ; -0.795 ; -2.088        ;
 +----------------------+--------+---------------+
 
 
@@ -142,28 +148,28 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------------------+--------+---------------+
 ; Clock                ; Slack  ; End Point TNS ;
 +----------------------+--------+---------------+
-; clock1               ; -2.554 ; -2.554        ;
+; clock1               ; -2.539 ; -2.539        ;
 ; clock:talita|clk_div ; 0.391  ; 0.000         ;
-; reset                ; 0.495  ; 0.000         ;
-+----------------------+--------+---------------+
-
-
-+-----------------------------------------------+
-; Slow Model Recovery Summary                   ;
-+----------------------+--------+---------------+
-; Clock                ; Slack  ; End Point TNS ;
-+----------------------+--------+---------------+
-; clock:talita|clk_div ; -0.101 ; -0.404        ;
+; reset                ; 1.328  ; 0.000         ;
 +----------------------+--------+---------------+
 
 
 +----------------------------------------------+
-; Slow Model Removal Summary                   ;
+; Slow Model Recovery Summary                  ;
 +----------------------+-------+---------------+
 ; Clock                ; Slack ; End Point TNS ;
 +----------------------+-------+---------------+
-; clock:talita|clk_div ; 0.371 ; 0.000         ;
+; clock:talita|clk_div ; 0.681 ; 0.000         ;
 +----------------------+-------+---------------+
+
+
++-----------------------------------------------+
+; Slow Model Removal Summary                    ;
++----------------------+--------+---------------+
+; Clock                ; Slack  ; End Point TNS ;
++----------------------+--------+---------------+
+; clock:talita|clk_div ; -0.411 ; -1.644        ;
++----------------------+--------+---------------+
 
 
 +-----------------------------------------------+
@@ -182,106 +188,106 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node              ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
-; -5.105 ; clock:talita|count[0]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 6.141      ;
-; -5.104 ; clock:talita|count[0]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 6.140      ;
-; -5.104 ; clock:talita|count[0]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 6.140      ;
-; -5.104 ; clock:talita|count[0]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 6.140      ;
-; -5.103 ; clock:talita|count[0]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 6.139      ;
-; -5.103 ; clock:talita|count[0]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 6.139      ;
-; -5.103 ; clock:talita|count[0]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; 0.000      ; 6.139      ;
-; -4.697 ; clock:talita|count[0]  ; clock:talita|count[6]  ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.733      ;
-; -4.696 ; clock:talita|count[0]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.732      ;
-; -4.696 ; clock:talita|count[0]  ; clock:talita|count[11] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.732      ;
-; -4.695 ; clock:talita|count[0]  ; clock:talita|count[0]  ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.731      ;
-; -4.687 ; clock:talita|count[0]  ; clock:talita|count[12] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.723      ;
-; -4.687 ; clock:talita|count[0]  ; clock:talita|count[13] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.723      ;
-; -4.683 ; clock:talita|count[0]  ; clock:talita|count[14] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.719      ;
-; -4.669 ; clock:talita|count[6]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.705      ;
-; -4.668 ; clock:talita|count[6]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.704      ;
-; -4.668 ; clock:talita|count[6]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.704      ;
-; -4.668 ; clock:talita|count[6]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.704      ;
-; -4.667 ; clock:talita|count[6]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.703      ;
-; -4.667 ; clock:talita|count[6]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.703      ;
-; -4.667 ; clock:talita|count[6]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.703      ;
-; -4.581 ; clock:talita|count[1]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.615      ;
-; -4.580 ; clock:talita|count[1]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.614      ;
-; -4.580 ; clock:talita|count[1]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.614      ;
-; -4.580 ; clock:talita|count[1]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.614      ;
-; -4.579 ; clock:talita|count[1]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.613      ;
-; -4.579 ; clock:talita|count[1]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.613      ;
-; -4.579 ; clock:talita|count[1]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.613      ;
-; -4.516 ; clock:talita|count[2]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.550      ;
-; -4.515 ; clock:talita|count[2]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.549      ;
-; -4.515 ; clock:talita|count[2]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.549      ;
-; -4.515 ; clock:talita|count[2]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.549      ;
-; -4.514 ; clock:talita|count[2]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.548      ;
-; -4.514 ; clock:talita|count[2]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.548      ;
-; -4.514 ; clock:talita|count[2]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.548      ;
-; -4.477 ; clock:talita|count[3]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.511      ;
-; -4.476 ; clock:talita|count[3]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.510      ;
-; -4.476 ; clock:talita|count[3]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.510      ;
-; -4.476 ; clock:talita|count[3]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.510      ;
-; -4.475 ; clock:talita|count[3]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.509      ;
-; -4.475 ; clock:talita|count[3]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.509      ;
-; -4.475 ; clock:talita|count[3]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.509      ;
-; -4.374 ; clock:talita|count[4]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.408      ;
-; -4.373 ; clock:talita|count[4]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.407      ;
-; -4.373 ; clock:talita|count[4]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.407      ;
-; -4.373 ; clock:talita|count[4]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.407      ;
-; -4.372 ; clock:talita|count[4]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.406      ;
-; -4.372 ; clock:talita|count[4]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.406      ;
-; -4.372 ; clock:talita|count[4]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.406      ;
-; -4.335 ; clock:talita|count[5]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.369      ;
-; -4.334 ; clock:talita|count[5]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.368      ;
-; -4.334 ; clock:talita|count[5]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.368      ;
-; -4.334 ; clock:talita|count[5]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.368      ;
-; -4.333 ; clock:talita|count[5]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.367      ;
-; -4.333 ; clock:talita|count[5]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.367      ;
-; -4.333 ; clock:talita|count[5]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.367      ;
-; -4.261 ; clock:talita|count[6]  ; clock:talita|count[6]  ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.297      ;
-; -4.260 ; clock:talita|count[6]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.296      ;
-; -4.260 ; clock:talita|count[6]  ; clock:talita|count[11] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.296      ;
-; -4.259 ; clock:talita|count[6]  ; clock:talita|count[0]  ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.295      ;
-; -4.251 ; clock:talita|count[6]  ; clock:talita|count[12] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.287      ;
-; -4.251 ; clock:talita|count[6]  ; clock:talita|count[13] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.287      ;
-; -4.247 ; clock:talita|count[6]  ; clock:talita|count[14] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.283      ;
-; -4.230 ; clock:talita|count[11] ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.266      ;
-; -4.229 ; clock:talita|count[11] ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.265      ;
-; -4.229 ; clock:talita|count[11] ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.265      ;
-; -4.229 ; clock:talita|count[11] ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.265      ;
-; -4.228 ; clock:talita|count[11] ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.264      ;
-; -4.228 ; clock:talita|count[11] ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.264      ;
-; -4.228 ; clock:talita|count[11] ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.264      ;
-; -4.193 ; clock:talita|count[12] ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.229      ;
-; -4.192 ; clock:talita|count[12] ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.228      ;
-; -4.192 ; clock:talita|count[12] ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.228      ;
-; -4.192 ; clock:talita|count[12] ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.228      ;
-; -4.191 ; clock:talita|count[12] ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.227      ;
-; -4.191 ; clock:talita|count[12] ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.227      ;
-; -4.191 ; clock:talita|count[12] ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.227      ;
-; -4.173 ; clock:talita|count[1]  ; clock:talita|count[6]  ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.207      ;
-; -4.172 ; clock:talita|count[1]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.206      ;
-; -4.172 ; clock:talita|count[1]  ; clock:talita|count[11] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.206      ;
-; -4.171 ; clock:talita|count[1]  ; clock:talita|count[0]  ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.205      ;
-; -4.165 ; clock:talita|count[7]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.199      ;
-; -4.164 ; clock:talita|count[7]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.198      ;
-; -4.164 ; clock:talita|count[7]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.198      ;
-; -4.164 ; clock:talita|count[7]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.198      ;
-; -4.163 ; clock:talita|count[7]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.197      ;
-; -4.163 ; clock:talita|count[7]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.197      ;
-; -4.163 ; clock:talita|count[7]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.197      ;
-; -4.163 ; clock:talita|count[1]  ; clock:talita|count[12] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.197      ;
-; -4.163 ; clock:talita|count[1]  ; clock:talita|count[13] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.197      ;
-; -4.159 ; clock:talita|count[1]  ; clock:talita|count[14] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.193      ;
-; -4.108 ; clock:talita|count[2]  ; clock:talita|count[6]  ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.142      ;
-; -4.107 ; clock:talita|count[2]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.141      ;
-; -4.107 ; clock:talita|count[2]  ; clock:talita|count[11] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.141      ;
-; -4.106 ; clock:talita|count[2]  ; clock:talita|count[0]  ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.140      ;
-; -4.098 ; clock:talita|count[2]  ; clock:talita|count[12] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.132      ;
-; -4.098 ; clock:talita|count[2]  ; clock:talita|count[13] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.132      ;
-; -4.094 ; clock:talita|count[2]  ; clock:talita|count[14] ; clock1       ; clock1      ; 1.000        ; -0.002     ; 5.128      ;
-; -4.091 ; clock:talita|count[13] ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.127      ;
-; -4.090 ; clock:talita|count[13] ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.126      ;
+; -5.001 ; clock:talita|count[0]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 6.037      ;
+; -5.000 ; clock:talita|count[0]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; 0.000      ; 6.036      ;
+; -4.998 ; clock:talita|count[0]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 6.034      ;
+; -4.997 ; clock:talita|count[0]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 6.033      ;
+; -4.919 ; clock:talita|count[0]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.004      ; 5.959      ;
+; -4.917 ; clock:talita|count[0]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.004      ; 5.957      ;
+; -4.917 ; clock:talita|count[0]  ; clock:talita|count[12] ; clock1       ; clock1      ; 1.000        ; 0.004      ; 5.957      ;
+; -4.915 ; clock:talita|count[0]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.004      ; 5.955      ;
+; -4.914 ; clock:talita|count[0]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; 0.004      ; 5.954      ;
+; -4.748 ; clock:talita|count[1]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.783      ;
+; -4.747 ; clock:talita|count[1]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.782      ;
+; -4.745 ; clock:talita|count[1]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.780      ;
+; -4.744 ; clock:talita|count[1]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.779      ;
+; -4.706 ; clock:talita|count[0]  ; clock:talita|count[13] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.742      ;
+; -4.705 ; clock:talita|count[0]  ; clock:talita|count[14] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.741      ;
+; -4.704 ; clock:talita|count[0]  ; clock:talita|count[11] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.740      ;
+; -4.702 ; clock:talita|count[0]  ; clock:talita|count[6]  ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.738      ;
+; -4.686 ; clock:talita|count[0]  ; clock:talita|count[0]  ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.722      ;
+; -4.683 ; clock:talita|count[2]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.718      ;
+; -4.682 ; clock:talita|count[2]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.717      ;
+; -4.680 ; clock:talita|count[2]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.715      ;
+; -4.679 ; clock:talita|count[2]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.714      ;
+; -4.666 ; clock:talita|count[1]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.705      ;
+; -4.664 ; clock:talita|count[1]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.703      ;
+; -4.664 ; clock:talita|count[1]  ; clock:talita|count[12] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.703      ;
+; -4.662 ; clock:talita|count[1]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.701      ;
+; -4.661 ; clock:talita|count[1]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.700      ;
+; -4.644 ; clock:talita|count[3]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.679      ;
+; -4.643 ; clock:talita|count[3]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.678      ;
+; -4.641 ; clock:talita|count[3]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.676      ;
+; -4.640 ; clock:talita|count[3]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.675      ;
+; -4.601 ; clock:talita|count[2]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.640      ;
+; -4.599 ; clock:talita|count[2]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.638      ;
+; -4.599 ; clock:talita|count[2]  ; clock:talita|count[12] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.638      ;
+; -4.597 ; clock:talita|count[2]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.636      ;
+; -4.596 ; clock:talita|count[2]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.635      ;
+; -4.571 ; clock:talita|count[6]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.607      ;
+; -4.570 ; clock:talita|count[6]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.606      ;
+; -4.568 ; clock:talita|count[6]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.604      ;
+; -4.567 ; clock:talita|count[6]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.603      ;
+; -4.562 ; clock:talita|count[3]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.601      ;
+; -4.560 ; clock:talita|count[3]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.599      ;
+; -4.560 ; clock:talita|count[3]  ; clock:talita|count[12] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.599      ;
+; -4.558 ; clock:talita|count[3]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.597      ;
+; -4.557 ; clock:talita|count[3]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.596      ;
+; -4.541 ; clock:talita|count[4]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.576      ;
+; -4.540 ; clock:talita|count[4]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.575      ;
+; -4.538 ; clock:talita|count[4]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.573      ;
+; -4.537 ; clock:talita|count[4]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.572      ;
+; -4.502 ; clock:talita|count[5]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.537      ;
+; -4.501 ; clock:talita|count[5]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.536      ;
+; -4.499 ; clock:talita|count[5]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.534      ;
+; -4.498 ; clock:talita|count[5]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.533      ;
+; -4.489 ; clock:talita|count[6]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.004      ; 5.529      ;
+; -4.487 ; clock:talita|count[6]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.004      ; 5.527      ;
+; -4.487 ; clock:talita|count[6]  ; clock:talita|count[12] ; clock1       ; clock1      ; 1.000        ; 0.004      ; 5.527      ;
+; -4.485 ; clock:talita|count[6]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.004      ; 5.525      ;
+; -4.484 ; clock:talita|count[6]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; 0.004      ; 5.524      ;
+; -4.459 ; clock:talita|count[4]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.498      ;
+; -4.457 ; clock:talita|count[4]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.496      ;
+; -4.457 ; clock:talita|count[4]  ; clock:talita|count[12] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.496      ;
+; -4.455 ; clock:talita|count[4]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.494      ;
+; -4.454 ; clock:talita|count[4]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.493      ;
+; -4.453 ; clock:talita|count[1]  ; clock:talita|count[13] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.488      ;
+; -4.452 ; clock:talita|count[1]  ; clock:talita|count[14] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.487      ;
+; -4.451 ; clock:talita|count[1]  ; clock:talita|count[11] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.486      ;
+; -4.449 ; clock:talita|count[1]  ; clock:talita|count[6]  ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.484      ;
+; -4.433 ; clock:talita|count[1]  ; clock:talita|count[0]  ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.468      ;
+; -4.420 ; clock:talita|count[5]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.459      ;
+; -4.418 ; clock:talita|count[5]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.457      ;
+; -4.418 ; clock:talita|count[5]  ; clock:talita|count[12] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.457      ;
+; -4.416 ; clock:talita|count[5]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.455      ;
+; -4.415 ; clock:talita|count[5]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 5.454      ;
+; -4.388 ; clock:talita|count[2]  ; clock:talita|count[13] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.423      ;
+; -4.387 ; clock:talita|count[2]  ; clock:talita|count[14] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.422      ;
+; -4.386 ; clock:talita|count[2]  ; clock:talita|count[11] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.421      ;
+; -4.384 ; clock:talita|count[2]  ; clock:talita|count[6]  ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.419      ;
+; -4.368 ; clock:talita|count[2]  ; clock:talita|count[0]  ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.403      ;
+; -4.349 ; clock:talita|count[3]  ; clock:talita|count[13] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.384      ;
+; -4.348 ; clock:talita|count[3]  ; clock:talita|count[14] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.383      ;
+; -4.347 ; clock:talita|count[3]  ; clock:talita|count[11] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.382      ;
+; -4.345 ; clock:talita|count[3]  ; clock:talita|count[6]  ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.380      ;
+; -4.338 ; clock:talita|count[12] ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; -0.004     ; 5.370      ;
+; -4.337 ; clock:talita|count[12] ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; -0.004     ; 5.369      ;
+; -4.335 ; clock:talita|count[12] ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; -0.004     ; 5.367      ;
+; -4.334 ; clock:talita|count[12] ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; -0.004     ; 5.366      ;
+; -4.332 ; clock:talita|count[7]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.367      ;
+; -4.331 ; clock:talita|count[7]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.366      ;
+; -4.329 ; clock:talita|count[7]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.364      ;
+; -4.329 ; clock:talita|count[3]  ; clock:talita|count[0]  ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.364      ;
+; -4.328 ; clock:talita|count[7]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 5.363      ;
+; -4.276 ; clock:talita|count[6]  ; clock:talita|count[13] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.312      ;
+; -4.275 ; clock:talita|count[6]  ; clock:talita|count[14] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.311      ;
+; -4.274 ; clock:talita|count[6]  ; clock:talita|count[11] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.310      ;
+; -4.272 ; clock:talita|count[6]  ; clock:talita|count[6]  ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.308      ;
+; -4.256 ; clock:talita|count[12] ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.292      ;
+; -4.256 ; clock:talita|count[6]  ; clock:talita|count[0]  ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.292      ;
+; -4.254 ; clock:talita|count[12] ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.290      ;
+; -4.254 ; clock:talita|count[12] ; clock:talita|count[12] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.290      ;
+; -4.252 ; clock:talita|count[12] ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 5.288      ;
 +--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -290,10 +296,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------+------------------------------------+--------------------------------+----------------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node                          ; To Node                        ; Launch Clock         ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+------------------------------------+--------------------------------+----------------------+-------------+--------------+------------+------------+
-; -0.717 ; conta_decada:feliperenato|qtemp[0] ; conta_decada:feliperenato|q[0] ; clock:talita|clk_div ; reset       ; 1.000        ; 0.225      ; 0.735      ;
-; -0.528 ; conta_decada:feliperenato|qtemp[1] ; conta_decada:feliperenato|q[1] ; clock:talita|clk_div ; reset       ; 1.000        ; 0.162      ; 0.713      ;
-; -0.497 ; conta_decada:feliperenato|qtemp[2] ; conta_decada:feliperenato|q[2] ; clock:talita|clk_div ; reset       ; 1.000        ; 0.223      ; 0.729      ;
-; -0.460 ; conta_decada:feliperenato|qtemp[3] ; conta_decada:feliperenato|q[3] ; clock:talita|clk_div ; reset       ; 1.000        ; 0.227      ; 0.722      ;
+; -1.457 ; conta_updown:feliperenato|qtemp[0] ; conta_updown:feliperenato|q[0] ; clock:talita|clk_div ; reset       ; 1.000        ; -0.751     ; 0.872      ;
+; -1.340 ; conta_updown:feliperenato|qtemp[1] ; conta_updown:feliperenato|q[1] ; clock:talita|clk_div ; reset       ; 1.000        ; -0.601     ; 0.761      ;
+; -1.340 ; conta_updown:feliperenato|qtemp[3] ; conta_updown:feliperenato|q[3] ; clock:talita|clk_div ; reset       ; 1.000        ; -0.600     ; 0.756      ;
+; -1.303 ; conta_updown:feliperenato|qtemp[2] ; conta_updown:feliperenato|q[2] ; clock:talita|clk_div ; reset       ; 1.000        ; -0.600     ; 0.728      ;
 +--------+------------------------------------+--------------------------------+----------------------+-------------+--------------+------------+------------+
 
 
@@ -302,21 +308,22 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------+------------------------------------+------------------------------------+----------------------+----------------------+--------------+------------+------------+
 ; Slack  ; From Node                          ; To Node                            ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
 +--------+------------------------------------+------------------------------------+----------------------+----------------------+--------------+------------+------------+
-; -0.257 ; conta_decada:feliperenato|qtemp[1] ; conta_decada:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 1.293      ;
-; -0.222 ; conta_decada:feliperenato|qtemp[1] ; conta_decada:feliperenato|qtemp[3] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 1.258      ;
-; -0.077 ; conta_decada:feliperenato|qtemp[3] ; conta_decada:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 1.113      ;
-; -0.059 ; conta_decada:feliperenato|qtemp[0] ; conta_decada:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 1.095      ;
-; -0.053 ; conta_decada:feliperenato|qtemp[0] ; conta_decada:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 1.089      ;
-; -0.034 ; conta_decada:feliperenato|qtemp[1] ; conta_decada:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 1.070      ;
-; -0.027 ; conta_decada:feliperenato|qtemp[0] ; conta_decada:feliperenato|qtemp[3] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 1.063      ;
-; 0.221  ; conta_decada:feliperenato|qtemp[2] ; conta_decada:feliperenato|qtemp[3] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.815      ;
-; 0.226  ; conta_decada:feliperenato|qtemp[2] ; conta_decada:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.810      ;
-; 0.230  ; conta_decada:feliperenato|qtemp[3] ; conta_decada:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.806      ;
-; 0.235  ; conta_decada:feliperenato|qtemp[3] ; conta_decada:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.801      ;
-; 0.379  ; conta_decada:feliperenato|qtemp[2] ; conta_decada:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.657      ;
-; 0.379  ; conta_decada:feliperenato|qtemp[3] ; conta_decada:feliperenato|qtemp[3] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.657      ;
-; 0.379  ; conta_decada:feliperenato|qtemp[0] ; conta_decada:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.657      ;
-; 0.379  ; conta_decada:feliperenato|qtemp[1] ; conta_decada:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.657      ;
+; -0.795 ; conta_updown:feliperenato|qtemp[1] ; conta_updown:feliperenato|qtemp[3] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 1.831      ;
+; -0.730 ; conta_updown:feliperenato|qtemp[2] ; conta_updown:feliperenato|qtemp[3] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 1.766      ;
+; -0.600 ; conta_updown:feliperenato|qtemp[0] ; conta_updown:feliperenato|qtemp[3] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 1.636      ;
+; -0.493 ; conta_updown:feliperenato|qtemp[1] ; conta_updown:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 1.529      ;
+; -0.493 ; conta_updown:feliperenato|qtemp[1] ; conta_updown:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 1.529      ;
+; -0.484 ; conta_updown:feliperenato|qtemp[3] ; conta_updown:feliperenato|qtemp[3] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 1.520      ;
+; -0.477 ; conta_updown:feliperenato|qtemp[2] ; conta_updown:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 1.513      ;
+; -0.469 ; conta_updown:feliperenato|qtemp[0] ; conta_updown:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 1.505      ;
+; -0.307 ; conta_updown:feliperenato|qtemp[0] ; conta_updown:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 1.343      ;
+; -0.224 ; conta_updown:feliperenato|qtemp[3] ; conta_updown:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 1.260      ;
+; -0.197 ; conta_updown:feliperenato|qtemp[1] ; conta_updown:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 1.233      ;
+; -0.188 ; conta_updown:feliperenato|qtemp[2] ; conta_updown:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 1.224      ;
+; -0.111 ; conta_updown:feliperenato|qtemp[3] ; conta_updown:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 1.147      ;
+; -0.104 ; conta_updown:feliperenato|qtemp[3] ; conta_updown:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 1.140      ;
+; 0.379  ; conta_updown:feliperenato|qtemp[0] ; conta_updown:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.657      ;
+; 0.379  ; conta_updown:feliperenato|qtemp[2] ; conta_updown:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.657      ;
 +--------+------------------------------------+------------------------------------+----------------------+----------------------+--------------+------------+------------+
 
 
@@ -325,8 +332,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------+------------------------+------------------------+----------------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node              ; To Node                ; Launch Clock         ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+------------------------+------------------------+----------------------+-------------+--------------+------------+------------+
-; -2.554 ; clock:talita|clk_div   ; clock:talita|clk_div   ; clock:talita|clk_div ; clock1      ; 0.000        ; 2.695      ; 0.657      ;
-; -2.054 ; clock:talita|clk_div   ; clock:talita|clk_div   ; clock:talita|clk_div ; clock1      ; -0.500       ; 2.695      ; 0.657      ;
+; -2.539 ; clock:talita|clk_div   ; clock:talita|clk_div   ; clock:talita|clk_div ; clock1      ; 0.000        ; 2.680      ; 0.657      ;
+; -2.039 ; clock:talita|clk_div   ; clock:talita|clk_div   ; clock:talita|clk_div ; clock1      ; -0.500       ; 2.680      ; 0.657      ;
 ; 0.524  ; clock:talita|count[31] ; clock:talita|count[31] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.790      ;
 ; 0.788  ; clock:talita|count[23] ; clock:talita|count[23] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.054      ;
 ; 0.788  ; clock:talita|count[15] ; clock:talita|count[15] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.054      ;
@@ -336,24 +343,24 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; 0.799  ; clock:talita|count[2]  ; clock:talita|count[2]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.065      ;
 ; 0.799  ; clock:talita|count[4]  ; clock:talita|count[4]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.065      ;
 ; 0.799  ; clock:talita|count[27] ; clock:talita|count[27] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.065      ;
+; 0.799  ; clock:talita|count[25] ; clock:talita|count[25] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.065      ;
+; 0.799  ; clock:talita|count[7]  ; clock:talita|count[7]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.065      ;
 ; 0.799  ; clock:talita|count[29] ; clock:talita|count[29] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.065      ;
 ; 0.799  ; clock:talita|count[30] ; clock:talita|count[30] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.065      ;
-; 0.799  ; clock:talita|count[7]  ; clock:talita|count[7]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.065      ;
-; 0.799  ; clock:talita|count[25] ; clock:talita|count[25] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.065      ;
 ; 0.828  ; clock:talita|count[3]  ; clock:talita|count[3]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.094      ;
 ; 0.828  ; clock:talita|count[5]  ; clock:talita|count[5]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.094      ;
-; 0.828  ; clock:talita|count[28] ; clock:talita|count[28] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.094      ;
-; 0.828  ; clock:talita|count[8]  ; clock:talita|count[8]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.094      ;
-; 0.828  ; clock:talita|count[10] ; clock:talita|count[10] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.094      ;
 ; 0.828  ; clock:talita|count[26] ; clock:talita|count[26] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.094      ;
+; 0.828  ; clock:talita|count[10] ; clock:talita|count[10] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.094      ;
+; 0.828  ; clock:talita|count[8]  ; clock:talita|count[8]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.094      ;
+; 0.828  ; clock:talita|count[28] ; clock:talita|count[28] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.094      ;
 ; 1.176  ; clock:talita|count[1]  ; clock:talita|count[2]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.442      ;
 ; 1.177  ; clock:talita|count[9]  ; clock:talita|count[10] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.443      ;
 ; 1.182  ; clock:talita|count[30] ; clock:talita|count[31] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.448      ;
 ; 1.182  ; clock:talita|count[29] ; clock:talita|count[30] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.448      ;
 ; 1.182  ; clock:talita|count[2]  ; clock:talita|count[3]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.448      ;
 ; 1.182  ; clock:talita|count[4]  ; clock:talita|count[5]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.448      ;
-; 1.182  ; clock:talita|count[27] ; clock:talita|count[28] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.448      ;
 ; 1.182  ; clock:talita|count[25] ; clock:talita|count[26] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.448      ;
+; 1.182  ; clock:talita|count[27] ; clock:talita|count[28] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.448      ;
 ; 1.214  ; clock:talita|count[8]  ; clock:talita|count[9]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.480      ;
 ; 1.214  ; clock:talita|count[3]  ; clock:talita|count[4]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.480      ;
 ; 1.214  ; clock:talita|count[26] ; clock:talita|count[27] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.480      ;
@@ -374,12 +381,15 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; 1.324  ; clock:talita|count[27] ; clock:talita|count[30] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.590      ;
 ; 1.324  ; clock:talita|count[2]  ; clock:talita|count[5]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.590      ;
 ; 1.324  ; clock:talita|count[25] ; clock:talita|count[28] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.590      ;
+; 1.330  ; clock:talita|count[15] ; clock:talita|count[17] ; clock1               ; clock1      ; 0.000        ; 0.004      ; 1.600      ;
 ; 1.334  ; clock:talita|count[23] ; clock:talita|count[25] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.600      ;
-; 1.337  ; clock:talita|count[15] ; clock:talita|count[17] ; clock1               ; clock1      ; 0.000        ; -0.003     ; 1.600      ;
 ; 1.345  ; clock:talita|count[7]  ; clock:talita|count[9]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.611      ;
+; 1.349  ; clock:talita|count[16] ; clock:talita|count[17] ; clock1               ; clock1      ; 0.000        ; 0.001      ; 1.616      ;
+; 1.353  ; clock:talita|count[14] ; clock:talita|count[15] ; clock1               ; clock1      ; 0.000        ; 0.001      ; 1.620      ;
+; 1.354  ; clock:talita|count[6]  ; clock:talita|count[7]  ; clock1               ; clock1      ; 0.000        ; 0.001      ; 1.621      ;
 ; 1.356  ; clock:talita|count[28] ; clock:talita|count[31] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.622      ;
 ; 1.356  ; clock:talita|count[26] ; clock:talita|count[29] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.622      ;
-; 1.356  ; clock:talita|count[16] ; clock:talita|count[17] ; clock1               ; clock1      ; 0.000        ; -0.001     ; 1.621      ;
+; 1.358  ; clock:talita|count[0]  ; clock:talita|count[1]  ; clock1               ; clock1      ; 0.000        ; 0.001      ; 1.625      ;
 ; 1.389  ; clock:talita|count[1]  ; clock:talita|count[5]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.655      ;
 ; 1.395  ; clock:talita|count[27] ; clock:talita|count[31] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.661      ;
 ; 1.395  ; clock:talita|count[25] ; clock:talita|count[29] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.661      ;
@@ -387,13 +397,21 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; 1.416  ; clock:talita|count[7]  ; clock:talita|count[10] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.682      ;
 ; 1.427  ; clock:talita|count[3]  ; clock:talita|count[7]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.693      ;
 ; 1.427  ; clock:talita|count[26] ; clock:talita|count[30] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.693      ;
+; 1.429  ; clock:talita|count[0]  ; clock:talita|count[2]  ; clock1               ; clock1      ; 0.000        ; 0.001      ; 1.696      ;
 ; 1.444  ; clock:talita|count[5]  ; clock:talita|count[8]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.710      ;
+; 1.465  ; clock:talita|count[13] ; clock:talita|count[15] ; clock1               ; clock1      ; 0.000        ; 0.001      ; 1.732      ;
 ; 1.466  ; clock:talita|count[2]  ; clock:talita|count[7]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.732      ;
 ; 1.466  ; clock:talita|count[25] ; clock:talita|count[30] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.732      ;
 ; 1.476  ; clock:talita|count[23] ; clock:talita|count[27] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.742      ;
 ; 1.483  ; clock:talita|count[4]  ; clock:talita|count[8]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.749      ;
-; 1.498  ; clock:talita|count[10] ; clock:talita|count[15] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.764      ;
+; 1.498  ; clock:talita|count[20] ; clock:talita|count[23] ; clock1               ; clock1      ; 0.000        ; 0.001      ; 1.765      ;
 ; 1.498  ; clock:talita|count[26] ; clock:talita|count[31] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.764      ;
+; 1.498  ; clock:talita|count[10] ; clock:talita|count[15] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.764      ;
+; 1.500  ; clock:talita|count[0]  ; clock:talita|count[3]  ; clock1               ; clock1      ; 0.000        ; 0.001      ; 1.767      ;
+; 1.509  ; clock:talita|count[31] ; clock:talita|count[19] ; clock1               ; clock1      ; 0.000        ; -0.001     ; 1.774      ;
+; 1.512  ; clock:talita|count[31] ; clock:talita|count[20] ; clock1               ; clock1      ; 0.000        ; -0.001     ; 1.777      ;
+; 1.512  ; clock:talita|count[31] ; clock:talita|count[18] ; clock1               ; clock1      ; 0.000        ; -0.001     ; 1.777      ;
+; 1.513  ; clock:talita|count[6]  ; clock:talita|count[8]  ; clock1               ; clock1      ; 0.000        ; 0.001      ; 1.780      ;
 ; 1.515  ; clock:talita|count[5]  ; clock:talita|count[9]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.781      ;
 ; 1.531  ; clock:talita|count[1]  ; clock:talita|count[7]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.797      ;
 ; 1.532  ; clock:talita|count[9]  ; clock:talita|count[15] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.798      ;
@@ -401,30 +419,19 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; 1.537  ; clock:talita|count[25] ; clock:talita|count[31] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.803      ;
 ; 1.547  ; clock:talita|count[23] ; clock:talita|count[28] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.813      ;
 ; 1.554  ; clock:talita|count[4]  ; clock:talita|count[9]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.820      ;
+; 1.562  ; clock:talita|count[11] ; clock:talita|count[15] ; clock1               ; clock1      ; 0.000        ; 0.001      ; 1.829      ;
+; 1.562  ; clock:talita|count[19] ; clock:talita|count[23] ; clock1               ; clock1      ; 0.000        ; 0.001      ; 1.829      ;
+; 1.566  ; clock:talita|count[14] ; clock:talita|count[17] ; clock1               ; clock1      ; 0.000        ; 0.005      ; 1.837      ;
+; 1.571  ; clock:talita|count[0]  ; clock:talita|count[4]  ; clock1               ; clock1      ; 0.000        ; 0.001      ; 1.838      ;
+; 1.584  ; clock:talita|count[6]  ; clock:talita|count[9]  ; clock1               ; clock1      ; 0.000        ; 0.001      ; 1.851      ;
 ; 1.586  ; clock:talita|count[5]  ; clock:talita|count[10] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.852      ;
 ; 1.586  ; clock:talita|count[3]  ; clock:talita|count[8]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.852      ;
-; 1.597  ; clock:talita|count[14] ; clock:talita|count[15] ; clock1               ; clock1      ; 0.000        ; 0.002      ; 1.865      ;
-; 1.602  ; clock:talita|count[24] ; clock:talita|count[25] ; clock1               ; clock1      ; 0.000        ; -0.001     ; 1.867      ;
-; 1.611  ; clock:talita|count[22] ; clock:talita|count[23] ; clock1               ; clock1      ; 0.000        ; -0.001     ; 1.876      ;
 ; 1.618  ; clock:talita|count[23] ; clock:talita|count[29] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.884      ;
-; 1.619  ; clock:talita|count[6]  ; clock:talita|count[7]  ; clock1               ; clock1      ; 0.000        ; 0.002      ; 1.887      ;
 ; 1.625  ; clock:talita|count[4]  ; clock:talita|count[10] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.891      ;
 ; 1.625  ; clock:talita|count[2]  ; clock:talita|count[8]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.891      ;
-; 1.629  ; clock:talita|count[0]  ; clock:talita|count[1]  ; clock1               ; clock1      ; 0.000        ; 0.002      ; 1.897      ;
+; 1.630  ; clock:talita|count[24] ; clock:talita|count[25] ; clock1               ; clock1      ; 0.000        ; 0.005      ; 1.901      ;
 ; 1.640  ; clock:talita|count[8]  ; clock:talita|count[15] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.906      ;
-; 1.657  ; clock:talita|count[3]  ; clock:talita|count[9]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.923      ;
-; 1.668  ; clock:talita|count[21] ; clock:talita|count[23] ; clock1               ; clock1      ; 0.000        ; -0.001     ; 1.933      ;
-; 1.673  ; clock:talita|count[24] ; clock:talita|count[26] ; clock1               ; clock1      ; 0.000        ; -0.001     ; 1.938      ;
-; 1.689  ; clock:talita|count[23] ; clock:talita|count[30] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.955      ;
-; 1.690  ; clock:talita|count[1]  ; clock:talita|count[8]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.956      ;
-; 1.696  ; clock:talita|count[2]  ; clock:talita|count[9]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.962      ;
-; 1.697  ; clock:talita|count[13] ; clock:talita|count[15] ; clock1               ; clock1      ; 0.000        ; 0.002      ; 1.965      ;
-; 1.700  ; clock:talita|count[0]  ; clock:talita|count[2]  ; clock1               ; clock1      ; 0.000        ; 0.002      ; 1.968      ;
-; 1.718  ; clock:talita|count[10] ; clock:talita|count[17] ; clock1               ; clock1      ; 0.000        ; -0.003     ; 1.981      ;
-; 1.728  ; clock:talita|count[3]  ; clock:talita|count[10] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 1.994      ;
-; 1.742  ; clock:talita|count[20] ; clock:talita|count[23] ; clock1               ; clock1      ; 0.000        ; -0.001     ; 2.007      ;
-; 1.744  ; clock:talita|count[24] ; clock:talita|count[27] ; clock1               ; clock1      ; 0.000        ; -0.001     ; 2.009      ;
-; 1.752  ; clock:talita|count[9]  ; clock:talita|count[17] ; clock1               ; clock1      ; 0.000        ; -0.003     ; 2.015      ;
+; 1.641  ; clock:talita|count[18] ; clock:talita|count[23] ; clock1               ; clock1      ; 0.000        ; 0.001      ; 1.908      ;
 +--------+------------------------+------------------------+----------------------+-------------+--------------+------------+------------+
 
 
@@ -433,21 +440,22 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+------------------------------------+------------------------------------+----------------------+----------------------+--------------+------------+------------+
 ; Slack ; From Node                          ; To Node                            ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
 +-------+------------------------------------+------------------------------------+----------------------+----------------------+--------------+------------+------------+
-; 0.391 ; conta_decada:feliperenato|qtemp[1] ; conta_decada:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.657      ;
-; 0.391 ; conta_decada:feliperenato|qtemp[0] ; conta_decada:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.657      ;
-; 0.391 ; conta_decada:feliperenato|qtemp[2] ; conta_decada:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.657      ;
-; 0.391 ; conta_decada:feliperenato|qtemp[3] ; conta_decada:feliperenato|qtemp[3] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.657      ;
-; 0.535 ; conta_decada:feliperenato|qtemp[3] ; conta_decada:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.801      ;
-; 0.540 ; conta_decada:feliperenato|qtemp[3] ; conta_decada:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.806      ;
-; 0.544 ; conta_decada:feliperenato|qtemp[2] ; conta_decada:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.810      ;
-; 0.549 ; conta_decada:feliperenato|qtemp[2] ; conta_decada:feliperenato|qtemp[3] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.815      ;
-; 0.797 ; conta_decada:feliperenato|qtemp[0] ; conta_decada:feliperenato|qtemp[3] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 1.063      ;
-; 0.804 ; conta_decada:feliperenato|qtemp[1] ; conta_decada:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 1.070      ;
-; 0.823 ; conta_decada:feliperenato|qtemp[0] ; conta_decada:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 1.089      ;
-; 0.829 ; conta_decada:feliperenato|qtemp[0] ; conta_decada:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 1.095      ;
-; 0.847 ; conta_decada:feliperenato|qtemp[3] ; conta_decada:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 1.113      ;
-; 0.992 ; conta_decada:feliperenato|qtemp[1] ; conta_decada:feliperenato|qtemp[3] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 1.258      ;
-; 1.027 ; conta_decada:feliperenato|qtemp[1] ; conta_decada:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 1.293      ;
+; 0.391 ; conta_updown:feliperenato|qtemp[3] ; conta_updown:feliperenato|qtemp[3] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; conta_updown:feliperenato|qtemp[0] ; conta_updown:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; conta_updown:feliperenato|qtemp[2] ; conta_updown:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.657      ;
+; 0.874 ; conta_updown:feliperenato|qtemp[3] ; conta_updown:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 1.140      ;
+; 0.881 ; conta_updown:feliperenato|qtemp[3] ; conta_updown:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 1.147      ;
+; 0.958 ; conta_updown:feliperenato|qtemp[2] ; conta_updown:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 1.224      ;
+; 0.959 ; conta_updown:feliperenato|qtemp[2] ; conta_updown:feliperenato|qtemp[3] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 1.225      ;
+; 0.967 ; conta_updown:feliperenato|qtemp[1] ; conta_updown:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 1.233      ;
+; 0.994 ; conta_updown:feliperenato|qtemp[3] ; conta_updown:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 1.260      ;
+; 1.077 ; conta_updown:feliperenato|qtemp[0] ; conta_updown:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 1.343      ;
+; 1.109 ; conta_updown:feliperenato|qtemp[0] ; conta_updown:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 1.375      ;
+; 1.110 ; conta_updown:feliperenato|qtemp[0] ; conta_updown:feliperenato|qtemp[3] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 1.376      ;
+; 1.124 ; conta_updown:feliperenato|qtemp[1] ; conta_updown:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 1.390      ;
+; 1.247 ; conta_updown:feliperenato|qtemp[2] ; conta_updown:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 1.513      ;
+; 1.263 ; conta_updown:feliperenato|qtemp[1] ; conta_updown:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 1.529      ;
+; 1.264 ; conta_updown:feliperenato|qtemp[1] ; conta_updown:feliperenato|qtemp[3] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 1.530      ;
 +-------+------------------------------------+------------------------------------+----------------------+----------------------+--------------+------------+------------+
 
 
@@ -456,43 +464,43 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+------------------------------------+--------------------------------+----------------------+-------------+--------------+------------+------------+
 ; Slack ; From Node                          ; To Node                        ; Launch Clock         ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+------------------------------------+--------------------------------+----------------------+-------------+--------------+------------+------------+
-; 0.495 ; conta_decada:feliperenato|qtemp[3] ; conta_decada:feliperenato|q[3] ; clock:talita|clk_div ; reset       ; 0.000        ; 0.227      ; 0.722      ;
-; 0.506 ; conta_decada:feliperenato|qtemp[2] ; conta_decada:feliperenato|q[2] ; clock:talita|clk_div ; reset       ; 0.000        ; 0.223      ; 0.729      ;
-; 0.510 ; conta_decada:feliperenato|qtemp[0] ; conta_decada:feliperenato|q[0] ; clock:talita|clk_div ; reset       ; 0.000        ; 0.225      ; 0.735      ;
-; 0.551 ; conta_decada:feliperenato|qtemp[1] ; conta_decada:feliperenato|q[1] ; clock:talita|clk_div ; reset       ; 0.000        ; 0.162      ; 0.713      ;
+; 1.328 ; conta_updown:feliperenato|qtemp[2] ; conta_updown:feliperenato|q[2] ; clock:talita|clk_div ; reset       ; 0.000        ; -0.600     ; 0.728      ;
+; 1.356 ; conta_updown:feliperenato|qtemp[3] ; conta_updown:feliperenato|q[3] ; clock:talita|clk_div ; reset       ; 0.000        ; -0.600     ; 0.756      ;
+; 1.362 ; conta_updown:feliperenato|qtemp[1] ; conta_updown:feliperenato|q[1] ; clock:talita|clk_div ; reset       ; 0.000        ; -0.601     ; 0.761      ;
+; 1.623 ; conta_updown:feliperenato|qtemp[0] ; conta_updown:feliperenato|q[0] ; clock:talita|clk_div ; reset       ; 0.000        ; -0.751     ; 0.872      ;
 +-------+------------------------------------+--------------------------------+----------------------+-------------+--------------+------------+------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------+
-; Slow Model Recovery: 'clock:talita|clk_div'                                                                                            ;
-+--------+-----------+------------------------------------+--------------+----------------------+--------------+------------+------------+
-; Slack  ; From Node ; To Node                            ; Launch Clock ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
-+--------+-----------+------------------------------------+--------------+----------------------+--------------+------------+------------+
-; -0.101 ; reset     ; conta_decada:feliperenato|qtemp[1] ; reset        ; clock:talita|clk_div ; 0.500        ; 2.579      ; 3.216      ;
-; -0.101 ; reset     ; conta_decada:feliperenato|qtemp[0] ; reset        ; clock:talita|clk_div ; 0.500        ; 2.579      ; 3.216      ;
-; -0.101 ; reset     ; conta_decada:feliperenato|qtemp[2] ; reset        ; clock:talita|clk_div ; 0.500        ; 2.579      ; 3.216      ;
-; -0.101 ; reset     ; conta_decada:feliperenato|qtemp[3] ; reset        ; clock:talita|clk_div ; 0.500        ; 2.579      ; 3.216      ;
-; 0.399  ; reset     ; conta_decada:feliperenato|qtemp[1] ; reset        ; clock:talita|clk_div ; 1.000        ; 2.579      ; 3.216      ;
-; 0.399  ; reset     ; conta_decada:feliperenato|qtemp[0] ; reset        ; clock:talita|clk_div ; 1.000        ; 2.579      ; 3.216      ;
-; 0.399  ; reset     ; conta_decada:feliperenato|qtemp[2] ; reset        ; clock:talita|clk_div ; 1.000        ; 2.579      ; 3.216      ;
-; 0.399  ; reset     ; conta_decada:feliperenato|qtemp[3] ; reset        ; clock:talita|clk_div ; 1.000        ; 2.579      ; 3.216      ;
-+--------+-----------+------------------------------------+--------------+----------------------+--------------+------------+------------+
-
-
 +---------------------------------------------------------------------------------------------------------------------------------------+
-; Slow Model Removal: 'clock:talita|clk_div'                                                                                            ;
+; Slow Model Recovery: 'clock:talita|clk_div'                                                                                           ;
 +-------+-----------+------------------------------------+--------------+----------------------+--------------+------------+------------+
 ; Slack ; From Node ; To Node                            ; Launch Clock ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
 +-------+-----------+------------------------------------+--------------+----------------------+--------------+------------+------------+
-; 0.371 ; reset     ; conta_decada:feliperenato|qtemp[1] ; reset        ; clock:talita|clk_div ; 0.000        ; 2.579      ; 3.216      ;
-; 0.371 ; reset     ; conta_decada:feliperenato|qtemp[0] ; reset        ; clock:talita|clk_div ; 0.000        ; 2.579      ; 3.216      ;
-; 0.371 ; reset     ; conta_decada:feliperenato|qtemp[2] ; reset        ; clock:talita|clk_div ; 0.000        ; 2.579      ; 3.216      ;
-; 0.371 ; reset     ; conta_decada:feliperenato|qtemp[3] ; reset        ; clock:talita|clk_div ; 0.000        ; 2.579      ; 3.216      ;
-; 0.871 ; reset     ; conta_decada:feliperenato|qtemp[1] ; reset        ; clock:talita|clk_div ; -0.500       ; 2.579      ; 3.216      ;
-; 0.871 ; reset     ; conta_decada:feliperenato|qtemp[0] ; reset        ; clock:talita|clk_div ; -0.500       ; 2.579      ; 3.216      ;
-; 0.871 ; reset     ; conta_decada:feliperenato|qtemp[2] ; reset        ; clock:talita|clk_div ; -0.500       ; 2.579      ; 3.216      ;
-; 0.871 ; reset     ; conta_decada:feliperenato|qtemp[3] ; reset        ; clock:talita|clk_div ; -0.500       ; 2.579      ; 3.216      ;
+; 0.681 ; reset     ; conta_updown:feliperenato|qtemp[3] ; reset        ; clock:talita|clk_div ; 0.500        ; 3.378      ; 3.233      ;
+; 0.681 ; reset     ; conta_updown:feliperenato|qtemp[0] ; reset        ; clock:talita|clk_div ; 0.500        ; 3.378      ; 3.233      ;
+; 0.681 ; reset     ; conta_updown:feliperenato|qtemp[2] ; reset        ; clock:talita|clk_div ; 0.500        ; 3.378      ; 3.233      ;
+; 0.681 ; reset     ; conta_updown:feliperenato|qtemp[1] ; reset        ; clock:talita|clk_div ; 0.500        ; 3.378      ; 3.233      ;
+; 1.181 ; reset     ; conta_updown:feliperenato|qtemp[3] ; reset        ; clock:talita|clk_div ; 1.000        ; 3.378      ; 3.233      ;
+; 1.181 ; reset     ; conta_updown:feliperenato|qtemp[0] ; reset        ; clock:talita|clk_div ; 1.000        ; 3.378      ; 3.233      ;
+; 1.181 ; reset     ; conta_updown:feliperenato|qtemp[2] ; reset        ; clock:talita|clk_div ; 1.000        ; 3.378      ; 3.233      ;
+; 1.181 ; reset     ; conta_updown:feliperenato|qtemp[1] ; reset        ; clock:talita|clk_div ; 1.000        ; 3.378      ; 3.233      ;
 +-------+-----------+------------------------------------+--------------+----------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Removal: 'clock:talita|clk_div'                                                                                             ;
++--------+-----------+------------------------------------+--------------+----------------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                            ; Launch Clock ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+------------------------------------+--------------+----------------------+--------------+------------+------------+
+; -0.411 ; reset     ; conta_updown:feliperenato|qtemp[3] ; reset        ; clock:talita|clk_div ; 0.000        ; 3.378      ; 3.233      ;
+; -0.411 ; reset     ; conta_updown:feliperenato|qtemp[0] ; reset        ; clock:talita|clk_div ; 0.000        ; 3.378      ; 3.233      ;
+; -0.411 ; reset     ; conta_updown:feliperenato|qtemp[2] ; reset        ; clock:talita|clk_div ; 0.000        ; 3.378      ; 3.233      ;
+; -0.411 ; reset     ; conta_updown:feliperenato|qtemp[1] ; reset        ; clock:talita|clk_div ; 0.000        ; 3.378      ; 3.233      ;
+; 0.089  ; reset     ; conta_updown:feliperenato|qtemp[3] ; reset        ; clock:talita|clk_div ; -0.500       ; 3.378      ; 3.233      ;
+; 0.089  ; reset     ; conta_updown:feliperenato|qtemp[0] ; reset        ; clock:talita|clk_div ; -0.500       ; 3.378      ; 3.233      ;
+; 0.089  ; reset     ; conta_updown:feliperenato|qtemp[2] ; reset        ; clock:talita|clk_div ; -0.500       ; 3.378      ; 3.233      ;
+; 0.089  ; reset     ; conta_updown:feliperenato|qtemp[1] ; reset        ; clock:talita|clk_div ; -0.500       ; 3.378      ; 3.233      ;
++--------+-----------+------------------------------------+--------------+----------------------+--------------+------------+------------+
 
 
 +-----------------------------------------------------------------------------------------------------------+
@@ -609,16 +617,16 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                         ;
 +--------+--------------+----------------+------------------+-------+------------+--------------------------------+
 ; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; reset ; Rise       ; reset                          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; conta_decada:feliperenato|q[0] ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; conta_decada:feliperenato|q[0] ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; conta_decada:feliperenato|q[1] ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; conta_decada:feliperenato|q[1] ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; conta_decada:feliperenato|q[2] ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; conta_decada:feliperenato|q[2] ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; conta_decada:feliperenato|q[3] ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; conta_decada:feliperenato|q[3] ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; feliperenato|q[0]|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; feliperenato|q[0]|datac        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; conta_updown:feliperenato|q[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; conta_updown:feliperenato|q[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; conta_updown:feliperenato|q[1] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; conta_updown:feliperenato|q[1] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; conta_updown:feliperenato|q[2] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; conta_updown:feliperenato|q[2] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; conta_updown:feliperenato|q[3] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; conta_updown:feliperenato|q[3] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; feliperenato|q[0]|datad        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; feliperenato|q[0]|datad        ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; feliperenato|q[1]|datac        ;
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; feliperenato|q[1]|datac        ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; feliperenato|q[2]|datac        ;
@@ -639,14 +647,14 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------+--------------+----------------+------------------+----------------------+------------+------------------------------------+
 ; Slack  ; Actual Width ; Required Width ; Type             ; Clock                ; Clock Edge ; Target                             ;
 +--------+--------------+----------------+------------------+----------------------+------------+------------------------------------+
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; conta_decada:feliperenato|qtemp[0] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock:talita|clk_div ; Rise       ; conta_decada:feliperenato|qtemp[0] ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; conta_decada:feliperenato|qtemp[1] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock:talita|clk_div ; Rise       ; conta_decada:feliperenato|qtemp[1] ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; conta_decada:feliperenato|qtemp[2] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock:talita|clk_div ; Rise       ; conta_decada:feliperenato|qtemp[2] ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; conta_decada:feliperenato|qtemp[3] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock:talita|clk_div ; Rise       ; conta_decada:feliperenato|qtemp[3] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; conta_updown:feliperenato|qtemp[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock:talita|clk_div ; Rise       ; conta_updown:feliperenato|qtemp[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; conta_updown:feliperenato|qtemp[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock:talita|clk_div ; Rise       ; conta_updown:feliperenato|qtemp[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; conta_updown:feliperenato|qtemp[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock:talita|clk_div ; Rise       ; conta_updown:feliperenato|qtemp[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; conta_updown:feliperenato|qtemp[3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock:talita|clk_div ; Rise       ; conta_updown:feliperenato|qtemp[3] ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; feliperenato|qtemp[0]|clk          ;
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock:talita|clk_div ; Rise       ; feliperenato|qtemp[0]|clk          ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; feliperenato|qtemp[1]|clk          ;
@@ -664,19 +672,37 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------+--------------+----------------+------------------+----------------------+------------+------------------------------------+
 
 
++--------------------------------------------------------------------------------------+
+; Setup Times                                                                          ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; Data Port ; Clock Port           ; Rise  ; Fall  ; Clock Edge ; Clock Reference      ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; sobedesce ; clock:talita|clk_div ; 0.097 ; 0.097 ; Rise       ; clock:talita|clk_div ;
++-----------+----------------------+-------+-------+------------+----------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Hold Times                                                                           ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; Data Port ; Clock Port           ; Rise  ; Fall  ; Clock Edge ; Clock Reference      ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; sobedesce ; clock:talita|clk_div ; 0.561 ; 0.561 ; Rise       ; clock:talita|clk_div ;
++-----------+----------------------+-------+-------+------------+----------------------+
+
+
 +-----------------------------------------------------------------------+
 ; Clock to Output Times                                                 ;
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; HEX0[*]   ; reset      ; 7.131 ; 7.131 ; Rise       ; reset           ;
-;  HEX0[0]  ; reset      ; 7.131 ; 7.131 ; Rise       ; reset           ;
-;  HEX0[1]  ; reset      ; 6.684 ; 6.684 ; Rise       ; reset           ;
-;  HEX0[2]  ; reset      ; 6.697 ; 6.697 ; Rise       ; reset           ;
-;  HEX0[3]  ; reset      ; 6.832 ; 6.832 ; Rise       ; reset           ;
-;  HEX0[4]  ; reset      ; 6.996 ; 6.996 ; Rise       ; reset           ;
-;  HEX0[5]  ; reset      ; 7.124 ; 7.124 ; Rise       ; reset           ;
-;  HEX0[6]  ; reset      ; 7.129 ; 7.129 ; Rise       ; reset           ;
+; HEX0[*]   ; reset      ; 7.420 ; 7.420 ; Rise       ; reset           ;
+;  HEX0[0]  ; reset      ; 7.412 ; 7.412 ; Rise       ; reset           ;
+;  HEX0[1]  ; reset      ; 7.420 ; 7.420 ; Rise       ; reset           ;
+;  HEX0[2]  ; reset      ; 7.418 ; 7.418 ; Rise       ; reset           ;
+;  HEX0[3]  ; reset      ; 7.197 ; 7.197 ; Rise       ; reset           ;
+;  HEX0[4]  ; reset      ; 6.585 ; 6.585 ; Rise       ; reset           ;
+;  HEX0[5]  ; reset      ; 6.993 ; 6.993 ; Rise       ; reset           ;
+;  HEX0[6]  ; reset      ; 6.981 ; 6.981 ; Rise       ; reset           ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -685,14 +711,14 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; HEX0[*]   ; reset      ; 6.308 ; 6.308 ; Rise       ; reset           ;
-;  HEX0[0]  ; reset      ; 6.612 ; 6.612 ; Rise       ; reset           ;
-;  HEX0[1]  ; reset      ; 6.467 ; 6.467 ; Rise       ; reset           ;
-;  HEX0[2]  ; reset      ; 6.506 ; 6.506 ; Rise       ; reset           ;
-;  HEX0[3]  ; reset      ; 6.308 ; 6.308 ; Rise       ; reset           ;
-;  HEX0[4]  ; reset      ; 6.776 ; 6.776 ; Rise       ; reset           ;
-;  HEX0[5]  ; reset      ; 6.612 ; 6.612 ; Rise       ; reset           ;
-;  HEX0[6]  ; reset      ; 6.599 ; 6.599 ; Rise       ; reset           ;
+; HEX0[*]   ; reset      ; 6.301 ; 6.301 ; Rise       ; reset           ;
+;  HEX0[0]  ; reset      ; 7.194 ; 7.194 ; Rise       ; reset           ;
+;  HEX0[1]  ; reset      ; 6.752 ; 6.752 ; Rise       ; reset           ;
+;  HEX0[2]  ; reset      ; 6.750 ; 6.750 ; Rise       ; reset           ;
+;  HEX0[3]  ; reset      ; 6.986 ; 6.986 ; Rise       ; reset           ;
+;  HEX0[4]  ; reset      ; 6.314 ; 6.314 ; Rise       ; reset           ;
+;  HEX0[5]  ; reset      ; 6.313 ; 6.313 ; Rise       ; reset           ;
+;  HEX0[6]  ; reset      ; 6.301 ; 6.301 ; Rise       ; reset           ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -701,9 +727,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------------------+--------+---------------+
 ; Clock                ; Slack  ; End Point TNS ;
 +----------------------+--------+---------------+
-; clock1               ; -1.834 ; -32.997       ;
-; reset                ; 0.206  ; 0.000         ;
-; clock:talita|clk_div ; 0.416  ; 0.000         ;
+; clock1               ; -1.805 ; -31.086       ;
+; reset                ; -0.203 ; -0.637        ;
+; clock:talita|clk_div ; 0.189  ; 0.000         ;
 +----------------------+--------+---------------+
 
 
@@ -712,9 +738,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------------------+--------+---------------+
 ; Clock                ; Slack  ; End Point TNS ;
 +----------------------+--------+---------------+
-; clock1               ; -1.595 ; -1.595        ;
+; clock1               ; -1.580 ; -1.580        ;
 ; clock:talita|clk_div ; 0.215  ; 0.000         ;
-; reset                ; 0.267  ; 0.000         ;
+; reset                ; 0.731  ; 0.000         ;
 +----------------------+--------+---------------+
 
 
@@ -723,17 +749,17 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------------------+-------+---------------+
 ; Clock                ; Slack ; End Point TNS ;
 +----------------------+-------+---------------+
-; clock:talita|clk_div ; 0.142 ; 0.000         ;
+; clock:talita|clk_div ; 0.580 ; 0.000         ;
 +----------------------+-------+---------------+
 
 
-+----------------------------------------------+
-; Fast Model Removal Summary                   ;
-+----------------------+-------+---------------+
-; Clock                ; Slack ; End Point TNS ;
-+----------------------+-------+---------------+
-; clock:talita|clk_div ; 0.238 ; 0.000         ;
-+----------------------+-------+---------------+
++-----------------------------------------------+
+; Fast Model Removal Summary                    ;
++----------------------+--------+---------------+
+; Clock                ; Slack  ; End Point TNS ;
++----------------------+--------+---------------+
+; clock:talita|clk_div ; -0.200 ; -0.800        ;
++----------------------+--------+---------------+
 
 
 +-----------------------------------------------+
@@ -752,119 +778,119 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node              ; To Node                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
-; -1.834 ; clock:talita|count[0]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.866      ;
-; -1.833 ; clock:talita|count[0]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.865      ;
-; -1.833 ; clock:talita|count[0]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.865      ;
-; -1.833 ; clock:talita|count[0]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.865      ;
-; -1.832 ; clock:talita|count[0]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.864      ;
-; -1.832 ; clock:talita|count[0]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.864      ;
-; -1.832 ; clock:talita|count[0]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.864      ;
-; -1.667 ; clock:talita|count[0]  ; clock:talita|count[6]  ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.699      ;
-; -1.666 ; clock:talita|count[0]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.698      ;
-; -1.666 ; clock:talita|count[0]  ; clock:talita|count[11] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.698      ;
-; -1.665 ; clock:talita|count[0]  ; clock:talita|count[0]  ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.697      ;
-; -1.658 ; clock:talita|count[0]  ; clock:talita|count[12] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.690      ;
-; -1.658 ; clock:talita|count[0]  ; clock:talita|count[13] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.690      ;
-; -1.655 ; clock:talita|count[0]  ; clock:talita|count[14] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.687      ;
-; -1.620 ; clock:talita|count[6]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.652      ;
-; -1.619 ; clock:talita|count[6]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.651      ;
-; -1.619 ; clock:talita|count[6]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.651      ;
-; -1.619 ; clock:talita|count[6]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.651      ;
-; -1.618 ; clock:talita|count[6]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.650      ;
-; -1.618 ; clock:talita|count[6]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.650      ;
-; -1.618 ; clock:talita|count[6]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.650      ;
-; -1.599 ; clock:talita|count[1]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.630      ;
-; -1.598 ; clock:talita|count[1]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.629      ;
-; -1.598 ; clock:talita|count[1]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.629      ;
-; -1.598 ; clock:talita|count[1]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.629      ;
-; -1.597 ; clock:talita|count[1]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.628      ;
-; -1.597 ; clock:talita|count[1]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.628      ;
-; -1.597 ; clock:talita|count[1]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.628      ;
-; -1.567 ; clock:talita|count[2]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.598      ;
-; -1.566 ; clock:talita|count[2]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.597      ;
-; -1.566 ; clock:talita|count[2]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.597      ;
-; -1.566 ; clock:talita|count[2]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.597      ;
-; -1.565 ; clock:talita|count[2]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.596      ;
-; -1.565 ; clock:talita|count[2]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.596      ;
-; -1.565 ; clock:talita|count[2]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.596      ;
-; -1.543 ; clock:talita|count[3]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.574      ;
-; -1.542 ; clock:talita|count[3]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.573      ;
-; -1.542 ; clock:talita|count[3]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.573      ;
-; -1.542 ; clock:talita|count[3]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.573      ;
-; -1.541 ; clock:talita|count[3]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.572      ;
-; -1.541 ; clock:talita|count[3]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.572      ;
-; -1.541 ; clock:talita|count[3]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.572      ;
-; -1.498 ; clock:talita|count[4]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.529      ;
-; -1.497 ; clock:talita|count[4]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.528      ;
-; -1.497 ; clock:talita|count[4]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.528      ;
-; -1.497 ; clock:talita|count[4]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.528      ;
-; -1.496 ; clock:talita|count[4]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.527      ;
-; -1.496 ; clock:talita|count[4]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.527      ;
-; -1.496 ; clock:talita|count[4]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.527      ;
-; -1.473 ; clock:talita|count[5]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.504      ;
-; -1.472 ; clock:talita|count[5]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.503      ;
-; -1.472 ; clock:talita|count[5]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.503      ;
-; -1.472 ; clock:talita|count[5]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.503      ;
-; -1.471 ; clock:talita|count[5]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.502      ;
-; -1.471 ; clock:talita|count[5]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.502      ;
-; -1.471 ; clock:talita|count[5]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.502      ;
-; -1.453 ; clock:talita|count[6]  ; clock:talita|count[6]  ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.485      ;
-; -1.452 ; clock:talita|count[6]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.484      ;
-; -1.452 ; clock:talita|count[6]  ; clock:talita|count[11] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.484      ;
-; -1.451 ; clock:talita|count[6]  ; clock:talita|count[0]  ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.483      ;
-; -1.444 ; clock:talita|count[6]  ; clock:talita|count[12] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.476      ;
-; -1.444 ; clock:talita|count[6]  ; clock:talita|count[13] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.476      ;
-; -1.441 ; clock:talita|count[6]  ; clock:talita|count[14] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.473      ;
-; -1.432 ; clock:talita|count[1]  ; clock:talita|count[6]  ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.463      ;
-; -1.431 ; clock:talita|count[1]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.462      ;
-; -1.431 ; clock:talita|count[1]  ; clock:talita|count[11] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.462      ;
-; -1.430 ; clock:talita|count[1]  ; clock:talita|count[0]  ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.461      ;
-; -1.423 ; clock:talita|count[1]  ; clock:talita|count[12] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.454      ;
-; -1.423 ; clock:talita|count[1]  ; clock:talita|count[13] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.454      ;
-; -1.420 ; clock:talita|count[1]  ; clock:talita|count[14] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.451      ;
-; -1.400 ; clock:talita|count[2]  ; clock:talita|count[6]  ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.431      ;
-; -1.399 ; clock:talita|count[2]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.430      ;
-; -1.399 ; clock:talita|count[2]  ; clock:talita|count[11] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.430      ;
-; -1.398 ; clock:talita|count[2]  ; clock:talita|count[0]  ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.429      ;
-; -1.391 ; clock:talita|count[2]  ; clock:talita|count[12] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.422      ;
-; -1.391 ; clock:talita|count[2]  ; clock:talita|count[13] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.422      ;
-; -1.389 ; clock:talita|count[11] ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.421      ;
-; -1.389 ; clock:talita|count[7]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.420      ;
-; -1.388 ; clock:talita|count[11] ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.420      ;
-; -1.388 ; clock:talita|count[7]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.419      ;
-; -1.388 ; clock:talita|count[11] ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.420      ;
-; -1.388 ; clock:talita|count[7]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.419      ;
-; -1.388 ; clock:talita|count[11] ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.420      ;
-; -1.388 ; clock:talita|count[7]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.419      ;
-; -1.388 ; clock:talita|count[2]  ; clock:talita|count[14] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.419      ;
-; -1.387 ; clock:talita|count[11] ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.419      ;
-; -1.387 ; clock:talita|count[7]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.418      ;
-; -1.387 ; clock:talita|count[11] ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.419      ;
-; -1.387 ; clock:talita|count[7]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.418      ;
-; -1.387 ; clock:talita|count[11] ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.419      ;
-; -1.387 ; clock:talita|count[7]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.418      ;
-; -1.376 ; clock:talita|count[3]  ; clock:talita|count[6]  ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.407      ;
-; -1.375 ; clock:talita|count[3]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.406      ;
-; -1.375 ; clock:talita|count[3]  ; clock:talita|count[11] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.406      ;
-; -1.374 ; clock:talita|count[3]  ; clock:talita|count[0]  ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.405      ;
-; -1.367 ; clock:talita|count[3]  ; clock:talita|count[12] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.398      ;
-; -1.367 ; clock:talita|count[3]  ; clock:talita|count[13] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.398      ;
-; -1.365 ; clock:talita|count[12] ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.397      ;
-; -1.364 ; clock:talita|count[12] ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.396      ;
-; -1.364 ; clock:talita|count[12] ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.396      ;
+; -1.805 ; clock:talita|count[0]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.837      ;
+; -1.805 ; clock:talita|count[0]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.837      ;
+; -1.802 ; clock:talita|count[0]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.834      ;
+; -1.801 ; clock:talita|count[0]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.833      ;
+; -1.744 ; clock:talita|count[0]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.004      ; 2.780      ;
+; -1.742 ; clock:talita|count[0]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.004      ; 2.778      ;
+; -1.742 ; clock:talita|count[0]  ; clock:talita|count[12] ; clock1       ; clock1      ; 1.000        ; 0.004      ; 2.778      ;
+; -1.741 ; clock:talita|count[0]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.004      ; 2.777      ;
+; -1.738 ; clock:talita|count[0]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; 0.004      ; 2.774      ;
+; -1.689 ; clock:talita|count[1]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.720      ;
+; -1.689 ; clock:talita|count[1]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.720      ;
+; -1.686 ; clock:talita|count[1]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.717      ;
+; -1.685 ; clock:talita|count[1]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.716      ;
+; -1.657 ; clock:talita|count[2]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.688      ;
+; -1.657 ; clock:talita|count[2]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.688      ;
+; -1.654 ; clock:talita|count[2]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.685      ;
+; -1.653 ; clock:talita|count[2]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.684      ;
+; -1.652 ; clock:talita|count[0]  ; clock:talita|count[0]  ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.684      ;
+; -1.651 ; clock:talita|count[0]  ; clock:talita|count[14] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.683      ;
+; -1.651 ; clock:talita|count[0]  ; clock:talita|count[13] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.683      ;
+; -1.651 ; clock:talita|count[0]  ; clock:talita|count[6]  ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.683      ;
+; -1.650 ; clock:talita|count[0]  ; clock:talita|count[11] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.682      ;
+; -1.633 ; clock:talita|count[3]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.664      ;
+; -1.633 ; clock:talita|count[3]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.664      ;
+; -1.630 ; clock:talita|count[3]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.661      ;
+; -1.629 ; clock:talita|count[3]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.660      ;
+; -1.628 ; clock:talita|count[1]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 2.663      ;
+; -1.626 ; clock:talita|count[1]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 2.661      ;
+; -1.626 ; clock:talita|count[1]  ; clock:talita|count[12] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 2.661      ;
+; -1.625 ; clock:talita|count[1]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 2.660      ;
+; -1.622 ; clock:talita|count[1]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 2.657      ;
+; -1.596 ; clock:talita|count[2]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 2.631      ;
+; -1.594 ; clock:talita|count[6]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.626      ;
+; -1.594 ; clock:talita|count[6]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.626      ;
+; -1.594 ; clock:talita|count[2]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 2.629      ;
+; -1.594 ; clock:talita|count[2]  ; clock:talita|count[12] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 2.629      ;
+; -1.593 ; clock:talita|count[2]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 2.628      ;
+; -1.591 ; clock:talita|count[6]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.623      ;
+; -1.590 ; clock:talita|count[6]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.622      ;
+; -1.590 ; clock:talita|count[2]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 2.625      ;
+; -1.588 ; clock:talita|count[4]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.619      ;
+; -1.588 ; clock:talita|count[4]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.619      ;
+; -1.585 ; clock:talita|count[4]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.616      ;
+; -1.584 ; clock:talita|count[4]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.615      ;
+; -1.572 ; clock:talita|count[3]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 2.607      ;
+; -1.570 ; clock:talita|count[3]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 2.605      ;
+; -1.570 ; clock:talita|count[3]  ; clock:talita|count[12] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 2.605      ;
+; -1.569 ; clock:talita|count[3]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 2.604      ;
+; -1.566 ; clock:talita|count[3]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 2.601      ;
+; -1.563 ; clock:talita|count[5]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.594      ;
+; -1.563 ; clock:talita|count[5]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.594      ;
+; -1.560 ; clock:talita|count[5]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.591      ;
+; -1.559 ; clock:talita|count[5]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.590      ;
+; -1.536 ; clock:talita|count[1]  ; clock:talita|count[0]  ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.567      ;
+; -1.535 ; clock:talita|count[1]  ; clock:talita|count[14] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.566      ;
+; -1.535 ; clock:talita|count[1]  ; clock:talita|count[13] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.566      ;
+; -1.535 ; clock:talita|count[1]  ; clock:talita|count[6]  ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.566      ;
+; -1.534 ; clock:talita|count[1]  ; clock:talita|count[11] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.565      ;
+; -1.533 ; clock:talita|count[6]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.004      ; 2.569      ;
+; -1.531 ; clock:talita|count[6]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.004      ; 2.567      ;
+; -1.531 ; clock:talita|count[6]  ; clock:talita|count[12] ; clock1       ; clock1      ; 1.000        ; 0.004      ; 2.567      ;
+; -1.530 ; clock:talita|count[6]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.004      ; 2.566      ;
+; -1.527 ; clock:talita|count[4]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 2.562      ;
+; -1.527 ; clock:talita|count[6]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; 0.004      ; 2.563      ;
+; -1.525 ; clock:talita|count[4]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 2.560      ;
+; -1.525 ; clock:talita|count[4]  ; clock:talita|count[12] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 2.560      ;
+; -1.524 ; clock:talita|count[4]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 2.559      ;
+; -1.521 ; clock:talita|count[4]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 2.556      ;
+; -1.504 ; clock:talita|count[2]  ; clock:talita|count[0]  ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.535      ;
+; -1.503 ; clock:talita|count[2]  ; clock:talita|count[14] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.534      ;
+; -1.503 ; clock:talita|count[2]  ; clock:talita|count[13] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.534      ;
+; -1.503 ; clock:talita|count[2]  ; clock:talita|count[6]  ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.534      ;
+; -1.502 ; clock:talita|count[5]  ; clock:talita|count[18] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 2.537      ;
+; -1.502 ; clock:talita|count[2]  ; clock:talita|count[11] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.533      ;
+; -1.500 ; clock:talita|count[5]  ; clock:talita|count[20] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 2.535      ;
+; -1.500 ; clock:talita|count[5]  ; clock:talita|count[12] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 2.535      ;
+; -1.499 ; clock:talita|count[5]  ; clock:talita|count[19] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 2.534      ;
+; -1.496 ; clock:talita|count[5]  ; clock:talita|count[16] ; clock1       ; clock1      ; 1.000        ; 0.003      ; 2.531      ;
+; -1.480 ; clock:talita|count[3]  ; clock:talita|count[0]  ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.511      ;
+; -1.479 ; clock:talita|count[7]  ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.510      ;
+; -1.479 ; clock:talita|count[7]  ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.510      ;
+; -1.479 ; clock:talita|count[3]  ; clock:talita|count[14] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.510      ;
+; -1.479 ; clock:talita|count[3]  ; clock:talita|count[13] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.510      ;
+; -1.479 ; clock:talita|count[3]  ; clock:talita|count[6]  ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.510      ;
+; -1.478 ; clock:talita|count[3]  ; clock:talita|count[11] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.509      ;
+; -1.476 ; clock:talita|count[7]  ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.507      ;
+; -1.475 ; clock:talita|count[7]  ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.506      ;
+; -1.453 ; clock:talita|count[12] ; clock:talita|count[22] ; clock1       ; clock1      ; 1.000        ; -0.004     ; 2.481      ;
+; -1.453 ; clock:talita|count[12] ; clock:talita|clk_div   ; clock1       ; clock1      ; 1.000        ; -0.004     ; 2.481      ;
+; -1.450 ; clock:talita|count[12] ; clock:talita|count[21] ; clock1       ; clock1      ; 1.000        ; -0.004     ; 2.478      ;
+; -1.449 ; clock:talita|count[12] ; clock:talita|count[24] ; clock1       ; clock1      ; 1.000        ; -0.004     ; 2.477      ;
+; -1.441 ; clock:talita|count[6]  ; clock:talita|count[0]  ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.473      ;
+; -1.440 ; clock:talita|count[6]  ; clock:talita|count[14] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.472      ;
+; -1.440 ; clock:talita|count[6]  ; clock:talita|count[13] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.472      ;
+; -1.440 ; clock:talita|count[6]  ; clock:talita|count[6]  ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.472      ;
+; -1.439 ; clock:talita|count[6]  ; clock:talita|count[11] ; clock1       ; clock1      ; 1.000        ; 0.000      ; 2.471      ;
+; -1.435 ; clock:talita|count[4]  ; clock:talita|count[0]  ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.466      ;
+; -1.434 ; clock:talita|count[4]  ; clock:talita|count[14] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.465      ;
+; -1.434 ; clock:talita|count[4]  ; clock:talita|count[13] ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.465      ;
+; -1.434 ; clock:talita|count[4]  ; clock:talita|count[6]  ; clock1       ; clock1      ; 1.000        ; -0.001     ; 2.465      ;
 +--------+------------------------+------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fast Model Setup: 'reset'                                                                                                                                 ;
-+-------+------------------------------------+--------------------------------+----------------------+-------------+--------------+------------+------------+
-; Slack ; From Node                          ; To Node                        ; Launch Clock         ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+------------------------------------+--------------------------------+----------------------+-------------+--------------+------------+------------+
-; 0.206 ; conta_decada:feliperenato|qtemp[0] ; conta_decada:feliperenato|q[0] ; clock:talita|clk_div ; reset       ; 1.000        ; 0.094      ; 0.370      ;
-; 0.300 ; conta_decada:feliperenato|qtemp[1] ; conta_decada:feliperenato|q[1] ; clock:talita|clk_div ; reset       ; 1.000        ; 0.058      ; 0.353      ;
-; 0.308 ; conta_decada:feliperenato|qtemp[2] ; conta_decada:feliperenato|q[2] ; clock:talita|clk_div ; reset       ; 1.000        ; 0.092      ; 0.366      ;
-; 0.332 ; conta_decada:feliperenato|qtemp[3] ; conta_decada:feliperenato|q[3] ; clock:talita|clk_div ; reset       ; 1.000        ; 0.096      ; 0.363      ;
-+-------+------------------------------------+--------------------------------+----------------------+-------------+--------------+------------+------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'reset'                                                                                                                                  ;
++--------+------------------------------------+--------------------------------+----------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                          ; To Node                        ; Launch Clock         ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------+--------------------------------+----------------------+-------------+--------------+------------+------------+
+; -0.203 ; conta_updown:feliperenato|qtemp[0] ; conta_updown:feliperenato|q[0] ; clock:talita|clk_div ; reset       ; 1.000        ; -0.428     ; 0.423      ;
+; -0.152 ; conta_updown:feliperenato|qtemp[1] ; conta_updown:feliperenato|q[1] ; clock:talita|clk_div ; reset       ; 1.000        ; -0.365     ; 0.381      ;
+; -0.146 ; conta_updown:feliperenato|qtemp[3] ; conta_updown:feliperenato|q[3] ; clock:talita|clk_div ; reset       ; 1.000        ; -0.364     ; 0.381      ;
+; -0.136 ; conta_updown:feliperenato|qtemp[2] ; conta_updown:feliperenato|q[2] ; clock:talita|clk_div ; reset       ; 1.000        ; -0.365     ; 0.366      ;
++--------+------------------------------------+--------------------------------+----------------------+-------------+--------------+------------+------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -872,21 +898,22 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+------------------------------------+------------------------------------+----------------------+----------------------+--------------+------------+------------+
 ; Slack ; From Node                          ; To Node                            ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
 +-------+------------------------------------+------------------------------------+----------------------+----------------------+--------------+------------+------------+
-; 0.416 ; conta_decada:feliperenato|qtemp[1] ; conta_decada:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.616      ;
-; 0.419 ; conta_decada:feliperenato|qtemp[1] ; conta_decada:feliperenato|qtemp[3] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.613      ;
-; 0.497 ; conta_decada:feliperenato|qtemp[0] ; conta_decada:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.535      ;
-; 0.497 ; conta_decada:feliperenato|qtemp[0] ; conta_decada:feliperenato|qtemp[3] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.535      ;
-; 0.499 ; conta_decada:feliperenato|qtemp[3] ; conta_decada:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.533      ;
-; 0.503 ; conta_decada:feliperenato|qtemp[0] ; conta_decada:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.529      ;
-; 0.517 ; conta_decada:feliperenato|qtemp[1] ; conta_decada:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.515      ;
-; 0.622 ; conta_decada:feliperenato|qtemp[2] ; conta_decada:feliperenato|qtemp[3] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.410      ;
-; 0.627 ; conta_decada:feliperenato|qtemp[3] ; conta_decada:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.405      ;
-; 0.627 ; conta_decada:feliperenato|qtemp[2] ; conta_decada:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.405      ;
-; 0.633 ; conta_decada:feliperenato|qtemp[3] ; conta_decada:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.399      ;
-; 0.665 ; conta_decada:feliperenato|qtemp[2] ; conta_decada:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.367      ;
-; 0.665 ; conta_decada:feliperenato|qtemp[3] ; conta_decada:feliperenato|qtemp[3] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.367      ;
-; 0.665 ; conta_decada:feliperenato|qtemp[1] ; conta_decada:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.367      ;
-; 0.665 ; conta_decada:feliperenato|qtemp[0] ; conta_decada:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.367      ;
+; 0.189 ; conta_updown:feliperenato|qtemp[1] ; conta_updown:feliperenato|qtemp[3] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.843      ;
+; 0.217 ; conta_updown:feliperenato|qtemp[2] ; conta_updown:feliperenato|qtemp[3] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.815      ;
+; 0.273 ; conta_updown:feliperenato|qtemp[0] ; conta_updown:feliperenato|qtemp[3] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.759      ;
+; 0.295 ; conta_updown:feliperenato|qtemp[1] ; conta_updown:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.737      ;
+; 0.318 ; conta_updown:feliperenato|qtemp[3] ; conta_updown:feliperenato|qtemp[3] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.714      ;
+; 0.323 ; conta_updown:feliperenato|qtemp[2] ; conta_updown:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.709      ;
+; 0.328 ; conta_updown:feliperenato|qtemp[1] ; conta_updown:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.704      ;
+; 0.340 ; conta_updown:feliperenato|qtemp[0] ; conta_updown:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.692      ;
+; 0.404 ; conta_updown:feliperenato|qtemp[0] ; conta_updown:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.628      ;
+; 0.411 ; conta_updown:feliperenato|qtemp[3] ; conta_updown:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.621      ;
+; 0.447 ; conta_updown:feliperenato|qtemp[1] ; conta_updown:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.585      ;
+; 0.451 ; conta_updown:feliperenato|qtemp[2] ; conta_updown:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.581      ;
+; 0.480 ; conta_updown:feliperenato|qtemp[3] ; conta_updown:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.552      ;
+; 0.484 ; conta_updown:feliperenato|qtemp[3] ; conta_updown:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.548      ;
+; 0.665 ; conta_updown:feliperenato|qtemp[0] ; conta_updown:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; conta_updown:feliperenato|qtemp[2] ; conta_updown:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 1.000        ; 0.000      ; 0.367      ;
 +-------+------------------------------------+------------------------------------+----------------------+----------------------+--------------+------------+------------+
 
 
@@ -895,8 +922,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------+------------------------+------------------------+----------------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node              ; To Node                ; Launch Clock         ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+------------------------+------------------------+----------------------+-------------+--------------+------------+------------+
-; -1.595 ; clock:talita|clk_div   ; clock:talita|clk_div   ; clock:talita|clk_div ; clock1      ; 0.000        ; 1.669      ; 0.367      ;
-; -1.095 ; clock:talita|clk_div   ; clock:talita|clk_div   ; clock:talita|clk_div ; clock1      ; -0.500       ; 1.669      ; 0.367      ;
+; -1.580 ; clock:talita|clk_div   ; clock:talita|clk_div   ; clock:talita|clk_div ; clock1      ; 0.000        ; 1.654      ; 0.367      ;
+; -1.080 ; clock:talita|clk_div   ; clock:talita|clk_div   ; clock:talita|clk_div ; clock1      ; -0.500       ; 1.654      ; 0.367      ;
 ; 0.241  ; clock:talita|count[31] ; clock:talita|count[31] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.393      ;
 ; 0.354  ; clock:talita|count[23] ; clock:talita|count[23] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.506      ;
 ; 0.355  ; clock:talita|count[1]  ; clock:talita|count[1]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.507      ;
@@ -907,20 +934,20 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; 0.358  ; clock:talita|count[27] ; clock:talita|count[27] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.510      ;
 ; 0.358  ; clock:talita|count[25] ; clock:talita|count[25] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.510      ;
 ; 0.359  ; clock:talita|count[4]  ; clock:talita|count[4]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359  ; clock:talita|count[7]  ; clock:talita|count[7]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.511      ;
 ; 0.359  ; clock:talita|count[29] ; clock:talita|count[29] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.511      ;
 ; 0.359  ; clock:talita|count[30] ; clock:talita|count[30] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.511      ;
-; 0.359  ; clock:talita|count[7]  ; clock:talita|count[7]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.511      ;
 ; 0.367  ; clock:talita|count[3]  ; clock:talita|count[3]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.519      ;
 ; 0.367  ; clock:talita|count[5]  ; clock:talita|count[5]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.519      ;
-; 0.367  ; clock:talita|count[28] ; clock:talita|count[28] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.519      ;
-; 0.367  ; clock:talita|count[8]  ; clock:talita|count[8]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.519      ;
-; 0.367  ; clock:talita|count[10] ; clock:talita|count[10] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.519      ;
 ; 0.367  ; clock:talita|count[26] ; clock:talita|count[26] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.519      ;
+; 0.367  ; clock:talita|count[10] ; clock:talita|count[10] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.519      ;
+; 0.367  ; clock:talita|count[8]  ; clock:talita|count[8]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.519      ;
+; 0.367  ; clock:talita|count[28] ; clock:talita|count[28] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.519      ;
 ; 0.493  ; clock:talita|count[1]  ; clock:talita|count[2]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.645      ;
 ; 0.493  ; clock:talita|count[9]  ; clock:talita|count[10] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.645      ;
 ; 0.496  ; clock:talita|count[2]  ; clock:talita|count[3]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.648      ;
-; 0.496  ; clock:talita|count[27] ; clock:talita|count[28] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.648      ;
 ; 0.496  ; clock:talita|count[25] ; clock:talita|count[26] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.648      ;
+; 0.496  ; clock:talita|count[27] ; clock:talita|count[28] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.648      ;
 ; 0.497  ; clock:talita|count[30] ; clock:talita|count[31] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.649      ;
 ; 0.497  ; clock:talita|count[29] ; clock:talita|count[30] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.649      ;
 ; 0.497  ; clock:talita|count[4]  ; clock:talita|count[5]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.649      ;
@@ -944,57 +971,57 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; 0.566  ; clock:talita|count[27] ; clock:talita|count[30] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.718      ;
 ; 0.566  ; clock:talita|count[2]  ; clock:talita|count[5]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.718      ;
 ; 0.567  ; clock:talita|count[4]  ; clock:talita|count[7]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.719      ;
-; 0.574  ; clock:talita|count[16] ; clock:talita|count[17] ; clock1               ; clock1      ; 0.000        ; -0.001     ; 0.725      ;
+; 0.571  ; clock:talita|count[15] ; clock:talita|count[17] ; clock1               ; clock1      ; 0.000        ; 0.004      ; 0.727      ;
+; 0.573  ; clock:talita|count[6]  ; clock:talita|count[7]  ; clock1               ; clock1      ; 0.000        ; 0.001      ; 0.726      ;
+; 0.574  ; clock:talita|count[0]  ; clock:talita|count[1]  ; clock1               ; clock1      ; 0.000        ; 0.001      ; 0.727      ;
+; 0.575  ; clock:talita|count[16] ; clock:talita|count[17] ; clock1               ; clock1      ; 0.000        ; 0.001      ; 0.728      ;
+; 0.577  ; clock:talita|count[14] ; clock:talita|count[15] ; clock1               ; clock1      ; 0.000        ; 0.001      ; 0.730      ;
 ; 0.577  ; clock:talita|count[26] ; clock:talita|count[29] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.729      ;
 ; 0.577  ; clock:talita|count[28] ; clock:talita|count[31] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.729      ;
-; 0.577  ; clock:talita|count[15] ; clock:talita|count[17] ; clock1               ; clock1      ; 0.000        ; -0.002     ; 0.727      ;
 ; 0.582  ; clock:talita|count[23] ; clock:talita|count[25] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.734      ;
 ; 0.587  ; clock:talita|count[7]  ; clock:talita|count[9]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.739      ;
 ; 0.598  ; clock:talita|count[1]  ; clock:talita|count[5]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.750      ;
 ; 0.601  ; clock:talita|count[25] ; clock:talita|count[29] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.753      ;
 ; 0.601  ; clock:talita|count[27] ; clock:talita|count[31] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.753      ;
+; 0.609  ; clock:talita|count[0]  ; clock:talita|count[2]  ; clock1               ; clock1      ; 0.000        ; 0.001      ; 0.762      ;
 ; 0.612  ; clock:talita|count[26] ; clock:talita|count[30] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.764      ;
 ; 0.612  ; clock:talita|count[3]  ; clock:talita|count[7]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.764      ;
 ; 0.617  ; clock:talita|count[23] ; clock:talita|count[26] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.769      ;
+; 0.621  ; clock:talita|count[13] ; clock:talita|count[15] ; clock1               ; clock1      ; 0.000        ; 0.001      ; 0.774      ;
 ; 0.622  ; clock:talita|count[7]  ; clock:talita|count[10] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.774      ;
 ; 0.636  ; clock:talita|count[5]  ; clock:talita|count[8]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.788      ;
 ; 0.636  ; clock:talita|count[25] ; clock:talita|count[30] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.788      ;
 ; 0.636  ; clock:talita|count[2]  ; clock:talita|count[7]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.788      ;
-; 0.647  ; clock:talita|count[10] ; clock:talita|count[15] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.799      ;
+; 0.643  ; clock:talita|count[20] ; clock:talita|count[23] ; clock1               ; clock1      ; 0.000        ; 0.001      ; 0.796      ;
+; 0.644  ; clock:talita|count[0]  ; clock:talita|count[3]  ; clock1               ; clock1      ; 0.000        ; 0.001      ; 0.797      ;
 ; 0.647  ; clock:talita|count[26] ; clock:talita|count[31] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.799      ;
+; 0.647  ; clock:talita|count[10] ; clock:talita|count[15] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.799      ;
 ; 0.652  ; clock:talita|count[23] ; clock:talita|count[27] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.804      ;
 ; 0.661  ; clock:talita|count[4]  ; clock:talita|count[8]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.813      ;
+; 0.667  ; clock:talita|count[31] ; clock:talita|count[19] ; clock1               ; clock1      ; 0.000        ; -0.001     ; 0.818      ;
+; 0.667  ; clock:talita|count[6]  ; clock:talita|count[8]  ; clock1               ; clock1      ; 0.000        ; 0.001      ; 0.820      ;
 ; 0.668  ; clock:talita|count[1]  ; clock:talita|count[7]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.820      ;
 ; 0.668  ; clock:talita|count[9]  ; clock:talita|count[15] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.820      ;
+; 0.669  ; clock:talita|count[31] ; clock:talita|count[20] ; clock1               ; clock1      ; 0.000        ; -0.001     ; 0.820      ;
+; 0.670  ; clock:talita|count[31] ; clock:talita|count[18] ; clock1               ; clock1      ; 0.000        ; -0.001     ; 0.821      ;
 ; 0.670  ; clock:talita|count[17] ; clock:talita|count[23] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.822      ;
 ; 0.671  ; clock:talita|count[5]  ; clock:talita|count[9]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.823      ;
 ; 0.671  ; clock:talita|count[25] ; clock:talita|count[31] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.823      ;
-; 0.683  ; clock:talita|count[24] ; clock:talita|count[25] ; clock1               ; clock1      ; 0.000        ; -0.001     ; 0.834      ;
+; 0.679  ; clock:talita|count[0]  ; clock:talita|count[4]  ; clock1               ; clock1      ; 0.000        ; 0.001      ; 0.832      ;
+; 0.680  ; clock:talita|count[11] ; clock:talita|count[15] ; clock1               ; clock1      ; 0.000        ; 0.001      ; 0.833      ;
+; 0.680  ; clock:talita|count[19] ; clock:talita|count[23] ; clock1               ; clock1      ; 0.000        ; 0.001      ; 0.833      ;
 ; 0.687  ; clock:talita|count[23] ; clock:talita|count[28] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.839      ;
-; 0.689  ; clock:talita|count[6]  ; clock:talita|count[7]  ; clock1               ; clock1      ; 0.000        ; 0.001      ; 0.842      ;
-; 0.689  ; clock:talita|count[14] ; clock:talita|count[15] ; clock1               ; clock1      ; 0.000        ; 0.001      ; 0.842      ;
-; 0.691  ; clock:talita|count[22] ; clock:talita|count[23] ; clock1               ; clock1      ; 0.000        ; -0.001     ; 0.842      ;
-; 0.693  ; clock:talita|count[0]  ; clock:talita|count[1]  ; clock1               ; clock1      ; 0.000        ; 0.001      ; 0.846      ;
+; 0.695  ; clock:talita|count[14] ; clock:talita|count[17] ; clock1               ; clock1      ; 0.000        ; 0.005      ; 0.852      ;
+; 0.695  ; clock:talita|count[24] ; clock:talita|count[25] ; clock1               ; clock1      ; 0.000        ; 0.005      ; 0.852      ;
 ; 0.696  ; clock:talita|count[4]  ; clock:talita|count[9]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.848      ;
+; 0.702  ; clock:talita|count[6]  ; clock:talita|count[9]  ; clock1               ; clock1      ; 0.000        ; 0.001      ; 0.855      ;
 ; 0.706  ; clock:talita|count[5]  ; clock:talita|count[10] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.858      ;
 ; 0.706  ; clock:talita|count[3]  ; clock:talita|count[8]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.858      ;
-; 0.716  ; clock:talita|count[21] ; clock:talita|count[23] ; clock1               ; clock1      ; 0.000        ; -0.001     ; 0.867      ;
+; 0.713  ; clock:talita|count[18] ; clock:talita|count[23] ; clock1               ; clock1      ; 0.000        ; 0.001      ; 0.866      ;
+; 0.714  ; clock:talita|count[0]  ; clock:talita|count[5]  ; clock1               ; clock1      ; 0.000        ; 0.001      ; 0.867      ;
+; 0.716  ; clock:talita|count[22] ; clock:talita|count[23] ; clock1               ; clock1      ; 0.000        ; 0.005      ; 0.873      ;
 ; 0.717  ; clock:talita|count[8]  ; clock:talita|count[15] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.869      ;
-; 0.718  ; clock:talita|count[24] ; clock:talita|count[26] ; clock1               ; clock1      ; 0.000        ; -0.001     ; 0.869      ;
 ; 0.722  ; clock:talita|count[23] ; clock:talita|count[29] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.874      ;
-; 0.728  ; clock:talita|count[0]  ; clock:talita|count[2]  ; clock1               ; clock1      ; 0.000        ; 0.001      ; 0.881      ;
-; 0.728  ; clock:talita|count[13] ; clock:talita|count[15] ; clock1               ; clock1      ; 0.000        ; 0.001      ; 0.881      ;
-; 0.730  ; clock:talita|count[2]  ; clock:talita|count[8]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.882      ;
-; 0.731  ; clock:talita|count[4]  ; clock:talita|count[10] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.883      ;
-; 0.741  ; clock:talita|count[3]  ; clock:talita|count[9]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.893      ;
-; 0.753  ; clock:talita|count[24] ; clock:talita|count[27] ; clock1               ; clock1      ; 0.000        ; -0.001     ; 0.904      ;
-; 0.756  ; clock:talita|count[20] ; clock:talita|count[23] ; clock1               ; clock1      ; 0.000        ; -0.001     ; 0.907      ;
-; 0.757  ; clock:talita|count[23] ; clock:talita|count[30] ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.909      ;
-; 0.762  ; clock:talita|count[1]  ; clock:talita|count[8]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.914      ;
-; 0.763  ; clock:talita|count[0]  ; clock:talita|count[3]  ; clock1               ; clock1      ; 0.000        ; 0.001      ; 0.916      ;
-; 0.765  ; clock:talita|count[2]  ; clock:talita|count[9]  ; clock1               ; clock1      ; 0.000        ; 0.000      ; 0.917      ;
-; 0.771  ; clock:talita|count[10] ; clock:talita|count[17] ; clock1               ; clock1      ; 0.000        ; -0.002     ; 0.921      ;
-; 0.773  ; clock:talita|count[12] ; clock:talita|count[15] ; clock1               ; clock1      ; 0.000        ; 0.001      ; 0.926      ;
 +--------+------------------------+------------------------+----------------------+-------------+--------------+------------+------------+
 
 
@@ -1003,21 +1030,22 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+------------------------------------+------------------------------------+----------------------+----------------------+--------------+------------+------------+
 ; Slack ; From Node                          ; To Node                            ; Launch Clock         ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
 +-------+------------------------------------+------------------------------------+----------------------+----------------------+--------------+------------+------------+
-; 0.215 ; conta_decada:feliperenato|qtemp[1] ; conta_decada:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; conta_decada:feliperenato|qtemp[0] ; conta_decada:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; conta_decada:feliperenato|qtemp[2] ; conta_decada:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; conta_decada:feliperenato|qtemp[3] ; conta_decada:feliperenato|qtemp[3] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.367      ;
-; 0.247 ; conta_decada:feliperenato|qtemp[3] ; conta_decada:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.399      ;
-; 0.253 ; conta_decada:feliperenato|qtemp[2] ; conta_decada:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.405      ;
-; 0.253 ; conta_decada:feliperenato|qtemp[3] ; conta_decada:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.405      ;
-; 0.258 ; conta_decada:feliperenato|qtemp[2] ; conta_decada:feliperenato|qtemp[3] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.410      ;
-; 0.363 ; conta_decada:feliperenato|qtemp[1] ; conta_decada:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.515      ;
-; 0.377 ; conta_decada:feliperenato|qtemp[0] ; conta_decada:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.529      ;
-; 0.381 ; conta_decada:feliperenato|qtemp[3] ; conta_decada:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.533      ;
-; 0.383 ; conta_decada:feliperenato|qtemp[0] ; conta_decada:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.535      ;
-; 0.383 ; conta_decada:feliperenato|qtemp[0] ; conta_decada:feliperenato|qtemp[3] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.535      ;
-; 0.461 ; conta_decada:feliperenato|qtemp[1] ; conta_decada:feliperenato|qtemp[3] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.613      ;
-; 0.464 ; conta_decada:feliperenato|qtemp[1] ; conta_decada:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.616      ;
+; 0.215 ; conta_updown:feliperenato|qtemp[3] ; conta_updown:feliperenato|qtemp[3] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; conta_updown:feliperenato|qtemp[0] ; conta_updown:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; conta_updown:feliperenato|qtemp[2] ; conta_updown:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.367      ;
+; 0.396 ; conta_updown:feliperenato|qtemp[3] ; conta_updown:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.548      ;
+; 0.400 ; conta_updown:feliperenato|qtemp[3] ; conta_updown:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.552      ;
+; 0.429 ; conta_updown:feliperenato|qtemp[2] ; conta_updown:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.581      ;
+; 0.430 ; conta_updown:feliperenato|qtemp[2] ; conta_updown:feliperenato|qtemp[3] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.582      ;
+; 0.433 ; conta_updown:feliperenato|qtemp[1] ; conta_updown:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.585      ;
+; 0.469 ; conta_updown:feliperenato|qtemp[3] ; conta_updown:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.621      ;
+; 0.476 ; conta_updown:feliperenato|qtemp[0] ; conta_updown:feliperenato|qtemp[2] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.628      ;
+; 0.495 ; conta_updown:feliperenato|qtemp[1] ; conta_updown:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.647      ;
+; 0.497 ; conta_updown:feliperenato|qtemp[0] ; conta_updown:feliperenato|qtemp[1] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.649      ;
+; 0.498 ; conta_updown:feliperenato|qtemp[0] ; conta_updown:feliperenato|qtemp[3] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.650      ;
+; 0.552 ; conta_updown:feliperenato|qtemp[1] ; conta_updown:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.704      ;
+; 0.557 ; conta_updown:feliperenato|qtemp[2] ; conta_updown:feliperenato|qtemp[0] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.709      ;
+; 0.586 ; conta_updown:feliperenato|qtemp[1] ; conta_updown:feliperenato|qtemp[3] ; clock:talita|clk_div ; clock:talita|clk_div ; 0.000        ; 0.000      ; 0.738      ;
 +-------+------------------------------------+------------------------------------+----------------------+----------------------+--------------+------------+------------+
 
 
@@ -1026,10 +1054,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+------------------------------------+--------------------------------+----------------------+-------------+--------------+------------+------------+
 ; Slack ; From Node                          ; To Node                        ; Launch Clock         ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+------------------------------------+--------------------------------+----------------------+-------------+--------------+------------+------------+
-; 0.267 ; conta_decada:feliperenato|qtemp[3] ; conta_decada:feliperenato|q[3] ; clock:talita|clk_div ; reset       ; 0.000        ; 0.096      ; 0.363      ;
-; 0.274 ; conta_decada:feliperenato|qtemp[2] ; conta_decada:feliperenato|q[2] ; clock:talita|clk_div ; reset       ; 0.000        ; 0.092      ; 0.366      ;
-; 0.276 ; conta_decada:feliperenato|qtemp[0] ; conta_decada:feliperenato|q[0] ; clock:talita|clk_div ; reset       ; 0.000        ; 0.094      ; 0.370      ;
-; 0.295 ; conta_decada:feliperenato|qtemp[1] ; conta_decada:feliperenato|q[1] ; clock:talita|clk_div ; reset       ; 0.000        ; 0.058      ; 0.353      ;
+; 0.731 ; conta_updown:feliperenato|qtemp[2] ; conta_updown:feliperenato|q[2] ; clock:talita|clk_div ; reset       ; 0.000        ; -0.365     ; 0.366      ;
+; 0.745 ; conta_updown:feliperenato|qtemp[3] ; conta_updown:feliperenato|q[3] ; clock:talita|clk_div ; reset       ; 0.000        ; -0.364     ; 0.381      ;
+; 0.746 ; conta_updown:feliperenato|qtemp[1] ; conta_updown:feliperenato|q[1] ; clock:talita|clk_div ; reset       ; 0.000        ; -0.365     ; 0.381      ;
+; 0.851 ; conta_updown:feliperenato|qtemp[0] ; conta_updown:feliperenato|q[0] ; clock:talita|clk_div ; reset       ; 0.000        ; -0.428     ; 0.423      ;
 +-------+------------------------------------+--------------------------------+----------------------+-------------+--------------+------------+------------+
 
 
@@ -1038,31 +1066,31 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+-----------+------------------------------------+--------------+----------------------+--------------+------------+------------+
 ; Slack ; From Node ; To Node                            ; Launch Clock ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
 +-------+-----------+------------------------------------+--------------+----------------------+--------------+------------+------------+
-; 0.142 ; reset     ; conta_decada:feliperenato|qtemp[1] ; reset        ; clock:talita|clk_div ; 0.500        ; 1.533      ; 1.923      ;
-; 0.142 ; reset     ; conta_decada:feliperenato|qtemp[0] ; reset        ; clock:talita|clk_div ; 0.500        ; 1.533      ; 1.923      ;
-; 0.142 ; reset     ; conta_decada:feliperenato|qtemp[2] ; reset        ; clock:talita|clk_div ; 0.500        ; 1.533      ; 1.923      ;
-; 0.142 ; reset     ; conta_decada:feliperenato|qtemp[3] ; reset        ; clock:talita|clk_div ; 0.500        ; 1.533      ; 1.923      ;
-; 0.642 ; reset     ; conta_decada:feliperenato|qtemp[1] ; reset        ; clock:talita|clk_div ; 1.000        ; 1.533      ; 1.923      ;
-; 0.642 ; reset     ; conta_decada:feliperenato|qtemp[0] ; reset        ; clock:talita|clk_div ; 1.000        ; 1.533      ; 1.923      ;
-; 0.642 ; reset     ; conta_decada:feliperenato|qtemp[2] ; reset        ; clock:talita|clk_div ; 1.000        ; 1.533      ; 1.923      ;
-; 0.642 ; reset     ; conta_decada:feliperenato|qtemp[3] ; reset        ; clock:talita|clk_div ; 1.000        ; 1.533      ; 1.923      ;
+; 0.580 ; reset     ; conta_updown:feliperenato|qtemp[3] ; reset        ; clock:talita|clk_div ; 0.500        ; 1.974      ; 1.926      ;
+; 0.580 ; reset     ; conta_updown:feliperenato|qtemp[0] ; reset        ; clock:talita|clk_div ; 0.500        ; 1.974      ; 1.926      ;
+; 0.580 ; reset     ; conta_updown:feliperenato|qtemp[2] ; reset        ; clock:talita|clk_div ; 0.500        ; 1.974      ; 1.926      ;
+; 0.580 ; reset     ; conta_updown:feliperenato|qtemp[1] ; reset        ; clock:talita|clk_div ; 0.500        ; 1.974      ; 1.926      ;
+; 1.080 ; reset     ; conta_updown:feliperenato|qtemp[3] ; reset        ; clock:talita|clk_div ; 1.000        ; 1.974      ; 1.926      ;
+; 1.080 ; reset     ; conta_updown:feliperenato|qtemp[0] ; reset        ; clock:talita|clk_div ; 1.000        ; 1.974      ; 1.926      ;
+; 1.080 ; reset     ; conta_updown:feliperenato|qtemp[2] ; reset        ; clock:talita|clk_div ; 1.000        ; 1.974      ; 1.926      ;
+; 1.080 ; reset     ; conta_updown:feliperenato|qtemp[1] ; reset        ; clock:talita|clk_div ; 1.000        ; 1.974      ; 1.926      ;
 +-------+-----------+------------------------------------+--------------+----------------------+--------------+------------+------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------+
-; Fast Model Removal: 'clock:talita|clk_div'                                                                                            ;
-+-------+-----------+------------------------------------+--------------+----------------------+--------------+------------+------------+
-; Slack ; From Node ; To Node                            ; Launch Clock ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
-+-------+-----------+------------------------------------+--------------+----------------------+--------------+------------+------------+
-; 0.238 ; reset     ; conta_decada:feliperenato|qtemp[1] ; reset        ; clock:talita|clk_div ; 0.000        ; 1.533      ; 1.923      ;
-; 0.238 ; reset     ; conta_decada:feliperenato|qtemp[0] ; reset        ; clock:talita|clk_div ; 0.000        ; 1.533      ; 1.923      ;
-; 0.238 ; reset     ; conta_decada:feliperenato|qtemp[2] ; reset        ; clock:talita|clk_div ; 0.000        ; 1.533      ; 1.923      ;
-; 0.238 ; reset     ; conta_decada:feliperenato|qtemp[3] ; reset        ; clock:talita|clk_div ; 0.000        ; 1.533      ; 1.923      ;
-; 0.738 ; reset     ; conta_decada:feliperenato|qtemp[1] ; reset        ; clock:talita|clk_div ; -0.500       ; 1.533      ; 1.923      ;
-; 0.738 ; reset     ; conta_decada:feliperenato|qtemp[0] ; reset        ; clock:talita|clk_div ; -0.500       ; 1.533      ; 1.923      ;
-; 0.738 ; reset     ; conta_decada:feliperenato|qtemp[2] ; reset        ; clock:talita|clk_div ; -0.500       ; 1.533      ; 1.923      ;
-; 0.738 ; reset     ; conta_decada:feliperenato|qtemp[3] ; reset        ; clock:talita|clk_div ; -0.500       ; 1.533      ; 1.923      ;
-+-------+-----------+------------------------------------+--------------+----------------------+--------------+------------+------------+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Removal: 'clock:talita|clk_div'                                                                                             ;
++--------+-----------+------------------------------------+--------------+----------------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                            ; Launch Clock ; Latch Clock          ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+------------------------------------+--------------+----------------------+--------------+------------+------------+
+; -0.200 ; reset     ; conta_updown:feliperenato|qtemp[3] ; reset        ; clock:talita|clk_div ; 0.000        ; 1.974      ; 1.926      ;
+; -0.200 ; reset     ; conta_updown:feliperenato|qtemp[0] ; reset        ; clock:talita|clk_div ; 0.000        ; 1.974      ; 1.926      ;
+; -0.200 ; reset     ; conta_updown:feliperenato|qtemp[2] ; reset        ; clock:talita|clk_div ; 0.000        ; 1.974      ; 1.926      ;
+; -0.200 ; reset     ; conta_updown:feliperenato|qtemp[1] ; reset        ; clock:talita|clk_div ; 0.000        ; 1.974      ; 1.926      ;
+; 0.300  ; reset     ; conta_updown:feliperenato|qtemp[3] ; reset        ; clock:talita|clk_div ; -0.500       ; 1.974      ; 1.926      ;
+; 0.300  ; reset     ; conta_updown:feliperenato|qtemp[0] ; reset        ; clock:talita|clk_div ; -0.500       ; 1.974      ; 1.926      ;
+; 0.300  ; reset     ; conta_updown:feliperenato|qtemp[2] ; reset        ; clock:talita|clk_div ; -0.500       ; 1.974      ; 1.926      ;
+; 0.300  ; reset     ; conta_updown:feliperenato|qtemp[1] ; reset        ; clock:talita|clk_div ; -0.500       ; 1.974      ; 1.926      ;
++--------+-----------+------------------------------------+--------------+----------------------+--------------+------------+------------+
 
 
 +-----------------------------------------------------------------------------------------------------------+
@@ -1179,16 +1207,16 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                         ;
 +--------+--------------+----------------+------------------+-------+------------+--------------------------------+
 ; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; reset ; Rise       ; reset                          ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; conta_decada:feliperenato|q[0] ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; conta_decada:feliperenato|q[0] ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; conta_decada:feliperenato|q[1] ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; conta_decada:feliperenato|q[1] ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; conta_decada:feliperenato|q[2] ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; conta_decada:feliperenato|q[2] ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; conta_decada:feliperenato|q[3] ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; conta_decada:feliperenato|q[3] ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; feliperenato|q[0]|datac        ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; feliperenato|q[0]|datac        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; conta_updown:feliperenato|q[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; conta_updown:feliperenato|q[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; conta_updown:feliperenato|q[1] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; conta_updown:feliperenato|q[1] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; conta_updown:feliperenato|q[2] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; conta_updown:feliperenato|q[2] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; conta_updown:feliperenato|q[3] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; conta_updown:feliperenato|q[3] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; feliperenato|q[0]|datad        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; feliperenato|q[0]|datad        ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; feliperenato|q[1]|datac        ;
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; reset ; Rise       ; feliperenato|q[1]|datac        ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; reset ; Rise       ; feliperenato|q[2]|datac        ;
@@ -1209,14 +1237,14 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------+--------------+----------------+------------------+----------------------+------------+------------------------------------+
 ; Slack  ; Actual Width ; Required Width ; Type             ; Clock                ; Clock Edge ; Target                             ;
 +--------+--------------+----------------+------------------+----------------------+------------+------------------------------------+
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; conta_decada:feliperenato|qtemp[0] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock:talita|clk_div ; Rise       ; conta_decada:feliperenato|qtemp[0] ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; conta_decada:feliperenato|qtemp[1] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock:talita|clk_div ; Rise       ; conta_decada:feliperenato|qtemp[1] ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; conta_decada:feliperenato|qtemp[2] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock:talita|clk_div ; Rise       ; conta_decada:feliperenato|qtemp[2] ;
-; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; conta_decada:feliperenato|qtemp[3] ;
-; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock:talita|clk_div ; Rise       ; conta_decada:feliperenato|qtemp[3] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; conta_updown:feliperenato|qtemp[0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock:talita|clk_div ; Rise       ; conta_updown:feliperenato|qtemp[0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; conta_updown:feliperenato|qtemp[1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock:talita|clk_div ; Rise       ; conta_updown:feliperenato|qtemp[1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; conta_updown:feliperenato|qtemp[2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock:talita|clk_div ; Rise       ; conta_updown:feliperenato|qtemp[2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; conta_updown:feliperenato|qtemp[3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock:talita|clk_div ; Rise       ; conta_updown:feliperenato|qtemp[3] ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; feliperenato|qtemp[0]|clk          ;
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock:talita|clk_div ; Rise       ; feliperenato|qtemp[0]|clk          ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock:talita|clk_div ; Rise       ; feliperenato|qtemp[1]|clk          ;
@@ -1234,19 +1262,37 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------+--------------+----------------+------------------+----------------------+------------+------------------------------------+
 
 
++----------------------------------------------------------------------------------------+
+; Setup Times                                                                            ;
++-----------+----------------------+--------+--------+------------+----------------------+
+; Data Port ; Clock Port           ; Rise   ; Fall   ; Clock Edge ; Clock Reference      ;
++-----------+----------------------+--------+--------+------------+----------------------+
+; sobedesce ; clock:talita|clk_div ; -0.291 ; -0.291 ; Rise       ; clock:talita|clk_div ;
++-----------+----------------------+--------+--------+------------+----------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Hold Times                                                                           ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; Data Port ; Clock Port           ; Rise  ; Fall  ; Clock Edge ; Clock Reference      ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; sobedesce ; clock:talita|clk_div ; 0.594 ; 0.594 ; Rise       ; clock:talita|clk_div ;
++-----------+----------------------+-------+-------+------------+----------------------+
+
+
 +-----------------------------------------------------------------------+
 ; Clock to Output Times                                                 ;
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; HEX0[*]   ; reset      ; 3.811 ; 3.811 ; Rise       ; reset           ;
-;  HEX0[0]  ; reset      ; 3.811 ; 3.811 ; Rise       ; reset           ;
-;  HEX0[1]  ; reset      ; 3.593 ; 3.593 ; Rise       ; reset           ;
-;  HEX0[2]  ; reset      ; 3.633 ; 3.633 ; Rise       ; reset           ;
-;  HEX0[3]  ; reset      ; 3.684 ; 3.684 ; Rise       ; reset           ;
-;  HEX0[4]  ; reset      ; 3.747 ; 3.747 ; Rise       ; reset           ;
-;  HEX0[5]  ; reset      ; 3.809 ; 3.809 ; Rise       ; reset           ;
-;  HEX0[6]  ; reset      ; 3.808 ; 3.808 ; Rise       ; reset           ;
+; HEX0[*]   ; reset      ; 3.911 ; 3.911 ; Rise       ; reset           ;
+;  HEX0[0]  ; reset      ; 3.906 ; 3.906 ; Rise       ; reset           ;
+;  HEX0[1]  ; reset      ; 3.894 ; 3.894 ; Rise       ; reset           ;
+;  HEX0[2]  ; reset      ; 3.911 ; 3.911 ; Rise       ; reset           ;
+;  HEX0[3]  ; reset      ; 3.828 ; 3.828 ; Rise       ; reset           ;
+;  HEX0[4]  ; reset      ; 3.575 ; 3.575 ; Rise       ; reset           ;
+;  HEX0[5]  ; reset      ; 3.721 ; 3.721 ; Rise       ; reset           ;
+;  HEX0[6]  ; reset      ; 3.711 ; 3.711 ; Rise       ; reset           ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -1255,14 +1301,14 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; HEX0[*]   ; reset      ; 3.447 ; 3.447 ; Rise       ; reset           ;
-;  HEX0[0]  ; reset      ; 3.577 ; 3.577 ; Rise       ; reset           ;
-;  HEX0[1]  ; reset      ; 3.490 ; 3.490 ; Rise       ; reset           ;
-;  HEX0[2]  ; reset      ; 3.549 ; 3.549 ; Rise       ; reset           ;
-;  HEX0[3]  ; reset      ; 3.447 ; 3.447 ; Rise       ; reset           ;
-;  HEX0[4]  ; reset      ; 3.644 ; 3.644 ; Rise       ; reset           ;
-;  HEX0[5]  ; reset      ; 3.578 ; 3.578 ; Rise       ; reset           ;
-;  HEX0[6]  ; reset      ; 3.564 ; 3.564 ; Rise       ; reset           ;
+; HEX0[*]   ; reset      ; 3.425 ; 3.425 ; Rise       ; reset           ;
+;  HEX0[0]  ; reset      ; 3.815 ; 3.815 ; Rise       ; reset           ;
+;  HEX0[1]  ; reset      ; 3.611 ; 3.611 ; Rise       ; reset           ;
+;  HEX0[2]  ; reset      ; 3.648 ; 3.648 ; Rise       ; reset           ;
+;  HEX0[3]  ; reset      ; 3.740 ; 3.740 ; Rise       ; reset           ;
+;  HEX0[4]  ; reset      ; 3.436 ; 3.436 ; Rise       ; reset           ;
+;  HEX0[5]  ; reset      ; 3.436 ; 3.436 ; Rise       ; reset           ;
+;  HEX0[6]  ; reset      ; 3.425 ; 3.425 ; Rise       ; reset           ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -1271,15 +1317,33 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------------------+----------+--------+----------+---------+---------------------+
 ; Clock                 ; Setup    ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
 +-----------------------+----------+--------+----------+---------+---------------------+
-; Worst-case Slack      ; -5.105   ; -2.554 ; -0.101   ; 0.238   ; -1.380              ;
-;  clock1               ; -5.105   ; -2.554 ; N/A      ; N/A     ; -1.380              ;
-;  clock:talita|clk_div ; -0.257   ; 0.215  ; -0.101   ; 0.238   ; -0.500              ;
-;  reset                ; -0.717   ; 0.267  ; N/A      ; N/A     ; -1.380              ;
-; Design-wide TNS       ; -110.118 ; -2.554 ; -0.404   ; 0.0     ; -39.76              ;
-;  clock1               ; -107.301 ; -2.554 ; N/A      ; N/A     ; -34.380             ;
-;  clock:talita|clk_div ; -0.615   ; 0.000  ; -0.404   ; 0.000   ; -4.000              ;
-;  reset                ; -2.202   ; 0.000  ; N/A      ; N/A     ; -1.380              ;
+; Worst-case Slack      ; -5.001   ; -2.539 ; 0.580    ; -0.411  ; -1.380              ;
+;  clock1               ; -5.001   ; -2.539 ; N/A      ; N/A     ; -1.380              ;
+;  clock:talita|clk_div ; -0.795   ; 0.215  ; 0.580    ; -0.411  ; -0.500              ;
+;  reset                ; -1.457   ; 0.731  ; N/A      ; N/A     ; -1.380              ;
+; Design-wide TNS       ; -109.131 ; -2.539 ; 0.0      ; -1.644  ; -39.76              ;
+;  clock1               ; -101.603 ; -2.539 ; N/A      ; N/A     ; -34.380             ;
+;  clock:talita|clk_div ; -2.088   ; 0.000  ; 0.000    ; -1.644  ; -4.000              ;
+;  reset                ; -5.440   ; 0.000  ; N/A      ; N/A     ; -1.380              ;
 +-----------------------+----------+--------+----------+---------+---------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Setup Times                                                                          ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; Data Port ; Clock Port           ; Rise  ; Fall  ; Clock Edge ; Clock Reference      ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; sobedesce ; clock:talita|clk_div ; 0.097 ; 0.097 ; Rise       ; clock:talita|clk_div ;
++-----------+----------------------+-------+-------+------------+----------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Hold Times                                                                           ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; Data Port ; Clock Port           ; Rise  ; Fall  ; Clock Edge ; Clock Reference      ;
++-----------+----------------------+-------+-------+------------+----------------------+
+; sobedesce ; clock:talita|clk_div ; 0.594 ; 0.594 ; Rise       ; clock:talita|clk_div ;
++-----------+----------------------+-------+-------+------------+----------------------+
 
 
 +-----------------------------------------------------------------------+
@@ -1287,14 +1351,14 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; HEX0[*]   ; reset      ; 7.131 ; 7.131 ; Rise       ; reset           ;
-;  HEX0[0]  ; reset      ; 7.131 ; 7.131 ; Rise       ; reset           ;
-;  HEX0[1]  ; reset      ; 6.684 ; 6.684 ; Rise       ; reset           ;
-;  HEX0[2]  ; reset      ; 6.697 ; 6.697 ; Rise       ; reset           ;
-;  HEX0[3]  ; reset      ; 6.832 ; 6.832 ; Rise       ; reset           ;
-;  HEX0[4]  ; reset      ; 6.996 ; 6.996 ; Rise       ; reset           ;
-;  HEX0[5]  ; reset      ; 7.124 ; 7.124 ; Rise       ; reset           ;
-;  HEX0[6]  ; reset      ; 7.129 ; 7.129 ; Rise       ; reset           ;
+; HEX0[*]   ; reset      ; 7.420 ; 7.420 ; Rise       ; reset           ;
+;  HEX0[0]  ; reset      ; 7.412 ; 7.412 ; Rise       ; reset           ;
+;  HEX0[1]  ; reset      ; 7.420 ; 7.420 ; Rise       ; reset           ;
+;  HEX0[2]  ; reset      ; 7.418 ; 7.418 ; Rise       ; reset           ;
+;  HEX0[3]  ; reset      ; 7.197 ; 7.197 ; Rise       ; reset           ;
+;  HEX0[4]  ; reset      ; 6.585 ; 6.585 ; Rise       ; reset           ;
+;  HEX0[5]  ; reset      ; 6.993 ; 6.993 ; Rise       ; reset           ;
+;  HEX0[6]  ; reset      ; 6.981 ; 6.981 ; Rise       ; reset           ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -1303,14 +1367,14 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; HEX0[*]   ; reset      ; 3.447 ; 3.447 ; Rise       ; reset           ;
-;  HEX0[0]  ; reset      ; 3.577 ; 3.577 ; Rise       ; reset           ;
-;  HEX0[1]  ; reset      ; 3.490 ; 3.490 ; Rise       ; reset           ;
-;  HEX0[2]  ; reset      ; 3.549 ; 3.549 ; Rise       ; reset           ;
-;  HEX0[3]  ; reset      ; 3.447 ; 3.447 ; Rise       ; reset           ;
-;  HEX0[4]  ; reset      ; 3.644 ; 3.644 ; Rise       ; reset           ;
-;  HEX0[5]  ; reset      ; 3.578 ; 3.578 ; Rise       ; reset           ;
-;  HEX0[6]  ; reset      ; 3.564 ; 3.564 ; Rise       ; reset           ;
+; HEX0[*]   ; reset      ; 3.425 ; 3.425 ; Rise       ; reset           ;
+;  HEX0[0]  ; reset      ; 3.815 ; 3.815 ; Rise       ; reset           ;
+;  HEX0[1]  ; reset      ; 3.611 ; 3.611 ; Rise       ; reset           ;
+;  HEX0[2]  ; reset      ; 3.648 ; 3.648 ; Rise       ; reset           ;
+;  HEX0[3]  ; reset      ; 3.740 ; 3.740 ; Rise       ; reset           ;
+;  HEX0[4]  ; reset      ; 3.436 ; 3.436 ; Rise       ; reset           ;
+;  HEX0[5]  ; reset      ; 3.436 ; 3.436 ; Rise       ; reset           ;
+;  HEX0[6]  ; reset      ; 3.425 ; 3.425 ; Rise       ; reset           ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -1321,7 +1385,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------------------+----------------------+----------+----------+----------+----------+
 ; clock1               ; clock1               ; 7920     ; 0        ; 0        ; 0        ;
 ; clock:talita|clk_div ; clock1               ; 1        ; 1        ; 0        ; 0        ;
-; clock:talita|clk_div ; clock:talita|clk_div ; 15       ; 0        ; 0        ; 0        ;
+; clock:talita|clk_div ; clock:talita|clk_div ; 22       ; 0        ; 0        ; 0        ;
 ; clock:talita|clk_div ; reset                ; 4        ; 0        ; 0        ; 0        ;
 +----------------------+----------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
@@ -1334,7 +1398,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +----------------------+----------------------+----------+----------+----------+----------+
 ; clock1               ; clock1               ; 7920     ; 0        ; 0        ; 0        ;
 ; clock:talita|clk_div ; clock1               ; 1        ; 1        ; 0        ; 0        ;
-; clock:talita|clk_div ; clock:talita|clk_div ; 15       ; 0        ; 0        ; 0        ;
+; clock:talita|clk_div ; clock:talita|clk_div ; 22       ; 0        ; 0        ; 0        ;
 ; clock:talita|clk_div ; reset                ; 4        ; 0        ; 0        ; 0        ;
 +----------------------+----------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
@@ -1379,8 +1443,8 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 0     ; 0    ;
-; Unconstrained Input Port Paths  ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 1     ; 1    ;
+; Unconstrained Input Port Paths  ; 4     ; 4    ;
 ; Unconstrained Output Ports      ; 7     ; 7    ;
 ; Unconstrained Output Port Paths ; 25    ; 25   ;
 +---------------------------------+-------+------+
@@ -1392,7 +1456,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Dec 03 20:27:20 2019
+    Info: Processing started: Mon Dec 09 21:06:49 2019
 Info: Command: quartus_sta conta10s -c conta10s
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -1408,26 +1472,26 @@ Info (332105): Deriving Clocks
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow Model
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -5.105
+Info (332146): Worst-case setup slack is -5.001
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -5.105      -107.301 clock1 
-    Info (332119):    -0.717        -2.202 reset 
-    Info (332119):    -0.257        -0.615 clock:talita|clk_div 
-Info (332146): Worst-case hold slack is -2.554
+    Info (332119):    -5.001      -101.603 clock1 
+    Info (332119):    -1.457        -5.440 reset 
+    Info (332119):    -0.795        -2.088 clock:talita|clk_div 
+Info (332146): Worst-case hold slack is -2.539
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -2.554        -2.554 clock1 
+    Info (332119):    -2.539        -2.539 clock1 
     Info (332119):     0.391         0.000 clock:talita|clk_div 
-    Info (332119):     0.495         0.000 reset 
-Info (332146): Worst-case recovery slack is -0.101
+    Info (332119):     1.328         0.000 reset 
+Info (332146): Worst-case recovery slack is 0.681
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -0.101        -0.404 clock:talita|clk_div 
-Info (332146): Worst-case removal slack is 0.371
+    Info (332119):     0.681         0.000 clock:talita|clk_div 
+Info (332146): Worst-case removal slack is -0.411
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):     0.371         0.000 clock:talita|clk_div 
+    Info (332119):    -0.411        -1.644 clock:talita|clk_div 
 Info (332146): Worst-case minimum pulse width slack is -1.380
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
@@ -1437,26 +1501,26 @@ Info (332146): Worst-case minimum pulse width slack is -1.380
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info: Analyzing Fast Model
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -1.834
+Info (332146): Worst-case setup slack is -1.805
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -1.834       -32.997 clock1 
-    Info (332119):     0.206         0.000 reset 
-    Info (332119):     0.416         0.000 clock:talita|clk_div 
-Info (332146): Worst-case hold slack is -1.595
+    Info (332119):    -1.805       -31.086 clock1 
+    Info (332119):    -0.203        -0.637 reset 
+    Info (332119):     0.189         0.000 clock:talita|clk_div 
+Info (332146): Worst-case hold slack is -1.580
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -1.595        -1.595 clock1 
+    Info (332119):    -1.580        -1.580 clock1 
     Info (332119):     0.215         0.000 clock:talita|clk_div 
-    Info (332119):     0.267         0.000 reset 
-Info (332146): Worst-case recovery slack is 0.142
+    Info (332119):     0.731         0.000 reset 
+Info (332146): Worst-case recovery slack is 0.580
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):     0.142         0.000 clock:talita|clk_div 
-Info (332146): Worst-case removal slack is 0.238
+    Info (332119):     0.580         0.000 clock:talita|clk_div 
+Info (332146): Worst-case removal slack is -0.200
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):     0.238         0.000 clock:talita|clk_div 
+    Info (332119):    -0.200        -0.800 clock:talita|clk_div 
 Info (332146): Worst-case minimum pulse width slack is -1.380
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
@@ -1468,7 +1532,7 @@ Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
     Info: Peak virtual memory: 4526 megabytes
-    Info: Processing ended: Tue Dec 03 20:27:22 2019
+    Info: Processing ended: Mon Dec 09 21:06:51 2019
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 

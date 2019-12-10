@@ -1,0 +1,93 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'clock1'
+Slack : -4.857
+TNS   : -99.510
+
+Type  : Slow Model Setup 'reset'
+Slack : -0.730
+TNS   : -2.132
+
+Type  : Slow Model Setup 'clock:talita|clk_div'
+Slack : -0.038
+TNS   : -0.041
+
+Type  : Slow Model Hold 'clock1'
+Slack : -2.505
+TNS   : -2.505
+
+Type  : Slow Model Hold 'clock:talita|clk_div'
+Slack : 0.391
+TNS   : 0.000
+
+Type  : Slow Model Hold 'reset'
+Slack : 0.698
+TNS   : 0.000
+
+Type  : Slow Model Recovery 'clock:talita|clk_div'
+Slack : 0.048
+TNS   : 0.000
+
+Type  : Slow Model Removal 'clock:talita|clk_div'
+Slack : 0.222
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'clock1'
+Slack : -1.380
+TNS   : -34.380
+
+Type  : Slow Model Minimum Pulse Width 'reset'
+Slack : -1.380
+TNS   : -1.380
+
+Type  : Slow Model Minimum Pulse Width 'clock:talita|clk_div'
+Slack : -0.500
+TNS   : -3.000
+
+Type  : Fast Model Setup 'clock1'
+Slack : -1.724
+TNS   : -30.128
+
+Type  : Fast Model Setup 'reset'
+Slack : 0.142
+TNS   : 0.000
+
+Type  : Fast Model Setup 'clock:talita|clk_div'
+Slack : 0.513
+TNS   : 0.000
+
+Type  : Fast Model Hold 'clock1'
+Slack : -1.550
+TNS   : -1.550
+
+Type  : Fast Model Hold 'clock:talita|clk_div'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Hold 'reset'
+Slack : 0.426
+TNS   : 0.000
+
+Type  : Fast Model Recovery 'clock:talita|clk_div'
+Slack : 0.272
+TNS   : 0.000
+
+Type  : Fast Model Removal 'clock:talita|clk_div'
+Slack : 0.108
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'clock1'
+Slack : -1.380
+TNS   : -34.380
+
+Type  : Fast Model Minimum Pulse Width 'reset'
+Slack : -1.380
+TNS   : -1.380
+
+Type  : Fast Model Minimum Pulse Width 'clock:talita|clk_div'
+Slack : -0.500
+TNS   : -3.000
+
+------------------------------------------------------------
