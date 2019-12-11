@@ -1,0 +1,27 @@
+|conta_updown
+clk => carry_out~reg0.CLK
+clk => qtemp[0].CLK
+clk => qtemp[1].CLK
+clk => qtemp[2].CLK
+clk => qtemp[3].CLK
+reset => qtemp[0].ACLR
+reset => qtemp[1].ACLR
+reset => qtemp[2].ACLR
+reset => qtemp[3].ACLR
+reset => q[3]$latch.LATCH_ENABLE
+reset => q[2]$latch.LATCH_ENABLE
+reset => q[1]$latch.LATCH_ENABLE
+reset => q[0]$latch.LATCH_ENABLE
+reset => carry_out~reg0.ENA
+sobedesce => qtemp.OUTPUTSELECT
+sobedesce => qtemp.OUTPUTSELECT
+sobedesce => qtemp.OUTPUTSELECT
+sobedesce => qtemp.OUTPUTSELECT
+sobedesce => carry_out.OUTPUTSELECT
+carry_out <= carry_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[0] <= q[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
