@@ -1,6 +1,0 @@
-|porta_AND_dataflow
-IN1 => OUT1.IN0
-IN2 => OUT1.IN1
-OUT1 <= OUT1.DB_MAX_OUTPUT_PORT_TYPE
-
-
